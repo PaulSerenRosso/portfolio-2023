@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/snowflake1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/vue.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Shg5cB3aeaWtNhySm927HtBJjw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Data_Paul\\portfolio-2023\\vue-start-spa\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\views" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="" />
+      <created>1689604046590</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689604046590</updated>
+      <workItem from="1689604048210" duration="4359000" />
+      <workItem from="1689678875825" duration="297000" />
+      <workItem from="1689679185760" duration="17491000" />
+      <workItem from="1689701431424" duration="10148000" />
+      <workItem from="1689768437656" duration="18491000" />
+      <workItem from="1689799761277" duration="1869000" />
+      <workItem from="1689860485185" duration="13922000" />
+      <workItem from="1689886857065" duration="2099000" />
+      <workItem from="1689932308103" duration="2257000" />
+      <workItem from="1689948695110" duration="13904000" />
+      <workItem from="1689972534664" duration="2186000" />
+      <workItem from="1689975222675" duration="1421000" />
+      <workItem from="1690104979671" duration="2750000" />
+      <workItem from="1690120621756" duration="3461000" />
+      <workItem from="1690134172225" duration="873000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
