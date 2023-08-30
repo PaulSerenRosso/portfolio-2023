@@ -2,6 +2,7 @@ import {createStore} from 'vuex'
 import * as THREE from "three";
 import {EffectComposer} from "three/addons/postprocessing/EffectComposer";
 import {RenderPass} from "three/addons/postprocessing/RenderPass";
+import {Vector3} from "three";
 
 
    export const store = createStore({
@@ -9,7 +10,7 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
             return {
                 devicePlateformId:1,
                 allDynamicObjectsOfTheCurrentScene : [],
-
+                camera:null,
             }
         },
         mutations: {
@@ -48,8 +49,13 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
             addDynamicObject(state, obj)
             {
                 state.allDynamicObjectsOfTheCurrentScene.push(obj);
-                obj.startPosition = obj.cameraStartPosition.unproject(this.camera);
-                console.log(obj.startPosition);
+                obj.startPosition = new Vector3(obj.cameraStartPosition.x,
+                    obj.cameraStartPosition.y, obj.cameraStartPosition.z)
+                    .unproject(state.camera);
+
+                if(obj.onStartPositionChanged !== undefined)
+                    obj.onStartPositionChanged(obj);
+
             },
             createNewScene(state)
             {
@@ -60,8 +66,11 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
             updateAllDynamicObjectsScene(state)
             {
                 state.allDynamicObjectsOfTheCurrentScene.forEach((item)=> {
-                    item.startPosition = item.cameraStartPosition.unproject(this.camera);
-                    console.log(item.startPosition);
+                    item.startPosition = new Vector3(item.cameraStartPosition.x, item.cameraStartPosition.y, item.cameraStartPosition.z)
+                        .unproject(state.camera);
+                    if(item.onStartPositionChanged !== undefined)
+                    item.onStartPositionChanged(item);
+
                 });
             },
             initNewScene(state, arg)
@@ -80,31 +89,31 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
 
                     }
                 }
-                console.log(arg.sceneContainer)
+
                 var axesHelper = new THREE.AxesHelper( 1 );
-                console.log(this.scene);
+
                 this.scene.add( axesHelper );
                 this.scene.fog = new THREE.FogExp2('#F5FCFFFF', 0.2);
                 const light = new THREE.DirectionalLight("white", 1);
                 light.castShadow = true;
                 light.position.set(1,1,1);
-                this.camera = new THREE.PerspectiveCamera(75, arg.sceneContainer.clientWidth / arg.sceneContainer.clientHeight, 1, 20);
-                this.camera.rotation.x = -Math.PI/10;
+                state.camera = new THREE.PerspectiveCamera(75, arg.sceneContainer.clientWidth / arg.sceneContainer.clientHeight, 1, 20);
+                state.camera.rotation.x = -Math.PI/10;
                 const renderer = new THREE.WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true });
                 renderer.shadowMap.enabled = true;
 
                 renderer.setSize(arg.sceneContainer.clientWidth, arg.sceneContainer.clientHeight);
                 arg.sceneContainer.appendChild(renderer.domElement);
-                this.camera.position.y = 1;
-                this.camera.position.z = 5;
+                state.camera.position.y = 1;
+                state.camera.position.z = 5;
                 const atmosphereLight = new THREE.AmbientLight('#b21c1b', 0.1);
                 this.scene.add(atmosphereLight);
                 this.scene.add(light);
 
                 const composer = new EffectComposer( renderer );
-                const renderPass =  new RenderPass( this.scene, this.camera );
+                const renderPass =  new RenderPass( this.scene, state.camera );
                 composer.addPass(renderPass);
-                const resizer = new Resizer(arg.sceneContainer, this.camera, renderer);
+                const resizer = new Resizer(arg.sceneContainer, state.camera, renderer);
                 const clock = new THREE.Clock();
                 renderer.setClearColor(0xffffff, 0);
                 const animate= () => {
@@ -116,6 +125,7 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
                         item.obj.position.set(item.startPosition.x,
                             item.startPosition.y+Math.sin(clock.getElapsedTime()*item.movementFrequency)
                             *item.movementLength, item.startPosition.z);
+
                     });
                     composer.render();
                     // particleMesh.rotation.y += 0.001;

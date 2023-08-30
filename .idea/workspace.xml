@@ -5,40 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/BackgroundWebsite.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/InformationWindow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/TextAnimation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeBackgroundParticles.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeDowloadVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeMedal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePolaroid.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeYoutubeVideo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/TitleAnimation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/WindowAnimation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ContactView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectExampleView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/fonts/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/AboutView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +110,7 @@
       <workItem from="1693223036746" duration="10651000" />
       <workItem from="1693239258508" duration="2197000" />
       <workItem from="1693245540069" duration="243000" />
+      <workItem from="1693408959973" duration="9275000" />
     </task>
     <servers />
   </component>
