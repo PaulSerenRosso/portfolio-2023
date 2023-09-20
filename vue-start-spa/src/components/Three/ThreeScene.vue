@@ -9,7 +9,7 @@ export default{
   name: "ThreeScene",
   props:{ containerId:String},
 
-  beforeMount() {
+  beforeCreate() {
     this.$store.commit('createNewScene');
   },
   methods: {

@@ -4,7 +4,13 @@
   <img id="_textureParticle"
        src="../assets/triangleParticleAlphaMap.png" style="display: none;">
     <three-scene  container-id="_canvasContainer"></three-scene>
-    <three-video srcVideo="testVideo.mp4" idVideo="Test"> </three-video>
+    <three-video-container srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
+                           :offset-html-position-y=100 > </three-video-container>
+  <three-js-html-position-linker dynamic-object-name="Test"
+                              html-element-id-name="_titleVideo"
+                              :offset-html-position-x=100
+                              :offset-html-position-y=100 ></three-js-html-position-linker>
+  <p id="_titleVideo"> je suis le titre de la video </p>
 <div id="_testContainerText">  <div id="_testTitle"> test text </div>
 <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
 </div>
@@ -13,8 +19,9 @@
 </template>
 
 <script >
-import ThreeVideo from '../components/Three/TabletVideo.vue'
+import ThreeVideo from '../components/Three/ThreeVideo.vue'
 import ThreeScene from '../components/Three/ThreeScene.vue'
+import ThreeJsHtmlPositionLinker from "@/components/Three/ThreeJsHtmlPositionLinker.vue";
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -24,13 +31,15 @@ import MenuBarDesktop from "@/components/MenuBar.vue";
 import MainButton from "@/components/MainButton.vue";
 import {computed} from "vue";
 import MenuBar from "@/components/MenuBar.vue";
+import ThreeVideoContainer from "@/components/Three/ThreeVideoContainer.vue";
   export default {
     // eslint-disable-next-line vue/no-unused-components
 components:{
- ThreeVideo, ThreeScene
+
+ ThreeVideoContainer, ThreeScene, ThreeJsHtmlPositionLinker
 },
 
-    mounted() {
+    created() {
   this.$store.commit("initDeviceId");
 /*
   const loader = new GLTFLoader();

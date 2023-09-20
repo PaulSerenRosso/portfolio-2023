@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="Vue Options API Component" />
         <option value="JavaScript File" />
+        <option value="Vue Options API Component" />
       </list>
     </option>
   </component>
@@ -59,8 +64,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src" />
@@ -111,6 +116,12 @@
       <workItem from="1693239258508" duration="2197000" />
       <workItem from="1693245540069" duration="243000" />
       <workItem from="1693408959973" duration="9275000" />
+      <workItem from="1695114509857" duration="18000" />
+      <workItem from="1695125031581" duration="209000" />
+      <workItem from="1695137654858" duration="83000" />
+      <workItem from="1695137746294" duration="5000" />
+      <workItem from="1695199355760" duration="3239000" />
+      <workItem from="1695213886378" duration="8475000" />
     </task>
     <servers />
   </component>
