@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePictureContainer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTextContainer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsiveProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeTextResponsiveProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Vector2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Vector3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/TabletVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeMedal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeText.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeYoutubeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
@@ -24,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="Vue Options API Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -53,6 +65,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Data_Paul\\portfolio-2023\\vue-start-spa\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -64,11 +77,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\composables\ResponsiveProperty" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -121,7 +134,15 @@
       <workItem from="1695137654858" duration="83000" />
       <workItem from="1695137746294" duration="5000" />
       <workItem from="1695199355760" duration="3239000" />
-      <workItem from="1695213886378" duration="8475000" />
+      <workItem from="1695213886378" duration="14851000" />
+      <workItem from="1695312026503" duration="6198000" />
+      <workItem from="1695546949032" duration="225000" />
+      <workItem from="1695556505203" duration="11478000" />
+      <workItem from="1695626384135" duration="26340000" />
+      <workItem from="1695713105267" duration="8129000" />
+      <workItem from="1695729731614" duration="17869000" />
+      <workItem from="1695756091708" duration="714000" />
+      <workItem from="1695799795599" duration="4873000" />
     </task>
     <servers />
   </component>

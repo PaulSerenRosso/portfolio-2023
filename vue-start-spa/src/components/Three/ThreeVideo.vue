@@ -1,9 +1,15 @@
 <script>
 
-import {VideoTexture, MeshPhongMaterial, PlaneGeometry, Mesh, FrontSide, MeshBasicMaterial, Vector3} from 'three';
-import {AnimatedObject} from "@/store/StoreClasses";
-import * as THREE from "three";
-import ThreeJsHtmlPositionLinker from "@/components/Three/ThreeJsHtmlPositionLinker.vue";
+import {
+  VideoTexture,
+  PlaneGeometry,
+  Mesh,
+  FrontSide,
+  MeshBasicMaterial,
+} from 'three';
+import {DynamicObject} from "@/store/StoreClasses";
+
+
 
 export default{
   name: "ThreeVideo",
@@ -13,21 +19,20 @@ export default{
       video : null,
       videoButton:null,
 
-
     }
 
   },
 
   mounted() {
-    console.log("a")
+
     this.video = document.getElementById(this.idVideo);
+    this.video.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
     this.video.onloadeddata = () =>{
       this.video.play()
 
-    };
-    this.video.style.display = "none";
-    console.log(this.videoButton)
+
+
     this.videoButton.addEventListener('click', this.activateFullscreen);
     document.addEventListener('fullscreenchange', () => {
       if (!document.fullscreenElement) {
@@ -35,17 +40,23 @@ export default{
       }
     });
     const videoTexture= new VideoTexture(this.video);
-    const videoMaterial= new MeshPhongMaterial(
+    const videoMaterial= new MeshBasicMaterial(
         {map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
-    const screen = new PlaneGeometry(1, 1);
+    const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
     const videoScreen = new Mesh(screen, videoMaterial);
     this.$store.commit('addScene',videoScreen);
-    this.$store.commit('addDynamicObject',
-        new AnimatedObject(videoScreen, 2,3,
-            new THREE.Vector3(0,0,0.5), this.videoObjectName, undefined));
+    const dynamicObject = new DynamicObject(videoScreen, this.movementLength,this.movementFrequency,
+      this.videoObjectName, undefined);
 
-    // il faut que la fucntin responsive update une variable avec la position actuelle dans l'espace 3d et qui la donne au animated. De plus il prendra en in put la camera position
-    videoScreen.name = "Video";
+    this.threeBasicResponsivePropertyGroup.setOnMediaQueryMatches((property)=>{property.assignResponsivePropertyToObj(dynamicObject)});
+    this.$store.commit('addResponsivePropertyGroup', this.threeBasicResponsivePropertyGroup)
+      this.$store.commit('addDynamicObject',
+          dynamicObject); // il faut que la fucntin responsive update une variable avec la position actuelle dans l'espace 3d et qui la donne au dynamic. De plus il prendra en in put la camera position
+    this.$emit("onVideoLoaded");
+    };
+
+
+
 
   },
   props: {
@@ -53,6 +64,10 @@ export default{
     idVideo: String,
     videoObjectName:String,
     videoButtonId:String,
+    threeBasicResponsivePropertyGroup:Object,
+
+    movementLength:Number,
+    movementFrequency:Number,
 
   },
   methods: {
@@ -80,10 +95,13 @@ export default{
          :src="require('@/assets/'+this.srcVideo)" ></video>
 </template>
 
-<style scoped>
+<style >
 .video-button
 {
 position: absolute;
+  color : white;
+
+  background-color: ;
 
 }
 </style>

@@ -1,8 +1,6 @@
 <script>
-import {defineComponent} from 'vue'
-import {FrontSide, Mesh, MeshPhongMaterial, PlaneGeometry, Vector3, VideoTexture} from "three";
-import {AnimatedObject} from "@/store/StoreClasses";
-import * as THREE from "three";
+import { Vector3} from "three";
+
 
 export default {
   name: "ThreeJsHtmlPositionLinker",
@@ -14,13 +12,15 @@ export default {
     }
 
   },
-  mounted() {
+  activated() {
+    console.log("activated");
     this.htmlElement = document.getElementById(this.htmlElementIdName);
     this.htmlElement.style.position="absolute"
 
-    console.log("test");
+
      this.$store.commit('addEventToDynamicObject',{dynamicObjectName:this.dynamicObjectName,
       onStartPositionChanged:(animatedObject)=>{
+
         var width = window.innerWidth, height = window.innerHeight;
         var widthHalf = width / 2, heightHalf = height / 2;
         var pos = new Vector3(animatedObject.startPosition.x,animatedObject.startPosition.y,animatedObject.startPosition.z) ;

@@ -1,22 +1,11 @@
 <script >
-
-import * as THREE from 'three';
-import {EffectComposer} from "three/addons/postprocessing/EffectComposer.js";
-
-import {RenderPass} from "three/addons/postprocessing/RenderPass.js";
-import {Scene} from "three";
 export default{
   name: "ThreeScene",
   props:{ containerId:String},
 
   beforeCreate() {
-    this.$store.commit('createNewScene');
-  },
-  methods: {
-    addToScene: function (obj) {
-      this.scene.add(obj);
 
-    }
+    this.$store.commit('createNewScene');
   },
 
   mounted() {

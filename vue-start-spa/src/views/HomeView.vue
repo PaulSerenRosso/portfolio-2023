@@ -4,13 +4,22 @@
   <img id="_textureParticle"
        src="../assets/triangleParticleAlphaMap.png" style="display: none;">
     <three-scene  container-id="_canvasContainer"></three-scene>
-    <three-video-container srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
-                           :offset-html-position-y=100 > </three-video-container>
+    <three-video-container :movement-length="0.4" :movement-frequency="0.4 " :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup  srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
+       edges-color="#F5FCFFFF" :edges-z-thickness=0.2 :edges-width-thickness=0.2 :offset-html-position-y=100
+    > </three-video-container>
+<three-text-container  text-used="C#" text-object-name="C# logo"
+                       :three-text-responsive-property-group="this.threeTextContainerResponsivePropertyGroup"
+                       :edges-width-thickness="0.2" :edges-z-thickness="0.2"
+                       edges-color="#F5FCFFFF"  :movement-frequency="0.4" :movement-length="0.4"
+                    ></three-text-container>
   <three-js-html-position-linker dynamic-object-name="Test"
                               html-element-id-name="_titleVideo"
                               :offset-html-position-x=100
                               :offset-html-position-y=100 ></three-js-html-position-linker>
+  <three-picture-container :movement-length="0.4" :movement-frequency="0.4" :three-basic-responsive-property-group=this.threePictureContainerResponsivePropertyGroup  src-picture="logo.png" id-picture="TestPicture" picture-object-name="TestPicture"
+                           edges-color="#F5FCFFFF" :edges-z-thickness=0.2 :edges-width-thickness=0.2  ></three-picture-container>
   <p id="_titleVideo"> je suis le titre de la video </p>
+
 <div id="_testContainerText">  <div id="_testTitle"> test text </div>
 <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
 </div>
@@ -19,26 +28,85 @@
 </template>
 
 <script >
-import ThreeVideo from '../components/Three/ThreeVideo.vue'
+
 import ThreeScene from '../components/Three/ThreeScene.vue'
 import ThreeJsHtmlPositionLinker from "@/components/Three/ThreeJsHtmlPositionLinker.vue";
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import {MathUtils} from "three";
-import MenuBarDesktop from "@/components/MenuBar.vue";
-import MainButton from "@/components/MainButton.vue";
-import {computed} from "vue";
-import MenuBar from "@/components/MenuBar.vue";
 import ThreeVideoContainer from "@/components/Three/ThreeVideoContainer.vue";
+import {ThreeBasicResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeBasicResponsiveProperty";
+import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
+import {Vector3} from "@/composables/Vector3";
+import ThreePictureContainer from "@/components/Three/ThreePictureContainer.vue";
+import ThreeTextContainer from "@/components/Three/ThreeTextContainer.vue";
+import {ThreeTextResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeTextResponsiveProperty";
+
   export default {
+
+
     // eslint-disable-next-line vue/no-unused-components
 components:{
+  ThreeTextContainer,
+  ThreePictureContainer,
+
+  //ThreeText,
+  //ThreePictureContainer,
 
  ThreeVideoContainer, ThreeScene, ThreeJsHtmlPositionLinker
 },
-
+    data(){
+  return{
+    threeVideoContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2, 1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0.5,0.5),
+            new Vector3(0,50,0),
+            new Vector3(0.2,0.2,1))),
+    threePictureContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0,0.5),
+            new Vector3(0,40,0),
+            new Vector3(0.2,0.2,1)),
+        new ThreeBasicResponsiveProperty(
+            new Vector3(0,0,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1))),
+    threeTextContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
+        new ThreeTextResponsiveProperty(
+            new Vector3(1,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1), 50),
+        new ThreeTextResponsiveProperty(
+            new Vector3(1,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1), 250),
+        new ThreeTextResponsiveProperty(
+            new Vector3(1,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2, 1), 250),
+        new ThreeTextResponsiveProperty(
+            new Vector3(1,0.5,0.5),
+            new Vector3(0,0,0),
+            new Vector3(0.2,0.2,1), 250)),
+  }
+    },
     created() {
   this.$store.commit("initDeviceId");
 /*
@@ -193,7 +261,7 @@ position: absolute;
 width: 100%;
 height: 20%;
 text-align: center;
-color: #b21c1b;
+color:  #b21c1b;
 font-size: 3em;
 font-family: MyBold;
 }
@@ -205,11 +273,18 @@ top: 50%;
 width: 20%;
 height: 70%;
 left: 60%;
-background-color: white;
+
+
 background-size: cover;
 border-radius: 10px;
 }
-
+#threeTextCanvas{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  width: 50%;
+}
 #_testText
 {
 position: absolute;
@@ -217,7 +292,7 @@ top: 10%;
 width: 100%;
 height: 20%;
 text-align: center;
-color: #262626;
+color:#424242;
 font-size: 2em;
 font-family: MyRegular;
 }
