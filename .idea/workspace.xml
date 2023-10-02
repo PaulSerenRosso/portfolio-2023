@@ -5,24 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePictureContainer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTextContainer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsiveProperty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeTextResponsiveProperty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Vector2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Vector3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticlesContainer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundSubParticles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/EventHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundSharedSubParticlesProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundSubParticlesResponsiveProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeEdgesResponsiveProperty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleEventsManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeObjectTagHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreModule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeBackgroundParticles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeLevitatedObject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeDowloadVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTransform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeMedal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeText.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeYoutubeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePictureContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePictureContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreePolaroid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTablet.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeText.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTextContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeTextContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsiveProperty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
@@ -77,11 +89,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\composables\ResponsiveProperty" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three\Video" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three\BackgroundParticles" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three\Text" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Three\Picture" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\store\Modules" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -143,10 +155,28 @@
       <workItem from="1695729731614" duration="17869000" />
       <workItem from="1695756091708" duration="714000" />
       <workItem from="1695799795599" duration="4873000" />
+      <workItem from="1695819688685" duration="15139000" />
+      <workItem from="1695887035744" duration="6630000" />
+      <workItem from="1696005385486" duration="2227000" />
+      <workItem from="1696065995882" duration="3630000" />
+      <workItem from="1696081895482" duration="5150000" />
+      <workItem from="1696150757314" duration="5225000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTransform.vue</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

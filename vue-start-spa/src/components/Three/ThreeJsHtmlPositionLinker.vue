@@ -16,8 +16,6 @@ export default {
     console.log("activated");
     this.htmlElement = document.getElementById(this.htmlElementIdName);
     this.htmlElement.style.position="absolute"
-
-
      this.$store.commit('addEventToDynamicObject',{dynamicObjectName:this.dynamicObjectName,
       onStartPositionChanged:(animatedObject)=>{
 

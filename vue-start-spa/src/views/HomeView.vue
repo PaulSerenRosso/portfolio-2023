@@ -1,10 +1,6 @@
 <template>
-  <img id="testImg"
-         src="../assets/logo.png" style="display: none;">
-  <img id="_textureParticle"
-       src="../assets/triangleParticleAlphaMap.png" style="display: none;">
     <three-scene  container-id="_canvasContainer"></three-scene>
-    <three-video-container :movement-length="0.4" :movement-frequency="0.4 " :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup  srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
+    <three-video-container  :movement-length="0.4" :movement-frequency="0.4 " :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup  srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
        edges-color="#F5FCFFFF" :edges-z-thickness=0.2 :edges-width-thickness=0.2 :offset-html-position-y=100
     > </three-video-container>
 <three-text-container  text-used="C#" text-object-name="C# logo"
@@ -31,12 +27,12 @@
 
 import ThreeScene from '../components/Three/ThreeScene.vue'
 import ThreeJsHtmlPositionLinker from "@/components/Three/ThreeJsHtmlPositionLinker.vue";
-import ThreeVideoContainer from "@/components/Three/ThreeVideoContainer.vue";
+import ThreeVideoContainer from "@/components/Three/Video/ThreeVideoContainer.vue";
 import {ThreeBasicResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeBasicResponsiveProperty";
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
 import {Vector3} from "@/composables/Vector3";
-import ThreePictureContainer from "@/components/Three/ThreePictureContainer.vue";
-import ThreeTextContainer from "@/components/Three/ThreeTextContainer.vue";
+import ThreePictureContainer from "@/components/Three/Picture/ThreePictureContainer.vue";
+import ThreeTextContainer from "@/components/Three/Text/ThreeTextContainer.vue";
 import {ThreeTextResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeTextResponsiveProperty";
 
   export default {
@@ -57,53 +53,53 @@ components:{
     threeVideoContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0.5,0.5),
-            new Vector3(0,0,0),
+         0,
             new Vector3(0.2,0.2,1)),
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1)),
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2, 1)),
         new ThreeBasicResponsiveProperty(
-            new Vector3(0,0.5,0.5),
-            new Vector3(0,50,0),
+            new Vector3(0,0.7,0.5),
+            40,
             new Vector3(0.2,0.2,1))),
     threePictureContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1)),
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1)),
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0,0.5),
-            new Vector3(0,40,0),
+            0,
             new Vector3(0.2,0.2,1)),
         new ThreeBasicResponsiveProperty(
             new Vector3(0,0,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1))),
     threeTextContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
         new ThreeTextResponsiveProperty(
             new Vector3(1,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1), 50),
         new ThreeTextResponsiveProperty(
             new Vector3(1,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1), 250),
         new ThreeTextResponsiveProperty(
             new Vector3(1,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2, 1), 250),
         new ThreeTextResponsiveProperty(
             new Vector3(1,0.5,0.5),
-            new Vector3(0,0,0),
+            0,
             new Vector3(0.2,0.2,1), 250)),
   }
     },

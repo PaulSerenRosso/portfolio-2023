@@ -1,5 +1,5 @@
 <script>
-import ThreePicture from "@/components/Three/ThreePicture.vue";
+import ThreePicture from "@/components/Three/Picture/ThreePicture.vue";
 import ThreeEdges from "@/components/Three/ThreeEdges.vue";
 
 export default {
@@ -15,6 +15,7 @@ export default {
     movementLength:Number,
     movementFrequency:Number,
     threeBasicResponsivePropertyGroup:Object,
+
   },
   data()
   {
@@ -45,7 +46,7 @@ export default {
 
   <three-picture :movement-length="this.movementLength" :movement-frequency="this.movementFrequency" v-on:onPictureLoaded="raiseOnPictureLoaded" :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup" :src-picture="this.srcPicture" :id-picture="this.idPicture"
                   :picture-object-name=this.pictureObjectName> </three-picture>
-  <keep-alive><three-edges :need-to-be-activated="true" v-if="this.checkPictureIsLoaded" :dynamic-parent-object-name=this.pictureObjectName :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness  ></three-edges> </keep-alive>
+  <keep-alive><three-edges :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup" :need-to-be-activated="true" v-if="this.checkPictureIsLoaded" :dynamic-parent-object-name=this.pictureObjectName :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness  ></three-edges> </keep-alive>
 </template>
 
 <style scoped>

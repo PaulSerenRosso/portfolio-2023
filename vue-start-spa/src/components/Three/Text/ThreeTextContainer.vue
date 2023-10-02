@@ -1,5 +1,5 @@
 <script>
-import ThreeText from "@/components/Three/ThreeText.vue";
+import ThreeText from "@/components/Three/Text/ThreeText.vue";
 import ThreeEdges from "@/components/Three/ThreeEdges.vue";
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
   <three-Text :movement-frequency="this.movementFrequency" :movement-length="this.movementLength"  :three-text-responsive-property-group="this.threeTextResponsivePropertyGroup" :text-used="this.textUsed"
                  :text-object-name=this.textObjectName> </three-Text>
-  <three-edges :need-to-be-activated="false" :dynamic-parent-object-name=this.textObjectName :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness  ></three-edges>
+  <three-edges :three-basic-responsive-property-group="this.threeTextResponsivePropertyGroup" :need-to-be-activated="false" :dynamic-parent-object-name=this.textObjectName :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness  ></three-edges>
 </template>
 
 <style scoped>

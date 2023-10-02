@@ -1,13 +1,11 @@
 
 
-export class ResponsivePropertyGroup {
+export  class ResponsivePropertyGroup {
     constructor(mobileResponsiveProperty, tabletResponsiveProperty,desktopResponsiveProperty,largeDesktopResponsiveProperty ) {
         this.responsivePropertyGroup = [mobileResponsiveProperty, tabletResponsiveProperty, desktopResponsiveProperty, largeDesktopResponsiveProperty];
         this.onMediaQueryMatches = {};
     }
-    addResponsiveProperty(key, responsiveProperty) {
-        this.responsivePropertyGroup[key] = responsiveProperty;
-    }
+
     setOnMediaQueryMatches(onMediaQueryMatches){
         this.onMediaQueryMatches = onMediaQueryMatches;
     }
