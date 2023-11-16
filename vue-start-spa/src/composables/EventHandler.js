@@ -1,16 +1,21 @@
 export default function createEventHandler(){
-
-        this.onEvent = [];
+        const onEvent = [];
         return{
             addEventListener(listener){
-                this.onEvent.push(listener);
+                onEvent.push(listener);
             },
             removeEventListener(listener){
-                this.onEvent.push(listener);
+                onEvent.splice(onEvent.indexOf(listener),1);
             },
             raiseEvent(){
-                if(this.onEvent.length !== 0)
-                    this.onEvent.forEach((item)=>item());
+
+                if(onEvent.length !== 0)
+                {
+                    onEvent.forEach((item)=>{
+                       // console.log(item);
+                        item();});
+                }
+
             }
         }
 }

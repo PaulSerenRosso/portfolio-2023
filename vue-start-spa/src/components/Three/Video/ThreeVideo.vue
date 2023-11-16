@@ -7,7 +7,7 @@ import {
   FrontSide,
   MeshBasicMaterial,
 } from 'three';
-import {DynamicObject} from "@/store/StoreClasses";
+
 
 
 
@@ -24,7 +24,7 @@ export default{
   },
 
   mounted() {
-
+/*
     this.video = document.getElementById(this.idVideo);
     this.video.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
@@ -56,7 +56,7 @@ export default{
     };
 
 
-
+*/
 
   },
   props: {
@@ -101,7 +101,7 @@ export default{
 position: absolute;
   color : white;
 
-  background-color: ;
+
 
 }
 </style>

@@ -7,13 +7,17 @@ export const moduleUpdateLoopHandler =
         {onUpdateHandler:null, clock:null},
      {
              initOnUpdate(state){
+                 console.log("ini update")
                      state.clock = new Clock();
                      state.onUpdateHandler = createEventHandler();
                      function update(){
                              state.onUpdateHandler.raiseEvent();
+                         requestAnimationFrame(update);
                      }
-                     requestAnimationFrame(update);
+                     update();
              },
+
+
      },
         {},
         )

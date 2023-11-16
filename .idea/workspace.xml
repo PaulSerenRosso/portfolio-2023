@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsGroupObject.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePictureContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePictureContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeLevitatedObject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeLevitatedObject.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/EventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/EventHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ResponsivePropertyGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleEventsManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleEventsManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeObjectTagHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeObjectTagHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreClasses.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreHelper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/StoreModule.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/StoreModule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +158,15 @@
       <workItem from="1696262276202" duration="2369000" />
       <workItem from="1696673749025" duration="681000" />
       <workItem from="1696839935796" duration="183000" />
+      <workItem from="1697439706059" duration="1109000" />
+      <workItem from="1697610913440" duration="2691000" />
+      <workItem from="1697697085152" duration="3113000" />
+      <workItem from="1697727850375" duration="5000" />
+      <workItem from="1697783833833" duration="2711000" />
+      <workItem from="1698585358040" duration="4000" />
+      <workItem from="1699784361806" duration="2333000" />
+      <workItem from="1699860944136" duration="2120000" />
+      <workItem from="1700119640586" duration="2264000" />
     </task>
     <servers />
   </component>

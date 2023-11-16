@@ -13,13 +13,21 @@ export  const moduleThreeSceneCreator =
             createNewScene(context) {
                 this.scene = new Scene();
                 context.commit("addThreeObjectTag", {tag:"currentScene", obj:this.scene});
-                context.state.onCreateSceneHandler = createEventHandler();
+                if( context.state.onCreateSceneHandler !== null)
+                {
+                    context.state.onCreateSceneHandler.raiseEvent();
+                }
+
+                context.rootState.threeSceneCreator.onCreateSceneHandler = createEventHandler();
+
+
             },
             initNewScene(context, sceneContainer,)
             {
+
                 function setSize() {
-                    this.camera.aspect = sceneContainer.clientWidth/sceneContainer.clientHeight;
-                    this.camera.updateProjectionMatrix();
+                    camera.aspect = sceneContainer.clientWidth/sceneContainer.clientHeight;
+                    camera.updateProjectionMatrix();
                     renderer.setSize(sceneContainer.clientWidth,sceneContainer.clientHeight);
                     renderer.setPixelRatio(window.devicePixelRatio);
                 }
@@ -27,20 +35,21 @@ export  const moduleThreeSceneCreator =
                 var axesHelper = new AxesHelper( 1 );
                 this.scene.add( axesHelper );
                 this.scene.fog = new FogExp2('#F5FCFFFF', 0.2);
-                this.camera = new PerspectiveCamera(75, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
-                context.commit("addThreeObjectTag",{tag:"currentCamera", obj:this.camera})
-                this.camera.rotation.x = -Math.PI/10;
+                const camera = new PerspectiveCamera(75, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
+                context.commit("addThreeObjectTag",{tag:"currentCamera", obj:camera})
+                camera.rotation.x = -Math.PI/10;
                 const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true, });
+
                 setSize();
-                context.onWindowResizeHandler.addListener(setSize);
+
+                context.rootState.responsiveEventHandler.onWindowResizeHandler.addEventListener(setSize);
                 sceneContainer.appendChild(renderer.domElement);
-                this.camera.position.y = 1;
-                this.camera.position.z = 5;
+                camera.position.y = 1;
+                camera.position.z = 5;
                 const composer = new EffectComposer( renderer );
-                const renderPass =  new RenderPass( this.scene, this.camera );
+                const renderPass =  new RenderPass( this.scene, camera );
                 composer.addPass(renderPass);
                 renderer.setClearColor(0xffffff, 0);
-                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener(animate);
                 const animate= () => {
                     /*
                     for(var key in state.allDynamicObjectsOfTheCurrentScene) {
@@ -60,5 +69,7 @@ export  const moduleThreeSceneCreator =
                     composer.render();
                     // particleMesh.rotation.y += 0.001;
                     // particleMesh.position.y = Math.sin(clock.getElapsedTime()*2)*0.1;
-                }}
+                }
+                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener(animate);
+}
         })

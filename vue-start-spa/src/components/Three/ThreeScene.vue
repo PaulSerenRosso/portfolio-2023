@@ -5,12 +5,12 @@ export default{
 
   beforeCreate() {
 
-    this.$store.commit('createNewScene');
+    this.$store.dispatch('createNewScene');
   },
 
   mounted() {
 
-    this.$store.commit('initNewScene', {sceneContainer: document.getElementById(this.containerId)});
+    this.$store.dispatch('initNewScene', document.getElementById(this.containerId));
   },
 
 

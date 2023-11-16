@@ -6,8 +6,12 @@ export const moduleThreeObjectTagHandler =
         {
             addThreeObjectTag(state, objectWithTag){
             state.allThreeObjectTags[objectWithTag.tag] = objectWithTag.obj;
+
             },
             removeThreeObjectTag(state, tag){
+
                 delete state.allThreeObjectTags[tag];
 }},
-        {getThreeObjectTag: (state) => (tag)=>{return state.allThreeObjectTags[tag]}})
+        {getThreeObjectTag: (state) => (tag)=>{
+
+            return state.allThreeObjectTags[tag]}})

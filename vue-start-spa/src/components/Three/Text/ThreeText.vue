@@ -5,7 +5,6 @@ import {
   MeshBasicMaterial,
   PlaneGeometry
 } from "three";
-import {DynamicObject} from "@/store/StoreClasses";
 import * as THREE from "three";
 
 export default {
@@ -25,7 +24,9 @@ export default {
     movementLength:Number,
     movementFrequency:Number,
       },
+  /*
   methods: {
+
     drawCanvasTexture(canvas, ctx) {
 
       this.canvasSizeReference = this.threeTextResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.devicePlateformId].canvasSizeReference;
@@ -80,7 +81,7 @@ export default {
     // il faut que la fucntin responsive update une variable avec la position actuelle dans l'espace 3d et qui la donne au dynamic. De plus il prendra en in put la camera position
 
   }
-
+*/
 }
 </script>
 

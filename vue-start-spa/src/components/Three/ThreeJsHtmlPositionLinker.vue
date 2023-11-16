@@ -8,16 +8,19 @@ export default {
   {
     return{
       htmlElement:{},
+      currentObj:{},
 
     }
 
   },
+
   activated() {
+    /*
     console.log("activated");
     this.htmlElement = document.getElementById(this.htmlElementIdName);
     this.htmlElement.style.position="absolute"
-     this.$store.commit('addEventToDynamicObject',{dynamicObjectName:this.dynamicObjectName,
-      onStartPositionChanged:(animatedObject)=>{
+    this.currentObj = this.$store.threeObjectTagHandler.getters.getThreeObjectTag(this.currentObjTag);
+    this.$store.onUpdateHandler.addEventListener(()=>{
 
         var width = window.innerWidth, height = window.innerHeight;
         var widthHalf = width / 2, heightHalf = height / 2;
@@ -30,13 +33,13 @@ export default {
         this.htmlElement.style.top = pos.y+"px";
         this.htmlElement.style.left = pos.x+"px";
 
-    }});
-
+    });
+*/
   },
   props: {
     offsetHtmlPositionX:Number,
     offsetHtmlPositionY:Number,
-    dynamicObjectName:String,
+    currentObjTag:String,
     htmlElementIdName: String,
   },
 }

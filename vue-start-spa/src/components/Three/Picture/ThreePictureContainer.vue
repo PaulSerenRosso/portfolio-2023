@@ -1,52 +1,33 @@
 <script>
 import ThreePicture from "@/components/Three/Picture/ThreePicture.vue";
 import ThreeEdges from "@/components/Three/ThreeEdges.vue";
+import ThreeJsGroupObject from "@/components/Three/ThreeJsGroupObject.vue";
+import ThreeLevitatedObject from "@/components/Three/ThreeLevitatedObject.vue";
 
 export default {
   name: "ThreePictureContainer",
-  components: { ThreePicture, ThreeEdges},
+  components: {ThreeLevitatedObject, ThreeJsGroupObject, ThreePicture, ThreeEdges},
   props: {
     srcPicture: String,
-    idPicture: String,
-    pictureObjectName:String,
     edgesWidthThickness:Number,
     edgesZThickness:Number,
+    pictureObjectTag:String,
     edgesColor:String,
-    movementLength:Number,
-    movementFrequency:Number,
     threeBasicResponsivePropertyGroup:Object,
+    levitatedMovementFrequency:Number,
+    levitatedMovementLength:Number,
 
   },
-  data()
-  {
-    return{
-      pictureIsLoaded:false,
-    }
-  },
-  computed: {
-
-    checkPictureIsLoaded() {
-
-      return this.pictureIsLoaded;
-    }
-  },
-  methods:
-      {
-        raiseOnPictureLoaded() {
-          this.pictureIsLoaded = true;
-          console.log("raise")
-
-        }
-      }
-
 }
 </script>
 
 <template>
 
-  <three-picture :movement-length="this.movementLength" :movement-frequency="this.movementFrequency" v-on:onPictureLoaded="raiseOnPictureLoaded" :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup" :src-picture="this.srcPicture" :id-picture="this.idPicture"
-                  :picture-object-name=this.pictureObjectName> </three-picture>
-  <keep-alive><three-edges :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup" :need-to-be-activated="true" v-if="this.checkPictureIsLoaded" :dynamic-parent-object-name=this.pictureObjectName :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness  ></three-edges> </keep-alive>
+  <three-js-group-object :obj-tag="this.pictureObjectTag+'Parent'" :parent-obj-tag="this.pictureObjectTag+'Root'"></three-js-group-object>
+  <three-levitated-object :current-obj-tag="this.pictureObjectTag+'Parent'" :movement-length="this.levitatedMovementLength" :movement-frequency="this.levitatedMovementFrequency"></three-levitated-object>
+  <three-picture :on-create-key="this.pictureObjectTag+'OnCreated'"   :src-picture="this.srcPicture" :id-picture="this.pictureObjectTag+'Id'"
+                  :parent-picture-tag="this.pictureObjectTag+'Parent'"> </three-picture>
+  <three-edges :parent-object-tag="this.pictureObjectTag" :on-parent-created-key="this.pictureObjectTag+'OnCreated'" :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup"  :edges-color=this.edgesColor :edges-width-thickness=this.edgesWidthThickness  :edges-z-thickness=this.edgesZThickness></three-edges>
 </template>
 
 <style scoped>

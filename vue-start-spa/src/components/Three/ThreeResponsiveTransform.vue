@@ -2,72 +2,82 @@
 
 
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
-import getOrAddEventHandler from "@/store/StoreHelper";
 import {Vector3} from "three";
+import {Vector2} from "@/composables/Vector2";
+import * as THREE from "three";
+import {getOrAddEventHandler, addRemoveAtSceneChangedResponsiveListener, getThreeTagObject} from "@/composables/StoreHelper";
+class ResponsiveObject{
+  startPosition;
+  startSize;
+  cameraStartPosition;
+  cameraStartSize;
 
+  constructor( obj) {
+
+    this.obj = obj;
+    this.cameraStartPosition =new THREE.Vector3(0,0,0);
+    this.cameraStartSize = new Vector3(0,0,0);
+    this.startPosition ;
+    this.startSize;
+
+  }
+
+}
 export default {
   name: "ThreeResponsiveTransform",
   data(){
     return{
-    currentObj:Object,
+    currentObj:{},
+      camera: {}
     }
   },
   props: {
     threeTransformResponsivePropertyGroup:ResponsivePropertyGroup,
     currentObjTag:String,
-    currentObjAddedEventKey:String,
-    isScalingInRelationChildren:Boolean,
+    originalSizeObjX:Number,
+    originalSizeObjY:Number,
   },
   mounted() {
-    if(this.currentObjAddedEventKey !== undefined){
-      this.$store.eventsManager.getters.getEventHandler(this.applyResponsiveTransform);
-    }
-    else this.applyResponsiveTransform();
+    this.camera = this.$store.getters.getThreeObjectTag("currentCamera");
+    this.applyResponsiveTransform();
   },
   methods:{
-    applyResponsiveTransform(){
-      this.currentObj = this.$store.threeObjectTagHandler.getters.getThreeObjectTag(this.currentObjTag);
-      this.$store.responsiveEventHandler.state.onWindowResizeHandler.addEventListener(this.resizeCurrentObject);
+    applyResponsiveTransform() {
+      this.currentObj = new ResponsiveObject(getThreeTagObject(this.currentObjTag), this.threeTransformResponsivePropertyGroup.ratio);
+      addRemoveAtSceneChangedResponsiveListener(this.resizeCurrentObject);
     },
     resizeCurrentObject(){
-     const currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.responsiveEventHandler.state.devicePlateformId];
+     const currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+      this.updateDynamicObjectScene();
      currentProperty.assignResponsivePropertyToObj(this.currentObj);
-
     },
-    updateDynamicObjectScale(state, obj)
+    updateDynamicObjectScale()
     {
-      const startPointForMeasuringSize = new Vector3(-1,0,obj.cameraStartPosition.z).unproject(state.camera);
-      const endPointForMeasuringSize = (new Vector3(obj.cameraStartSize.x,obj.cameraStartSize.y,obj.cameraStartPosition.z).unproject(state.camera));
 
-      obj.startSize = new Vector3(endPointForMeasuringSize.x-startPointForMeasuringSize.x,
-          endPointForMeasuringSize.y-startPointForMeasuringSize.y,obj.cameraStartSize.z);
-      const maxScaleX = obj.startSize.x/obj.obj.geometry.parameters.width;
-      const maxScaleY = obj.startSize.y/obj.obj.geometry.parameters.height;
+      const startPointForMeasuringSize = new Vector3(-1,0,this.currentObj.cameraStartPosition.z).unproject(this.camera);
+      const endPointForMeasuringSize = (new Vector3(this.currentObj.cameraStartSize.x,this.currentObj.cameraStartSize.y,this.currentObj.cameraStartPosition.z)
+          .unproject(this.camera));
+      this.currentObj.startSize = new Vector3(endPointForMeasuringSize.x-startPointForMeasuringSize.x,
+          endPointForMeasuringSize.y-startPointForMeasuringSize.y,this.currentObj.cameraStartSize.z);
+      console.log(this.currentObj.startSize);
+      const maxScaleX = this.currentObj.startSize.x/this.originalSizeObjX;
+      const maxScaleY = this.currentObj.startSize.y/this.originalSizeObjY;
       const maxScale = Math.min(maxScaleX, maxScaleY);
-      obj.obj.scale.set(maxScale, maxScale, obj.cameraStartSize.z)
+      console.log(this.currentObj.obj.scale);
+      this.currentObj.obj.scale.set(maxScale, maxScale, this.currentObj.cameraStartSize.z)
+
+
     },
-    updateDynamicObjectScene(state, obj) {
-      obj.startPosition = new Vector3(obj.cameraStartPosition.x,
-          obj.cameraStartPosition.y, obj.cameraStartPosition.z)
-          .unproject(state.camera);
-
-      store.commit("updateDynamicObjectScale", obj);
-      if(obj.onStartPositionChanged.length != 0)
-      {
-
-        obj.onStartPositionChanged.forEach((item) =>
-        {
-          item(obj);
-        });
-      }
+    updateDynamicObjectScene() {
+    this.currentObj.startPosition = new Vector3(this.currentObj.cameraStartPosition.x,
+       this.currentObj.cameraStartPosition.y, this.currentObj.cameraStartPosition.z)
+        .unproject(this.camera);
+     this.updateDynamicObjectScale(this.currentObj);
     },
   }
 }
 </script>
 
-<template>
-
-</template>
 
 <style scoped>
 

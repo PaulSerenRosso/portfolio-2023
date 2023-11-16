@@ -1,5 +1,6 @@
 import {StoreModule} from "@/store/StoreModule";
 import EventHandler from "@/composables/EventHandler";
+import createEventHandler from "@/composables/EventHandler";
 
 export const moduleResponsiveEventHandler =
     new StoreModule(
@@ -28,9 +29,9 @@ export const moduleResponsiveEventHandler =
                     state.onWindowResizeHandler.raiseEvent();
             }
                 window.addEventListener('resize', ()=>setDevice(state));
+                state.onWindowResizeHandler = createEventHandler();
+                console.log(state.onWindowResizeHandler);
                 setDevice(state);
-                state.onWindowResizeHandler = new EventHandler();
-
 
             /*    for (var index in state. allResponsivePropertyGroup) {
                     var value = state. allResponsivePropertyGroup[index];
@@ -39,4 +40,4 @@ export const moduleResponsiveEventHandler =
                 }*/
             },
             },
-        {},)
+        {},{})

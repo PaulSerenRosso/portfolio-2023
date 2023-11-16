@@ -2,22 +2,21 @@ import {StoreModule} from "@/store/StoreModule";
 import createEventHandler from "@/composables/EventHandler";
 
 export const moduleEventsManager = new StoreModule(
-    {},
+    {allEventHandlers:{}},
     {
-        initEventsManager(){
-            this.allEventHandlers = {};
-        },
         addEvent(state, eventKey){
-            if(this.allEventHandlers[eventKey] === undefined)
-          this.allEventHandlers[eventKey] = createEventHandler();
+            if(state.allEventHandlers[eventKey] === undefined)
+            {
+                state.allEventHandlers[eventKey] = createEventHandler();
+
+            }
         },
         removeEvent(state, eventKey){
-            delete this.allEventHandlers[eventKey];
+            delete state.allEventHandlers[eventKey];
         }
-
     },
     {
-            getEventHandler: (state) => (key)=>{return this.allEventHandlers[key]}
+            getEventHandler: (state) => (key)=>{return state.allEventHandlers[key]}
     },
     {},
 )

@@ -21,7 +21,6 @@ export class ThreeBasicResponsiveProperty extends ResponsiveProperty{
         obj.cameraStartPosition.x = this.position.x;
         obj.cameraStartPosition.y = this.position.y;
         obj.cameraStartPosition.z = this.position.z;
-        store.commit("updateDynamicObjectScene", obj);
 
     }
 
