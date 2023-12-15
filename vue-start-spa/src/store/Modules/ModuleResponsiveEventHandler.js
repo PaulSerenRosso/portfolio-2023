@@ -1,6 +1,7 @@
 import {StoreModule} from "@/store/StoreModule";
 import EventHandler from "@/composables/EventHandler";
 import createEventHandler from "@/composables/EventHandler";
+import {moduleThreeObjectTagHandler} from "@/store/Modules/ModuleThreeObjectTagHandler";
 
 export const moduleResponsiveEventHandler =
     new StoreModule(
@@ -28,8 +29,10 @@ export const moduleResponsiveEventHandler =
                     }
                     state.onWindowResizeHandler.raiseEvent();
             }
+
                 window.addEventListener('resize', ()=>setDevice(state));
-                state.onWindowResizeHandler = createEventHandler();
+               state.onWindowResizeHandler = createEventHandler();
+
                 console.log(state.onWindowResizeHandler);
                 setDevice(state);
 

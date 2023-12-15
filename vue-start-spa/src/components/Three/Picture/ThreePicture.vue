@@ -28,12 +28,13 @@ export default {
     const image = (document.getElementById(this.idPicture)).src;
 
      textureLoader.load(image, (texture) => {
-       console.log(texture);
+
       const material = new MeshBasicMaterial({ map: texture });
       const imageScreen = new Mesh(
           new PlaneGeometry(texture.image.width/texture.image.height,1,), material);
       getThreeTagObject(this.parentPictureTag).add(imageScreen);
        addThreeTagObject(imageScreen, this.pictureTag);
+
        raiseAndRemoveEvent(this.onCreateKey);
     });
   }

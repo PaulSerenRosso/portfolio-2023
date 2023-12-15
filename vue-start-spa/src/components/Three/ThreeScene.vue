@@ -27,8 +27,8 @@ export default{
 {
   top: 0%;
   left: 0%;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 200%;
+  height: 100%;
 }
 </style>

@@ -7,9 +7,5 @@ export default class ThreeBackgroundSubParticlesResponsiveProperty extends Respo
         this.particleSize = particleSize;
         this.rotationScrollSpeed = rotationScrollSpeed;
     }
-    assignResponsivePropertyToObj( obj) {
-        obj.rotationSpeed = this.rotationSpeed;
-        obj.particleSize = this.particleSize;
-        obj.rotationScrollSpeed = this.rotationScrollSpeed;
-    }
+
 }

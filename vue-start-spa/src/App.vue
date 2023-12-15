@@ -1,9 +1,11 @@
 <template>
     <menu-bar></menu-bar>
   <canvas id="threeTextCanvas" ></canvas>
+
   <div id="_testBackground">
-    <router-view/>
   </div>
+  <router-view/>
+
 
 </template>
 

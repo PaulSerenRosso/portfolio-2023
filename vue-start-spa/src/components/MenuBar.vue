@@ -153,7 +153,7 @@ export default defineComponent({
 }
 #_menuBarContainer
 {
-  position: relative;
+  position: fixed;
   top:0%;
   left: 0%;
   background-color: #424242;

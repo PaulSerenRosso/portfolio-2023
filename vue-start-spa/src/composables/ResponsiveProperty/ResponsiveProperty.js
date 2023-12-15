@@ -4,8 +4,5 @@ export class ResponsiveProperty{
 
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    assignResponsivePropertyToObj( obj)
-    {
-        throw new Error("Method 'say()' must be implemented.");
-    }
+
 }

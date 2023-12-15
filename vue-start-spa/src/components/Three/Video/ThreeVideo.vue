@@ -7,6 +7,7 @@ import {
   FrontSide,
   MeshBasicMaterial,
 } from 'three';
+import {addEvent, addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
 
 
 
@@ -24,14 +25,13 @@ export default{
   },
 
   mounted() {
-/*
+
     this.video = document.getElementById(this.idVideo);
     this.video.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
+    addEvent(this.onCreateKey);
     this.video.onloadeddata = () =>{
       this.video.play()
-
-
 
     this.videoButton.addEventListener('click', this.activateFullscreen);
     document.addEventListener('fullscreenchange', () => {
@@ -43,31 +43,24 @@ export default{
     const videoMaterial= new MeshBasicMaterial(
         {map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
-    const videoScreen = new Mesh(screen, videoMaterial);
-    this.$store.commit('addScene',videoScreen);
-    const dynamicObject = new DynamicObject(videoScreen, this.movementLength,this.movementFrequency,
-      this.videoObjectName, undefined);
 
-    this.threeBasicResponsivePropertyGroup.setOnMediaQueryMatches((property)=>{property.assignResponsivePropertyToObj(dynamicObject)});
-    this.$store.commit('addResponsivePropertyGroup', this.threeBasicResponsivePropertyGroup)
-      this.$store.commit('addDynamicObject',
-          dynamicObject); // il faut que la fucntin responsive update une variable avec la position actuelle dans l'espace 3d et qui la donne au dynamic. De plus il prendra en in put la camera position
-    this.$emit("onVideoLoaded");
+    const videoScreen = new Mesh(screen, videoMaterial);
+      getThreeTagObject(this.parentVideoTag).add(videoScreen);
+      addThreeTagObject(videoScreen, this.videoTag);
+      raiseAndRemoveEvent(this.onCreateKey);
     };
 
 
-*/
+
 
   },
   props: {
     srcVideo: String,
     idVideo: String,
-    videoObjectName:String,
     videoButtonId:String,
-    threeBasicResponsivePropertyGroup:Object,
-
-    movementLength:Number,
-    movementFrequency:Number,
+    parentVideoTag:String,
+    onCreateKey:String,
+    videoTag:String,
 
   },
   methods: {
@@ -95,13 +88,3 @@ export default{
          :src="require('@/assets/'+this.srcVideo)" ></video>
 </template>
 
-<style >
-.video-button
-{
-position: absolute;
-  color : white;
-
-
-
-}
-</style>

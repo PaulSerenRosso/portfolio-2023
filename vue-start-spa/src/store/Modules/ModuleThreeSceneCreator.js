@@ -3,28 +3,36 @@ import {AxesHelper, Clock, FogExp2, PerspectiveCamera, Scene, WebGLRenderer} fro
 import {EffectComposer} from "three/addons/postprocessing/EffectComposer";
 import {RenderPass} from "three/addons/postprocessing/RenderPass";
 import createEventHandler from "@/composables/EventHandler";
+import {moduleThreeObjectTagHandler} from "@/store/Modules/ModuleThreeObjectTagHandler";
 
 
 export  const moduleThreeSceneCreator =
     new StoreModule(
-        { onCreateSceneHandler:null,},
-        {},{},
+        { onCreateSceneHandler:null,cameraYScroll: 0},
         {
+
+        },{},
+        {
+            initThreeSceneCreator(context){
+                function updateScrollCamera( context){
+                    context.state.cameraYScroll = window.scrollY/window.innerHeight*2;
+                    context.rootState.responsiveEventHandler.onWindowResizeHandler.raiseEvent();
+                }
+                window.addEventListener('scroll', ()=>updateScrollCamera(context));
+            },
             createNewScene(context) {
                 this.scene = new Scene();
+
                 context.commit("addThreeObjectTag", {tag:"currentScene", obj:this.scene});
                 if( context.state.onCreateSceneHandler !== null)
                 {
                     context.state.onCreateSceneHandler.raiseEvent();
                 }
-
                 context.rootState.threeSceneCreator.onCreateSceneHandler = createEventHandler();
-
-
             },
-            initNewScene(context, sceneContainer,)
+            initNewScene(context, sceneContainer)
             {
-
+                context.state.cameraYScroll = 0;
                 function setSize() {
                     camera.aspect = sceneContainer.clientWidth/sceneContainer.clientHeight;
                     camera.updateProjectionMatrix();
@@ -35,21 +43,21 @@ export  const moduleThreeSceneCreator =
                 var axesHelper = new AxesHelper( 1 );
                 this.scene.add( axesHelper );
                 this.scene.fog = new FogExp2('#F5FCFFFF', 0.2);
-                const camera = new PerspectiveCamera(75, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
+                const camera = new PerspectiveCamera(50, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
                 context.commit("addThreeObjectTag",{tag:"currentCamera", obj:camera})
-                camera.rotation.x = -Math.PI/10;
                 const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true, });
 
                 setSize();
 
                 context.rootState.responsiveEventHandler.onWindowResizeHandler.addEventListener(setSize);
                 sceneContainer.appendChild(renderer.domElement);
-                camera.position.y = 1;
-                camera.position.z = 5;
+
                 const composer = new EffectComposer( renderer );
                 const renderPass =  new RenderPass( this.scene, camera );
                 composer.addPass(renderPass);
                 renderer.setClearColor(0xffffff, 0);
+
+
                 const animate= () => {
                     /*
                     for(var key in state.allDynamicObjectsOfTheCurrentScene) {

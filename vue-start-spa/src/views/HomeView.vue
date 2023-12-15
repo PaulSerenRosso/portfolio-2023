@@ -1,30 +1,53 @@
 <template>
-    <three-scene  container-id="_canvasContainer"></three-scene>
+  <three-scene  container-id="_canvasContainer"></three-scene>
   <three-js-group-object obj-tag="TestPictureRoot" parent-obj-tag="currentScene" ></three-js-group-object>
-  <three-responsive-transform current-obj-tag="TestPictureRoot" :three-transform-responsive-property-group="this.threePictureContainerResponsivePropertyGroup" :original-size-obj-x="32" :original-size-obj-y="32"></three-responsive-transform>
-  <three-picture-container :levitated-movement-length="0.5" :levitated-movement-frequency="0.5"
-                           :three-basic-responsive-property-group=this.threePictureContainerResponsivePropertyGroup
-                           src-picture="logo.png"  picture-object-tag="TestPicture"
-                           edges-color="#F5FCFFFF" :edges-z-thickness=0.2 :edges-width-thickness=0.2  ></three-picture-container>
-  <!-- <three-video-container  :movement-length="0.4" :movement-frequency="0.4 " :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup  srcVideo="testVideo.mp4" idVideo="Test" video-object-name="Test" :offset-html-position-x=100
-       edges-color="#F5FCFFFF" :edges-z-thickness=0.2 :edges-width-thickness=0.2 :offset-html-position-y=100
-    > </three-video-container>
-  <three-text-container  text-used="C#" text-object-name="C# logo"
-                         :three-text-responsive-property-group="this.threeTextContainerResponsivePropertyGroup"
-                         :edges-width-thickness="0.2" :edges-z-thickness="0.2"
-                         edges-color="#F5FCFFFF"  :movement-frequency="0.4" :movement-length="0.4"
-                      ></three-text-container>
-    <three-js-html-position-linker dynamic-object-name="Test"
-                                html-element-id-name="_titleVideo"
-                                :offset-html-position-x=100
-                                :offset-html-position-y=100 ></three-js-html-position-linker>
+  <three-responsive-transform current-obj-tag="TestPictureRoot" :three-transform-responsive-property-group="this.threePictureContainerResponsivePropertyGroup" :original-size-obj-x="1.89" :original-size-obj-y="1"></three-responsive-transform>
+    <three-picture-container :levitated-movement-length="0" :levitated-movement-frequency="0.5"
+                             :three-basic-responsive-property-group=this.threePictureContainerResponsivePropertyGroup
+                             src-picture="logo.png"  picture-object-tag="TestPicture"
+                               ></three-picture-container>
+  <three-js-group-object obj-tag="TestSecondPictureRoot" parent-obj-tag="currentScene" ></three-js-group-object>
+  <three-responsive-transform current-obj-tag="TestSecondPictureRoot" :three-transform-responsive-property-group="this.threeSecondPictureContainerResponsivePropertyGroup" :original-size-obj-x="1" :original-size-obj-y="1"></three-responsive-transform>
+  <three-picture-container :levitated-movement-length="0" :levitated-movement-frequency="0.5"
+                           :three-basic-responsive-property-group=this.threeSecondPictureContainerResponsivePropertyGroup
+                           src-picture="logo.png"  picture-object-tag="TestSecondPicture"
+                             ></three-picture-container>
 
-    <p id="_titleVideo"> je suis le titre de la video </p>
-
-  <div id="_testContainerText">  <div id="_testTitle"> test text </div>
   <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
-  </div>
-   -->
+  <div id="_testouille">hihi</div>
+  <three-js-html-position-linker   :three-basic-responsive-property-group=this.threeSecondPictureContainerResponsivePropertyGroup
+                                   html-element-id-name="_testouille"
+                                   :offset-html-position-y=10 ></three-js-html-position-linker>
+  <three-js-group-object obj-tag="TestVideoRoot" parent-obj-tag="currentScene" ></three-js-group-object>
+  <three-responsive-transform current-obj-tag="TestVideoRoot" :three-transform-responsive-property-group="this.threeVideoContainerResponsivePropertyGroup" :original-size-obj-x="1.89" :original-size-obj-y="1"></three-responsive-transform>
+  <three-video-container  :levitated-movement-length="0.4" :levitated-movement-frequency="0.4 " :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup video-object-tag="TestVideo" srcVideo="testVideo.mp4"
+                          :offset-html-position-y=0
+  > </three-video-container>
+
+
+  <three-js-group-object obj-tag="C# logoRoot" parent-obj-tag="currentScene" ></three-js-group-object>
+  <three-responsive-transform current-obj-tag="C# logoRoot" :three-transform-responsive-property-group="this.threeTextContainerResponsivePropertyGroup" :original-size-obj-x="1.89" :original-size-obj-y="1"></three-responsive-transform>
+  <three-text-container  text-used="C#" text-object-tag="C# logo"
+                         :three-text-responsive-property-group="this.threeTextContainerResponsivePropertyGroup"
+                       :levitated-movement-frequency="0.4" :levitated-movement-length="0.4"
+  ></three-text-container>
+  <!--
+
+
+
+
+
+  <three-js-html-position-linker dynamic-object-name="Test"
+                              html-element-id-name="_titleVideo"
+                              :offset-html-position-x=100
+                              :offset-html-position-y=100 ></three-js-html-position-linker>
+
+  <p id="_titleVideo"> je suis le titre de la video </p>
+
+<div id="_testContainerText">  <div id="_testTitle"> test text </div>
+<div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
+</div>
+ -->
 
   </template>
 
@@ -48,37 +71,34 @@
 
       // eslint-disable-next-line vue/no-unused-components
   components:{
+    ThreeTextContainer,
     ThreeResponsiveTransform,
     ThreeJsGroupObject,
-    //ThreeTextContainer,
     ThreePictureContainer,
-
-    //ThreeText,
-    //ThreePictureContainer,
-
-  // ThreeVideoContainer,
+    ThreeVideoContainer,
     ThreeScene,
-    //ThreeJsHtmlPositionLinker
+    ThreeJsHtmlPositionLinker
   },
       data(){
     return{
       threeVideoContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
-              new Vector3(0,0.5,0.5),
-           0,
+              new Vector3(0,0,0.5),
+              0,
               new Vector3(0.2,0.2,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0,0.5,0.5),
+              new Vector3(0,0,0.5),
               0,
               new Vector3(0.2,0.2,1)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0,0.5,0.5),
               0,
-              new Vector3(0.2,0.2, 1)),
+              new Vector3(0.5,0.5,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0,0.7,0.5),
-              40,
-              new Vector3(0.2,0.2,1))),
+              new Vector3(0.25,0.25,0.5),
+              60,
+              new Vector3(0.2,0.2,1)),
+      ),
       threePictureContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
               new Vector3(0,0,0.5),
@@ -89,6 +109,16 @@
               0,
               new Vector3(0.2,0.2,1)),
           new ThreeBasicResponsiveProperty(
+              new Vector3(0,0.5,0.5),
+              0,
+              new Vector3(0.5,0.5,1)),
+          new ThreeBasicResponsiveProperty(
+              new Vector3(1,0,0.5),
+              0,
+              new Vector3(0.2,0.2,1)),
+      ),
+      threeSecondPictureContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
+          new ThreeBasicResponsiveProperty(
               new Vector3(0,0,0.5),
               0,
               new Vector3(0.2,0.2,1)),
@@ -96,23 +126,31 @@
               new Vector3(0,0,0.5),
               0,
               new Vector3(0.2,0.2,1)),
-      new Vector2(1,1)),
+          new ThreeBasicResponsiveProperty(
+              new Vector3(0,0.5,0.5),
+              0,
+              new Vector3(0.5,0.5,1)),
+          new ThreeBasicResponsiveProperty(
+              new Vector3(0.25,0.5,0.5),
+              60,
+              new Vector3(0.2,0.2,1)),
+      ),
       threeTextContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeTextResponsiveProperty(
-              new Vector3(1,0.5,0.5),
-              0,
+              new Vector3(0.25,0.5,0.5),
+              60,
               new Vector3(0.2,0.2,1), 50),
           new ThreeTextResponsiveProperty(
-              new Vector3(1,0.5,0.5),
-              0,
+              new Vector3(0.25,0.5,0.5),
+              60,
               new Vector3(0.2,0.2,1), 250),
           new ThreeTextResponsiveProperty(
-              new Vector3(1,0.5,0.5),
-              0,
-              new Vector3(0.2,0.2, 1), 250),
+              new Vector3(0.25,0.5,0.5),
+              60,
+              new Vector3(0.25,0.5,0.5), 250),
           new ThreeTextResponsiveProperty(
-              new Vector3(1,0.5,0.5),
-              0,
+              new Vector3(0.75,0.5,0.5),
+              10,
               new Vector3(0.2,0.2,1), 250)),
     }
       },
@@ -295,7 +333,8 @@
   #_testText
   {
   position: absolute;
-  top: 10%;
+  top: 100%;
+    left: 0%;
   width: 100%;
   height: 20%;
   text-align: center;

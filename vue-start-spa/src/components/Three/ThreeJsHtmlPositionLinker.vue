@@ -1,6 +1,8 @@
 <script>
-import { Vector3} from "three";
-
+import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
+import {addRemoveAtSceneChangedResponsiveListener} from "@/composables/StoreHelper";
+import {Vector2} from "@/composables/Vector2";
+import {remap} from "@/composables/Math";
 
 export default {
   name: "ThreeJsHtmlPositionLinker",
@@ -8,40 +10,33 @@ export default {
   {
     return{
       htmlElement:{},
-      currentObj:{},
-
     }
-
   },
-
-  activated() {
-    /*
-    console.log("activated");
+    mounted() {
     this.htmlElement = document.getElementById(this.htmlElementIdName);
     this.htmlElement.style.position="absolute"
-    this.currentObj = this.$store.threeObjectTagHandler.getters.getThreeObjectTag(this.currentObjTag);
-    this.$store.onUpdateHandler.addEventListener(()=>{
-
-        var width = window.innerWidth, height = window.innerHeight;
-        var widthHalf = width / 2, heightHalf = height / 2;
-        var pos = new Vector3(animatedObject.startPosition.x,animatedObject.startPosition.y,animatedObject.startPosition.z) ;
-        pos.project(this.$store.state.camera);
-        pos.x = ( pos.x * widthHalf ) + widthHalf;
-        pos.y = - ( pos.y * heightHalf ) + heightHalf;
-        pos.x = pos.x+ this.offsetHtmlPositionX;
-        pos.y =  pos.y+this.offsetHtmlPositionY;
-        this.htmlElement.style.top = pos.y+"px";
-        this.htmlElement.style.left = pos.x+"px";
-
-    });
-*/
+      addRemoveAtSceneChangedResponsiveListener(this.placeHtmlElement);
+    this.placeHtmlElement();
   },
   props: {
-    offsetHtmlPositionX:Number,
     offsetHtmlPositionY:Number,
-    currentObjTag:String,
     htmlElementIdName: String,
+    threeBasicResponsivePropertyGroup:ResponsivePropertyGroup
   },
+  methods:{
+    placeHtmlElement (){
+      const currentProperty = this.threeBasicResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+
+      var width = window.innerWidth, height = window.innerHeight;
+      var pos = new Vector2(currentProperty.position.x,currentProperty.position.y) ;
+      pos.y += currentProperty.scale.y/2;
+      pos.x = remap(pos.x, -1,1,0,1) * width;
+      pos.y =  remap(pos.y, -1,1,1,0 ) * height ;
+    pos.y =  pos.y+this.offsetHtmlPositionY;
+      this.htmlElement.style.top = pos.y+"px";
+      this.htmlElement.style.left = pos.x+"px";
+    }
+  }
 }
 </script>
 

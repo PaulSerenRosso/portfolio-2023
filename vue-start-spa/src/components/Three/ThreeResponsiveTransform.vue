@@ -2,34 +2,20 @@
 
 
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
-import {Vector3} from "three";
-import {Vector2} from "@/composables/Vector2";
-import * as THREE from "three";
+import {Quaternion, Vector3} from "three";
+
 import {getOrAddEventHandler, addRemoveAtSceneChangedResponsiveListener, getThreeTagObject} from "@/composables/StoreHelper";
-class ResponsiveObject{
-  startPosition;
-  startSize;
-  cameraStartPosition;
-  cameraStartSize;
+import {degToRad, remap} from "@/composables/Math";
 
-  constructor( obj) {
-
-    this.obj = obj;
-    this.cameraStartPosition =new THREE.Vector3(0,0,0);
-    this.cameraStartSize = new Vector3(0,0,0);
-    this.startPosition ;
-    this.startSize;
-
-  }
-
-}
 export default {
   name: "ThreeResponsiveTransform",
   data(){
     return{
     currentObj:{},
-      camera: {}
+      camera: {},
+      currentProperty: {}
     }
+
   },
   props: {
     threeTransformResponsivePropertyGroup:ResponsivePropertyGroup,
@@ -43,35 +29,46 @@ export default {
   },
   methods:{
     applyResponsiveTransform() {
-      this.currentObj = new ResponsiveObject(getThreeTagObject(this.currentObjTag), this.threeTransformResponsivePropertyGroup.ratio);
+      this.currentObj = getThreeTagObject(this.currentObjTag);
       addRemoveAtSceneChangedResponsiveListener(this.resizeCurrentObject);
+      this.resizeCurrentObject();
     },
     resizeCurrentObject(){
-     const currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
-      this.updateDynamicObjectScene();
-     currentProperty.assignResponsivePropertyToObj(this.currentObj);
+     this.currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+
+     this.updateDynamicObjectScene();
+
+    },
+    updateDynamicObjectScene(){
+      this.updateDynamicObjectScale();
+      var quaternion = new Quaternion();
+      quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY*degToRad); // Rotate around X axis
+      this.currentObj.setRotationFromQuaternion(quaternion);
+      //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
+      this.updateDynamicObjectPositionScene();
     },
     updateDynamicObjectScale()
     {
 
-      const startPointForMeasuringSize = new Vector3(-1,0,this.currentObj.cameraStartPosition.z).unproject(this.camera);
-      const endPointForMeasuringSize = (new Vector3(this.currentObj.cameraStartSize.x,this.currentObj.cameraStartSize.y,this.currentObj.cameraStartPosition.z)
+      const startPointForMeasuringSize = new Vector3(-1,-1,this.currentProperty.position.z).unproject(this.camera);
+      const endPointForMeasuringSize = (new Vector3(this.currentProperty.scale.x,this.currentProperty.scale.y,this.currentProperty.position.z)
           .unproject(this.camera));
-      this.currentObj.startSize = new Vector3(endPointForMeasuringSize.x-startPointForMeasuringSize.x,
-          endPointForMeasuringSize.y-startPointForMeasuringSize.y,this.currentObj.cameraStartSize.z);
-      console.log(this.currentObj.startSize);
-      const maxScaleX = this.currentObj.startSize.x/this.originalSizeObjX;
-      const maxScaleY = this.currentObj.startSize.y/this.originalSizeObjY;
+      const startSize = new Vector3(endPointForMeasuringSize.x-startPointForMeasuringSize.x,
+          endPointForMeasuringSize.y-startPointForMeasuringSize.y,this.currentProperty.scale.z);
+      const maxScaleX = startSize.x/this.originalSizeObjX;
+      const maxScaleY = startSize.y/this.originalSizeObjY;
       const maxScale = Math.min(maxScaleX, maxScaleY);
-      console.log(this.currentObj.obj.scale);
-      this.currentObj.obj.scale.set(maxScale, maxScale, this.currentObj.cameraStartSize.z)
 
-
+      this.currentObj.scale.set(maxScale, maxScale, this.currentProperty.scale.z)
     },
-    updateDynamicObjectScene() {
-    this.currentObj.startPosition = new Vector3(this.currentObj.cameraStartPosition.x,
-       this.currentObj.cameraStartPosition.y, this.currentObj.cameraStartPosition.z)
-        .unproject(this.camera);
+    updateDynamicObjectPositionScene() {
+     const newPosition = new Vector3(this.currentProperty.position.x,
+         this.currentProperty.position.y+this.$store.state.threeSceneCreator.cameraYScroll, this.currentProperty.position.z)
+          .unproject(this.camera);
+
+
+
+    this.currentObj.position.set(newPosition.x, newPosition.y, newPosition.z);
      this.updateDynamicObjectScale(this.currentObj);
     },
   }

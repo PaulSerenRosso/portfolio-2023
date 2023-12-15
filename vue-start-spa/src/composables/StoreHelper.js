@@ -4,7 +4,7 @@ export function addThreeTagObject(obj, tag)
 {
 
     store.commit("addThreeObjectTag", {obj:obj, tag:tag});
-    store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>{ this.$store.commit("removeThreeObjectTag", tag)})
+    store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>{ store.commit("removeThreeObjectTag", tag)})
 }
 export function getThreeTagObject(tag){
 

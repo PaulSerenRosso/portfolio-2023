@@ -1,5 +1,4 @@
-/*
-// mouse.js
+
 import { ref, onMounted, onUnmounted } from 'vue'
 
 // by convention, composable function names start with "use"
@@ -21,4 +20,4 @@ export function useMouse() {
 
     // expose managed state as return value
     return { x, y }
-}*/
+}
