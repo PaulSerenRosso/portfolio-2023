@@ -48,6 +48,10 @@ export function addRemoveAtSceneChangedResponsiveListener(listener){
         store.state.responsiveEventHandler.onWindowResizeHandler.
         removeEventListener(listener));
 }
+
+export function addCameraYScrollListener(listener){
+    store.state.threeSceneCreator.onCameraYScrollHandler.addEventListener(listener);
+}
 export default function getOrAddEventHandler(keyEvent){
     let eventHandler =  store.getters.getEventHandler(keyEvent);
     if(eventHandler === undefined){

@@ -8,7 +8,7 @@
                                ></three-picture-container>
   <three-js-group-object obj-tag="TestSecondPictureRoot" parent-obj-tag="currentScene" ></three-js-group-object>
   <three-responsive-transform current-obj-tag="TestSecondPictureRoot" :three-transform-responsive-property-group="this.threeSecondPictureContainerResponsivePropertyGroup" :original-size-obj-x="1" :original-size-obj-y="1"></three-responsive-transform>
-  <three-picture-container :levitated-movement-length="0" :levitated-movement-frequency="0.5"
+  <three-picture-container :is-debug-ratio="true" :levitated-movement-length="0" :levitated-movement-frequency="0.5"
                            :three-basic-responsive-property-group=this.threeSecondPictureContainerResponsivePropertyGroup
                            src-picture="logo.png"  picture-object-tag="TestSecondPicture"
                              ></three-picture-container>
@@ -27,10 +27,11 @@
 
   <three-js-group-object obj-tag="C# logoRoot" parent-obj-tag="currentScene" ></three-js-group-object>
   <three-responsive-transform current-obj-tag="C# logoRoot" :three-transform-responsive-property-group="this.threeTextContainerResponsivePropertyGroup" :original-size-obj-x="1.89" :original-size-obj-y="1"></three-responsive-transform>
-  <three-text-container  text-used="C#" text-object-tag="C# logo"
+  <three-text-container :is-debug-ratio="true" background-color="green"  text-used="C#" text-object-tag="C# logo"
                          :three-text-responsive-property-group="this.threeTextContainerResponsivePropertyGroup"
                        :levitated-movement-frequency="0.4" :levitated-movement-length="0.4"
   ></three-text-container>
+  <three-background-particles></three-background-particles>
   <!--
 
 
@@ -65,12 +66,14 @@
   import ThreeJsGroupObject from "@/components/Three/ThreeJsGroupObject.vue";
   import ThreeResponsiveTransform from "@/components/Three/ThreeResponsiveTransform.vue";
   import {Vector2} from "@/composables/Vector2";
+  import ThreeBackgroundParticles from "@/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue";
 
     export default {
 
 
       // eslint-disable-next-line vue/no-unused-components
   components:{
+    ThreeBackgroundParticles,
     ThreeTextContainer,
     ThreeResponsiveTransform,
     ThreeJsGroupObject,
@@ -95,7 +98,7 @@
               0,
               new Vector3(0.5,0.5,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.25,0.25,0.5),
+              new Vector3(0.25,0.25,0.9),
               60,
               new Vector3(0.2,0.2,1)),
       ),
@@ -147,7 +150,7 @@
           new ThreeTextResponsiveProperty(
               new Vector3(0.25,0.5,0.5),
               60,
-              new Vector3(0.25,0.5,0.5), 250),
+              new Vector3(0.25,0.5,0.5), 50),
           new ThreeTextResponsiveProperty(
               new Vector3(0.75,0.5,0.5),
               10,
@@ -318,8 +321,6 @@
   width: 20%;
   height: 70%;
   left: 60%;
-
-
   background-size: cover;
   border-radius: 10px;
   }
@@ -329,6 +330,8 @@
     left: 50%;
     height: 50%;
     width: 50%;
+
+    font-family: MyBlack;
   }
   #_testText
   {

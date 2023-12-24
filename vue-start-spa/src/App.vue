@@ -1,8 +1,9 @@
 <template>
     <menu-bar></menu-bar>
-  <canvas id="threeTextCanvas" ></canvas>
 
+  <canvas id="threeTextCanvas" ></canvas>
   <div id="_testBackground">
+
   </div>
   <router-view/>
 

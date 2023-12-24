@@ -27,6 +27,9 @@ export const moduleResponsiveEventHandler =
                     {
                         state.devicePlateformId = 3;
                     }
+
+                    console.log(state.innerWidth);
+                    console.log(state.devicePlateformId);
                     state.onWindowResizeHandler.raiseEvent();
             }
 

@@ -4,7 +4,12 @@
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
 import {Quaternion, Vector3} from "three";
 
-import {getOrAddEventHandler, addRemoveAtSceneChangedResponsiveListener, getThreeTagObject} from "@/composables/StoreHelper";
+import {
+  getOrAddEventHandler,
+  addRemoveAtSceneChangedResponsiveListener,
+  getThreeTagObject,
+  addCameraYScrollListener
+} from "@/composables/StoreHelper";
 import {degToRad, remap} from "@/composables/Math";
 
 export default {
@@ -31,6 +36,7 @@ export default {
     applyResponsiveTransform() {
       this.currentObj = getThreeTagObject(this.currentObjTag);
       addRemoveAtSceneChangedResponsiveListener(this.resizeCurrentObject);
+      addCameraYScrollListener(this.updateDynamicObjectPositionScene);
       this.resizeCurrentObject();
     },
     resizeCurrentObject(){
@@ -65,11 +71,8 @@ export default {
      const newPosition = new Vector3(this.currentProperty.position.x,
          this.currentProperty.position.y+this.$store.state.threeSceneCreator.cameraYScroll, this.currentProperty.position.z)
           .unproject(this.camera);
-
-
-
+     console.log(newPosition.z);
     this.currentObj.position.set(newPosition.x, newPosition.y, newPosition.z);
-     this.updateDynamicObjectScale(this.currentObj);
     },
   }
 }

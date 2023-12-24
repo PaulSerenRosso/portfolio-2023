@@ -19,6 +19,7 @@ export default {
         srcPicture: String,
         idPicture: String,
         pictureTag:String,
+        isDebugRatio:Boolean,
       },
   mounted()
   {
@@ -32,6 +33,9 @@ export default {
       const material = new MeshBasicMaterial({ map: texture });
       const imageScreen = new Mesh(
           new PlaneGeometry(texture.image.width/texture.image.height,1,), material);
+       if(this.isDebugRatio){
+         console.log(this.pictureTag+(texture.image.width/texture.image.height));
+       }
       getThreeTagObject(this.parentPictureTag).add(imageScreen);
        addThreeTagObject(imageScreen, this.pictureTag);
 
