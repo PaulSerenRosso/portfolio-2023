@@ -27,15 +27,15 @@ export default {
   data() {
     return{
       threeBackgroundParticlesResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeBackgroundParticlesResponsiveProperty(10,1),
-          new ThreeBackgroundParticlesResponsiveProperty(10,1),
-          new ThreeBackgroundParticlesResponsiveProperty(10,1),
-          new ThreeBackgroundParticlesResponsiveProperty(10,1),
+          new ThreeBackgroundParticlesResponsiveProperty(100,1),
+          new ThreeBackgroundParticlesResponsiveProperty(150,1),
+          new ThreeBackgroundParticlesResponsiveProperty(200,1),
+          new ThreeBackgroundParticlesResponsiveProperty(200,1),
       ),
       threeBackgroundTypeParticleDatas:[
-          new ThreeBackgroundTypeParticleData( 2,new Color(0.69, 0.109, 0.105),0.002,5),
-        new ThreeBackgroundTypeParticleData( 5,new Color(0.960,0.988,1),0.0025,3),
-        new ThreeBackgroundTypeParticleData( 1,new Color( 0.498, 0.650, 0.709),0.003,1)],
+          new ThreeBackgroundTypeParticleData( 20,new Color(0.69, 0.109, 0.105),0.002,1),
+        new ThreeBackgroundTypeParticleData( 15,new Color(0.960,0.988,1),0.0025,0.75),
+        new ThreeBackgroundTypeParticleData( 10,new Color( 0.498, 0.650, 0.709),0.003,0.5)],
 
       currentProperty:null,
       particles:null,
@@ -49,9 +49,9 @@ export default {
       particlesSize:null,
       particlesColor:null,
       particlesSystem:null,
-      radius:new Vector3(0,0,1),
+      radius:new Vector3(0,0,10),
       originZ: 0,
-      originCameraZ: 0.9999,
+      originCameraZ: 0.8,
       camera: {},
 
 
@@ -65,8 +65,10 @@ export default {
   methods:
       {
         initParticles(){
+
           this.camera = getThreeTagObject("currentCamera");
           this.originZ = new Vector3(0,0,this.originCameraZ).unproject(this.camera).z;
+          console.log( this.originZ);
          addRemoveAtSceneChangedUpdateListener(this.updateParticlePosition);
           addRemoveAtSceneChangedResponsiveListener(this.createParticles);
           addRemoveAtSceneChangedResponsiveListener(this.refreshRadius);
@@ -80,7 +82,8 @@ export default {
           void main() {
             vColor = color;
             vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = size * (300.0 / -mvPosition.z);
+
+            gl_PointSize = size*-mvPosition.z;
             gl_Position = projectionMatrix * mvPosition;
           }
         `,
@@ -91,10 +94,7 @@ export default {
 
 
       float distance = length(gl_PointCoord - vec2(0.5, 0.5));
-      if (distance> 0.35 && distance <0.5){
-        gl_FragColor = vec4(0.259, 0.259, 0.259, 1);
-      }
-      else if (distance > 0.5) {
+       if (distance > 0.5) {
         discard;
       }
       else
@@ -103,7 +103,7 @@ export default {
       }
           }
         `,
-            depthTest: false,
+
           });
           this.refreshRadius();
           this.createParticles();
@@ -168,6 +168,7 @@ export default {
           this.particlesPosition[index * 3] = pos.x;
           this.particlesPosition[index * 3 + 1] = pos.y;
           this.particlesPosition[index * 3 + 2] = this.originZ+pos.z;
+
         },
         updateParticlePosition(){
 
@@ -182,6 +183,7 @@ export default {
             }
             this.particlesPolarAngle[i] += this.particlesDirections[i].x*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed;
             this.particlesElevationAngle[i] += this.particlesDirections[i].y*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed;
+
             this.setParticlePosition(i);
           }
 

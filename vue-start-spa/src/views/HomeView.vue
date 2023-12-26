@@ -32,10 +32,6 @@
                        :levitated-movement-frequency="0.4" :levitated-movement-length="0.4"
   ></three-text-container>
   <three-background-particles></three-background-particles>
-  <!--
-
-
-
 
 
   <three-js-html-position-linker dynamic-object-name="Test"
@@ -48,7 +44,7 @@
 <div id="_testContainerText">  <div id="_testTitle"> test text </div>
 <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
 </div>
- -->
+
 
   </template>
 
@@ -65,7 +61,6 @@
   import {ThreeTextResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeTextResponsiveProperty";
   import ThreeJsGroupObject from "@/components/Three/ThreeJsGroupObject.vue";
   import ThreeResponsiveTransform from "@/components/Three/ThreeResponsiveTransform.vue";
-  import {Vector2} from "@/composables/Vector2";
   import ThreeBackgroundParticles from "@/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue";
 
     export default {
@@ -157,147 +152,6 @@
               new Vector3(0.2,0.2,1), 250)),
     }
       },
-  /*
-    const loader = new GLTFLoader();
-    loader.load( 'path/to/model.glb', function ( gltf ) {
-      scene.add( gltf.scene );
-    }, undefined, function ( error ) {
-
-      console.error( error );
-
-    } );
-  */
-
-
-
-  // trop foncé à moitié
-    // très lentement cela flotte juste et cela accelère avec un scroll
-    //déplacement pour particle différent
-    // lots de rotation trois lots
-    // lots de tailles au moins 6 lots
-    // lots de vitesse differents
-
-    //  rotations random départ
-  /*
-    const pointLight = new THREE.PointLight("#ffbf6f", 0);
-    pointLight.distance = 5
-    const hemisphereLight = new THREE.HemisphereLight('#FFF07C','#53d8fb',1 );
-    const rectLight = new THREE.RectAreaLight("#ffc477",500, 52,50);
-
-    const spotLight = new THREE.SpotLight('white', 1.0, 25, Math.PI/4, 0.5, 1);
-
-
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const redMaterial = new THREE.MeshPhongMaterial( { color: '#b21c1b', shininess: 300, fog: false } );
-    const whiteMaterial = new THREE.MeshPhongMaterial( { color: '#ffffff', shininess: 300, fog: false} )
-    const grayMaterial = new THREE.MeshPhongMaterial( { color: '#262626', shininess: 300,fog: false } )
-    const cube = new THREE.Mesh( geometry, redMaterial );
-    const geometryPlane = new THREE.BoxGeometry( 10, 1, 10 );
-    const geometryEm = new THREE.BoxGeometry( 1, 2, 1 );
-    const materialEmmisive = new THREE.MeshPhongMaterial( { emissiveIntensity:2,emissive:'white',fog: false } );
-    const cubeEmis = new THREE.Mesh( geometry, whiteMaterial );
-    const plane = new THREE.Mesh( geometryPlane, grayMaterial );
-  plane.position.y = -2;
-  plane.position.z = -5;
-    const sphere = new THREE.Mesh(new THREE.SphereGeometry(1,40,40), redMaterial );
-
-    const materialLine = new THREE.LineBasicMaterial( { color: 0x00ff00, fog:false } );
-    const points = [];
-    points.push( new THREE.Vector3( - 1, 0, -1 ) );
-    points.push( new THREE.Vector3( 0, 1, 1 ) );
-    points.push( new THREE.Vector3( 1, 0, 0 ) );
-
-    const bufferGeometry = new THREE.BufferGeometry().setFromPoints( points );
-    const line = new THREE.Line( bufferGeometry, materialLine );
-    //Get your video element:
-
-
-    const textureLoader = new THREE.TextureLoader();
-    const image = (document.getElementById('testImg')).src;
-
-    const texture = textureLoader.load(image, (texture) => {
-      const material = new THREE.MeshBasicMaterial({ map: texture });
-      const imageScreen = new THREE.Mesh(
-          new THREE.PlaneGeometry(1,1,1,1), material);
-      imageScreen.rotation.y = -Math.PI/5;
-      imageScreen.position.set(1,1,1);
-      scene.add(imageScreen);
-    });
-    const assignSRGB = ( texture ) => {
-
-      texture.colorSpace = THREE.SRGBColorSpace;
-
-    };
-    const textureParticle = document.getElementById('_textureParticle').src;
-    const particleSprite = textureLoader.load( textureParticle, assignSRGB );
-    const particlesMaterial = new THREE.PointsMaterial(
-        {
-         alphaMap:particleSprite, alphaTest:0.01,  size:0.2,transparent: true, color: '#262626', fog : true
-        }
-    )
-
-    const particleCount= 500;
-    const particlesGeometry = new THREE.BufferGeometry;
-    const posArray = new Float32Array(particleCount*3);
-    for (let i = 0; i < particleCount; i++) {
-      posArray[i] =  MathUtils.randFloatSpread( 8);
-    }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray,3));
-    const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-    window.addEventListener('scroll',OnScroll)
-    let prevScrollTop = 0;
-    function OnScroll()
-    {
-      const scrollPosition = window.scrollY; // Current scroll position
-      const scrollDirection = getScrollDirection();
-      // Perform any actions based on the event data
-      console.log('Current scroll position:', scrollPosition);
-      console.log('Scroll direction:', scrollDirection);
-      prevScrollTop = window.scrollY;
-    }
-    // simple animation au moment de start du site
-    // trigger à un certain point du site
-    // animation scrolling continue
-    function getScrollDirection() {
-      if (window.scrollY> prevScrollTop) {
-        return 'down';
-      } else if (window.scrollY < prevScrollTop) {
-        return 'up';
-      } else {
-        return 'none';
-      }
-    }
-    scene.add(particleMesh);
-
-    cube.receiveShadow = true;
-    cube.castShadow = true;
-    sphere.receiveShadow = true;
-    sphere.castShadow = true;
-
-    sphere.rotation.x = -Math.PI/5;
-    sphere.position.set(-1,1,0);
-    pointLight.position.set(0,0,0.5);
-
-    scene.add(plane);
-    scene.add( line );
-    scene.add(sphere);
-
-    scene.add( cube );
-    scene.add(pointLight);
-
-   // scene.add(hemisphereLight);
-
-    rectLight.position.set(0,1,0.5);rectLight.lookAt(plane.position);
-    cubeEmis.position.set(-2,0.25,0);
-    scene.add(cubeEmis);
-    scene.add(rectLight);
-    const renderPass =  new RenderPass( scene, camera );
-    composer.addPass(renderPass);
-
-
-
-
-  */
   }
   </script>
 

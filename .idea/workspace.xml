@@ -5,28 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/FontLoadHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ThreeBackgroundTypeParticleData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticlesContainer.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundSubParticles.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePictureContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePictureContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeTextContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeTextContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Math.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundSharedSubParticlesProperty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundSubParticlesResponsiveProperty.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +169,9 @@
       <workItem from="1703365641716" duration="5757000" />
       <workItem from="1703411092641" duration="4344000" />
       <workItem from="1703423140817" duration="444000" />
+      <workItem from="1703442461456" duration="52000" />
+      <workItem from="1703499636559" duration="479000" />
+      <workItem from="1703590308830" duration="161000" />
     </task>
     <servers />
   </component>

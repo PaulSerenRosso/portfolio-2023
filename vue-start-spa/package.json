@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "gsap": "^3.12.2",
     "three": "^0.154.0",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
