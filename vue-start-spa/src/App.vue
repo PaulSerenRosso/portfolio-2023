@@ -65,8 +65,8 @@
   height: 100%;
   background-size: cover;
   background-attachment: fixed;
-  background: rgb(245,252,255);
-  background: linear-gradient(0deg, rgba(245,252,255,1) 0%, rgba(127,166,181,1) 100%)
+background: linear-gradient(0deg, rgba(245,252,255,1) 0%, rgba(127,166,181,1) 100%);
+
 }
 
 html

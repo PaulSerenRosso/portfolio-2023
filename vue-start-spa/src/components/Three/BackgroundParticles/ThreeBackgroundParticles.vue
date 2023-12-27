@@ -104,7 +104,7 @@ export default {
           }
         `,
 
-          });
+          }, { });
           this.refreshRadius();
           this.createParticles();
         },

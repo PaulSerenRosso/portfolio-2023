@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +168,9 @@
       <workItem from="1703423140817" duration="444000" />
       <workItem from="1703442461456" duration="52000" />
       <workItem from="1703499636559" duration="479000" />
-      <workItem from="1703590308830" duration="161000" />
+      <workItem from="1703590308830" duration="1233000" />
+      <workItem from="1703674504372" duration="2327000" />
+      <workItem from="1703686462238" duration="999000" />
     </task>
     <servers />
   </component>
@@ -185,6 +184,18 @@
           <url>file://$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTransform.vue</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-start-spa/src/App.vue</url>
+          <line>79</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue</url>
+          <line>168</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

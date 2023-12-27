@@ -13,7 +13,10 @@
                            src-picture="logo.png"  picture-object-tag="TestSecondPicture"
                              ></three-picture-container>
 
-  <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
+  <div id="_testContainerText">
+    <div id="_testTitle"> test text </div>
+    <div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
+  </div>
   <div id="_testouille">hihi</div>
   <three-js-html-position-linker   :three-basic-responsive-property-group=this.threeSecondPictureContainerResponsivePropertyGroup
                                    html-element-id-name="_testouille"
@@ -34,16 +37,12 @@
   <three-background-particles></three-background-particles>
 
 
-  <three-js-html-position-linker dynamic-object-name="Test"
-                              html-element-id-name="_titleVideo"
-                              :offset-html-position-x=100
-                              :offset-html-position-y=100 ></three-js-html-position-linker>
 
   <p id="_titleVideo"> je suis le titre de la video </p>
 
-<div id="_testContainerText">  <div id="_testTitle"> test text </div>
-<div id="_testText">blablabla fdqsfd qsfdqsfqsdfq fhdlsqhf qdsjfhdqskfl h fhdljkqshf lkjqsdhf hlqdsf</div>
-</div>
+
+
+
 
 
   </template>
@@ -157,47 +156,43 @@
 
   <style>
 
-  #_testTitle
-  {
-  position: absolute;
-  width: 100%;
-  height: 20%;
-  text-align: center;
-  color:  #b21c1b;
-  font-size: 3em;
-  font-family: MyBold;
-  }
+
 
   #_testContainerText
   {
   position: absolute;
   top: 50%;
   width: 20%;
-  height: 70%;
+  height: 90%;
   left: 60%;
   background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    background-color:rgba(245,252,255,1) ;
   border-radius: 10px;
   }
-  #threeTextCanvas{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 50%;
-    width: 50%;
 
-    font-family: MyBlack;
-  }
   #_testText
   {
-  position: absolute;
-  top: 100%;
-    left: 0%;
-  width: 100%;
-  height: 20%;
+
   text-align: center;
   color:#424242;
   font-size: 2em;
   font-family: MyRegular;
+    flex-grow: 1;
+  }
+
+  #_testTitle
+  {
+
+    text-align: center;
+    color:  #b21c1b;
+    font-size: 3em;
+    font-family: MyBold;
   }
 
 
