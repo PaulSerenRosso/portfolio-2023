@@ -1,25 +1,37 @@
 import {StoreModule} from "@/store/StoreModule";
-import {AxesHelper, Clock, FogExp2, PerspectiveCamera, Scene, WebGLRenderer} from "three";
+import {AxesHelper, Color, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import {EffectComposer} from "three/addons/postprocessing/EffectComposer";
 import {RenderPass} from "three/addons/postprocessing/RenderPass";
 import createEventHandler from "@/composables/EventHandler";
-import {moduleThreeObjectTagHandler} from "@/store/Modules/ModuleThreeObjectTagHandler";
-
+import {lerp} from "@/composables/Math";
 
 export  const moduleThreeSceneCreator =
     new StoreModule(
-        { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null},
+        { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,oldWindowScrollY: 0,
+            textsColor:[{
+                "c#":new Color(0, 0, 1),
+                "ue5":new Color(1, 0, 1),
+                "unity":new Color(1, 0, 0),
+                "network":new Color(0, 1, 0),
+
+            }],
+        },
         {
+
 
         },{},
         {
             initThreeSceneCreator(context){
                 function updateScrollCamera( context){
-                    context.state.cameraYScroll = window.scrollY/window.innerHeight*2;
-                    context.state.onCameraYScrollHandler.raiseEvent();
 
+                    if(Math.abs(context.state.oldWindowScrollY-window.scrollY)>0.1){
+                        context.state.oldWindowScrollY =  lerp(context.state.oldWindowScrollY,window.scrollY,0.2);
+                        context.state.cameraYScroll = context.state.oldWindowScrollY/window.innerHeight*2
+                        console.log("scrollY "+window.scrollY,"innerheight "+window.innerHeight*2,"cameraYscroll "+ context.state.cameraYScroll);
+                        context.state.onCameraYScrollHandler.raiseEvent();
+                    }
                 }
-                window.addEventListener('scroll', ()=>updateScrollCamera(context));
+                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
             },
             createNewScene(context) {
                 this.scene = new Scene();
@@ -44,11 +56,9 @@ export  const moduleThreeSceneCreator =
 
                 var axesHelper = new AxesHelper( 1 );
                 this.scene.add( axesHelper );
-                this.scene.fog = new FogExp2('#F5FCFFFF', 0.2);
-                const camera = new PerspectiveCamera(30, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
+                const camera = new PerspectiveCamera(20, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
                 context.commit("addThreeObjectTag",{tag:"currentCamera", obj:camera})
                 const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true, });
-
                 setSize();
 
                 context.rootState.responsiveEventHandler.onWindowResizeHandler.addEventListener(setSize);

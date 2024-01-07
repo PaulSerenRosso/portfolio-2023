@@ -1,5 +1,9 @@
 import {store} from "@/store/Store";
 
+
+export function addCreateSceneHandlerListener(listener){
+    store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(listener);
+}
 export function addThreeTagObject(obj, tag)
 {
 
@@ -33,12 +37,14 @@ export function removeEvent(eventKey){
     store.commit("removeEvent", eventKey);
 }
 
-export function raiseAndRemoveEvent(eventKey){
+export function raiseAndRemoveEvent(eventKey, obj){
 
-    store.getters.getEventHandler(eventKey).raiseEvent();
+    store.getters.getEventHandler(eventKey).raiseEvent(obj);
     store.commit("removeEvent", eventKey);
 }
 export function addEventListener(listener, keyEvent){
+
+
     store.state.eventsManager.allEventHandlers[keyEvent].addEventListener(listener);
 }
 
@@ -47,6 +53,10 @@ export function addRemoveAtSceneChangedResponsiveListener(listener){
     store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>
         store.state.responsiveEventHandler.onWindowResizeHandler.
         removeEventListener(listener));
+}
+
+export function raiseEvent(key, obj){
+    store.getters.getEventHandler(key).raiseEvent(obj);
 }
 
 export function addCameraYScrollListener(listener){

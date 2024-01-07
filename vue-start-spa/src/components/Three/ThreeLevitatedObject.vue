@@ -23,6 +23,10 @@ export default {
       currentLevitatedObject:{}
     }
   },
+  functional:true,
+  render() {
+    return null;
+  },
   mounted(){
 
     this.currentLevitatedObject = new LevitatedObject(getThreeTagObject(this.currentObjTag),

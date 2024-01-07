@@ -7,7 +7,7 @@ import {
   FrontSide,
   MeshBasicMaterial,
 } from 'three';
-import {addEvent, addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
+import { addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
 
 
 
@@ -26,10 +26,9 @@ export default{
 
   mounted() {
 
-    this.video = document.getElementById(this.idVideo);
+    this.video = this.$refs.video;
     this.video.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
-    addEvent(this.onCreateKey);
     this.video.onloadeddata = () =>{
       this.video.play()
 
@@ -40,8 +39,9 @@ export default{
       }
     });
     const videoTexture= new VideoTexture(this.video);
+      videoTexture.colorSpace ="srgb" ;
     const videoMaterial= new MeshBasicMaterial(
-        {map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
+        { map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
 
     const videoScreen = new Mesh(screen, videoMaterial);
@@ -56,7 +56,6 @@ export default{
   },
   props: {
     srcVideo: String,
-    idVideo: String,
     videoButtonId:String,
     parentVideoTag:String,
     onCreateKey:String,
@@ -84,7 +83,7 @@ export default{
 
 </script>
 <template>
-  <video :id="this.idVideo" playsinline webkit-playsinline muted loop autoplay
+  <video ref="video" playsinline webkit-playsinline muted loop autoplay
          :src="require('@/assets/'+this.srcVideo)" ></video>
 </template>
 

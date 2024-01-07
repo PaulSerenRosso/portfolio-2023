@@ -5,7 +5,10 @@
   <div id="_testBackground">
 
   </div>
-  <router-view/>
+
+    <router-view/>
+
+
 
 
 </template>
@@ -49,11 +52,13 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  text-align: left;
+  font-family: MyRegular;
+  color: white;
   height: 100%;
   width: 100%;
   position: relative;
+
 }
 
 #_testBackground
@@ -65,7 +70,13 @@
   height: 100%;
   background-size: cover;
   background-attachment: fixed;
-background: linear-gradient(0deg, rgba(245,252,255,1) 0%, rgba(127,166,181,1) 100%);
+  background: rgb(178,28,27);
+  background: linear-gradient(340deg, rgba(178,28,27,1) 0%, rgba(85,29,32,1) 64%, rgba(18,23,61,1) 100%);
+
+}
+
+#threeTextCanvas{
+  position: fixed;
 
 }
 
@@ -75,6 +86,29 @@ html
   height: 100%;
   margin: 0%;
   width: 100%;
+  font-size: 11px;
+}
+
+
+@media (min-width: 768px) {
+  html
+  {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html
+  {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html
+  {
+    font-size: 19px;
+  }
 }
 body
 {

@@ -46,6 +46,10 @@ export default {
     }
 
   },
+  functional:true,
+  render() {
+    return null;
+  },
   methods: {
 
     createEdges() {
@@ -55,8 +59,8 @@ export default {
       const edgeParentScaleXGeometry = new BoxGeometry(parentObjGeometry.parameters.width, this.edgesWidthThickness, this.edgesZThickness);
       const edgeParentScaleYGeometry = new BoxGeometry(this.edgesWidthThickness, parentObjGeometry.parameters.height, this.edgesZThickness);
       const edgeParentCornerGeometry = new BoxGeometry(this.edgesWidthThickness,this.edgesWidthThickness, this.edgesZThickness);
-      this.lightMaterial = new MeshBasicMaterial({color: "#F5FCFFFF", fog: false});
-      this.darkMaterial = new MeshBasicMaterial({color: "#424242", fog: false});
+      this.lightMaterial = new MeshBasicMaterial({color: "white", fog: false});
+      this.darkMaterial = new MeshBasicMaterial({color: 0x12173D, fog: false});
       this.transparentMaterial = new MeshBasicMaterial({visible:false });
       this.edgeTopMaterial = [this.transparentMaterial, this.transparentMaterial, this.darkMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];
       this.edgeDownMaterial = [this.lightMaterial, this.lightMaterial, this.darkMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];

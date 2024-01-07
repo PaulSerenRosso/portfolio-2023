@@ -1,16 +1,12 @@
 <script >
-
-
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
 import {Quaternion, Vector3} from "three";
 
 import {
-  getOrAddEventHandler,
-  addRemoveAtSceneChangedResponsiveListener,
   getThreeTagObject,
-  addCameraYScrollListener
+  addCameraYScrollListener, addEventListener, addEvent,
 } from "@/composables/StoreHelper";
-import {degToRad, remap} from "@/composables/Math";
+import {degToRad} from "@/composables/Math";
 
 export default {
   name: "ThreeResponsiveTransform",
@@ -18,60 +14,79 @@ export default {
     return{
     currentObj:{},
       camera: {},
-      currentProperty: {}
+      currentProperty: {},
+      currentRatioObj:{},
+      isRatioObjCreated:false,
     }
-
+  },
+  functional:true,
+  render() {
+    return null;
   },
   props: {
     threeTransformResponsivePropertyGroup:ResponsivePropertyGroup,
     currentObjTag:String,
-    originalSizeObjX:Number,
-    originalSizeObjY:Number,
+    ratioObjTag:String,
+    eventKeyForGetRatioObjTag:String,
+    macroContainerResizeEventKey:String,
   },
   mounted() {
-    this.camera = this.$store.getters.getThreeObjectTag("currentCamera");
-    this.applyResponsiveTransform();
+    addEventListener(this.updateDynamicObjectScene, this.macroContainerResizeEventKey);
+    if(this.eventKeyForGetRatioObjTag === ""){
+      this.applyResponsiveTransform();
+    }
+    else{
+      console.log(this.eventKeyForGetRatioObjTag)
+      addEvent(this.eventKeyForGetRatioObjTag);
+      addEventListener(this.applyResponsiveTransform,this.eventKeyForGetRatioObjTag)
+    }
   },
   methods:{
     applyResponsiveTransform() {
+      this.isRatioObjCreated = true;
+      this.camera = this.$store.getters.getThreeObjectTag("currentCamera");
       this.currentObj = getThreeTagObject(this.currentObjTag);
-      addRemoveAtSceneChangedResponsiveListener(this.resizeCurrentObject);
+      this.currentRatioObj = getThreeTagObject(this.ratioObjTag);
+
       addCameraYScrollListener(this.updateDynamicObjectPositionScene);
-      this.resizeCurrentObject();
+      this.updateDynamicObjectScene();
     },
-    resizeCurrentObject(){
-     this.currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+    updateDynamicObjectScene(obj){
+      if(obj !== undefined){
+        this.currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+        this.currentProperty.update(obj);
+      }
+      if(this.isRatioObjCreated){
+        console.log(this.currentRatioObj,"bidule");
+        this.updateDynamicObjectScale();
+        var quaternion = new Quaternion();
+        quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY*degToRad); // Rotate around X axis
+        this.currentObj.setRotationFromQuaternion(quaternion);
+        //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
+        this.updateDynamicObjectPositionScene();
+      }
 
-     this.updateDynamicObjectScene();
 
-    },
-    updateDynamicObjectScene(){
-      this.updateDynamicObjectScale();
-      var quaternion = new Quaternion();
-      quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY*degToRad); // Rotate around X axis
-      this.currentObj.setRotationFromQuaternion(quaternion);
-      //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
-      this.updateDynamicObjectPositionScene();
     },
     updateDynamicObjectScale()
     {
 
       const startPointForMeasuringSize = new Vector3(-1,-1,this.currentProperty.position.z).unproject(this.camera);
-      const endPointForMeasuringSize = (new Vector3(this.currentProperty.scale.x,this.currentProperty.scale.y,this.currentProperty.position.z)
+      const endPointForMeasuringSize = (new Vector3(-1+this.currentProperty.scale.x,-1+this.currentProperty.scale.y,this.currentProperty.position.z)
           .unproject(this.camera));
       const startSize = new Vector3(endPointForMeasuringSize.x-startPointForMeasuringSize.x,
           endPointForMeasuringSize.y-startPointForMeasuringSize.y,this.currentProperty.scale.z);
-      const maxScaleX = startSize.x/this.originalSizeObjX;
-      const maxScaleY = startSize.y/this.originalSizeObjY;
+      const maxScaleX = startSize.x/this.currentRatioObj.geometry.parameters.width;
+      const maxScaleY = startSize.y;
       const maxScale = Math.min(maxScaleX, maxScaleY);
 
       this.currentObj.scale.set(maxScale, maxScale, this.currentProperty.scale.z)
     },
     updateDynamicObjectPositionScene() {
+      console.log(this.currentProperty.position, this.ratioObjTag, this.currentObjTag);
      const newPosition = new Vector3(this.currentProperty.position.x,
          this.currentProperty.position.y+this.$store.state.threeSceneCreator.cameraYScroll, this.currentProperty.position.z)
           .unproject(this.camera);
-     console.log(newPosition.z);
     this.currentObj.position.set(newPosition.x, newPosition.y, newPosition.z);
     },
   }

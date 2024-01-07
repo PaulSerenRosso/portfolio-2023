@@ -1,25 +1,26 @@
 import {StoreModule} from "@/store/StoreModule";
-import EventHandler from "@/composables/EventHandler";
 import createEventHandler from "@/composables/EventHandler";
-import {moduleThreeObjectTagHandler} from "@/store/Modules/ModuleThreeObjectTagHandler";
+
 
 export const moduleResponsiveEventHandler =
     new StoreModule(
-        {  devicePlateformId:1, onWindowResizeHandler:null},
+        {  devicePlateformId:1, onWindowResizeHandler:null, oldDevice:-1, deviceHasChanged: false},
         {
             initDeviceId(state)
             {
                function setDevice(state)
                 {
+
                     if(window.innerWidth < 768)
                     {
+
                         state.devicePlateformId = 0;
                     }
-                    else if(window.innerWidth < 992)
+                    else if(window.innerWidth < 1024)
                     {
                         state.devicePlateformId = 1;
                     }
-                    else if(window.innerWidth < 1200)
+                    else if(window.innerWidth < 1280)
                     {
                         state.devicePlateformId = 2;
                     }
@@ -28,14 +29,21 @@ export const moduleResponsiveEventHandler =
                         state.devicePlateformId = 3;
                     }
 
-                    console.log(window.innerWidth);
+                    if(state.oldDevice !== state.devicePlateformId){
+                        state.deviceHasChanged = true;
+                    }
+                    else {
+                        state.deviceHasChanged = false;
+                    }
+
+                    state.oldDevice = state.devicePlateformId;
                     state.onWindowResizeHandler.raiseEvent();
             }
 
                 window.addEventListener('resize', ()=>setDevice(state));
                state.onWindowResizeHandler = createEventHandler();
 
-                console.log(state.onWindowResizeHandler);
+
                 setDevice(state);
 
             /*    for (var index in state. allResponsivePropertyGroup) {

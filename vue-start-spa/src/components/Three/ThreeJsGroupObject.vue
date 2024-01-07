@@ -15,7 +15,11 @@ export default {
     let obj = new Group();
     objParent.add(obj);
    addThreeTagObject(obj, this.objTag);
-  }
+  },
+  functional:true,
+  render() {
+    return null;
+  },
 }
 </script>
 

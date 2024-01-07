@@ -5,13 +5,13 @@ import {
   MeshBasicMaterial,
   PlaneGeometry
 } from "three";
-import * as THREE from "three";
+
 import {
-  addRemoveAtSceneChangedResponsiveListener, addRemoveAtSceneChangedUpdateListener,
+  addRemoveAtSceneChangedResponsiveListener,
   addThreeTagObject,
   getThreeTagObject
 } from "@/composables/StoreHelper";
-import {store} from "@/store/Store";
+
 import {
   waitForWebfonts
 } from "@/composables/FontLoadHelper"
@@ -33,7 +33,6 @@ export default {
     threeTextResponsivePropertyGroup: Object,
     parentTextTag:String,
     textTag:String,
-    backgroundColor:String,
     isDebugRatio:Boolean,
 
       },
@@ -55,9 +54,9 @@ export default {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.canvas.height = actualTextHeight + paddingInPixels * 2;
       this.canvas.width = textWidth + paddingInPixels * 2;
-      this.ctx.fillStyle = this.backgroundColor;
+      this.ctx.fillStyle = this.$store.state.threeSceneCreator.textsColor[this.textUsed];
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-      this.ctx.fillStyle = "#F5FCFFFF";
+
       this.ctx.font = textHeight + "px MyBlack";
       this.ctx.fillText(this.textUsed, paddingInPixels, this.canvas.height - paddingInPixels);
 

@@ -14,7 +14,8 @@ export default {
   },
     mounted() {
     this.htmlElement = document.getElementById(this.htmlElementIdName);
-    this.htmlElement.style.position="absolute"
+    this.htmlElement.style.position="absolute";
+    this.htmlElement.style.transform ="translateX(-50%)"
       addRemoveAtSceneChangedResponsiveListener(this.placeHtmlElement);
     this.placeHtmlElement();
   },
@@ -29,9 +30,10 @@ export default {
 
       var width = window.innerWidth, height = window.innerHeight;
       var pos = new Vector2(currentProperty.position.x,currentProperty.position.y) ;
-      pos.y += currentProperty.scale.y/2;
+      pos.y -= currentProperty.scale.y/2;
       pos.x = remap(pos.x, -1,1,0,1) * width;
       pos.y =  remap(pos.y, -1,1,1,0 ) * height ;
+
     pos.y =  pos.y+this.offsetHtmlPositionY;
       this.htmlElement.style.top = pos.y+"px";
       this.htmlElement.style.left = pos.x+"px";

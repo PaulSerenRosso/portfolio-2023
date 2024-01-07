@@ -11,6 +11,7 @@ export default{
   mounted() {
 
     this.$store.dispatch('initNewScene', document.getElementById(this.containerId));
+
   },
 
 
@@ -30,5 +31,18 @@ export default{
   position: fixed;
   width: 100%;
   height: 100%;
+  animation-name: reveal-animation;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  animation-timing-function:  linear;
+}
+@keyframes reveal-animation {
+  from
+  {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 </style>

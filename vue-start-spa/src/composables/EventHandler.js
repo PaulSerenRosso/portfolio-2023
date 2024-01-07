@@ -7,13 +7,13 @@ export default function createEventHandler(){
             removeEventListener(listener){
                 onEvent.splice(onEvent.indexOf(listener),1);
             },
-            raiseEvent(){
+            raiseEvent(obj){
 
                 if(onEvent.length !== 0)
                 {
                     onEvent.forEach((item)=>{
                        // console.log(item);
-                        item();});
+                        item(obj);});
                 }
 
             }

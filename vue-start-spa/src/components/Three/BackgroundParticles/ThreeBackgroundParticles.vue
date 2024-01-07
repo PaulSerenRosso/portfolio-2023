@@ -3,10 +3,8 @@ import {
   BufferAttribute,
   BufferGeometry,
   Color,
-  Mesh, MeshBasicMaterial,
   Points,
   ShaderMaterial,
-  SphereGeometry, Vector2,
   Vector3
 } from "three";
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
@@ -17,7 +15,7 @@ import {
   addRemoveAtSceneChangedResponsiveListener, addRemoveAtSceneChangedUpdateListener, getThreeTagObject
 } from "@/composables/StoreHelper";
 import {
-  getRandomNormalizedVector2, lerp,
+  getRandomNormalizedVector2,
   randomFloat,
   randomInt,
 } from "@/composables/Math";
@@ -34,8 +32,8 @@ export default {
       ),
       threeBackgroundTypeParticleDatas:[
           new ThreeBackgroundTypeParticleData( 20,new Color(0.69, 0.109, 0.105),0.002,1),
-        new ThreeBackgroundTypeParticleData( 15,new Color(0.960,0.988,1),0.0025,0.75),
-        new ThreeBackgroundTypeParticleData( 10,new Color( 0.498, 0.650, 0.709),0.003,0.5)],
+        new ThreeBackgroundTypeParticleData( 15,new Color(0.070,0.09,0.23),0.0025,0.75),
+        new ThreeBackgroundTypeParticleData( 10,new Color( 0.227, 0.226, 0.54),0.003,0.5)],
 
       currentProperty:null,
       particles:null,
@@ -57,7 +55,10 @@ export default {
 
     }
   },
-
+  functional:true,
+  render() {
+    return null;
+  },
   mounted() {
     this.initParticles();
 
@@ -68,7 +69,6 @@ export default {
 
           this.camera = getThreeTagObject("currentCamera");
           this.originZ = new Vector3(0,0,this.originCameraZ).unproject(this.camera).z;
-          console.log( this.originZ);
          addRemoveAtSceneChangedUpdateListener(this.updateParticlePosition);
           addRemoveAtSceneChangedResponsiveListener(this.createParticles);
           addRemoveAtSceneChangedResponsiveListener(this.refreshRadius);
@@ -110,7 +110,7 @@ export default {
         },
         createParticles(){
 
-          if(this.currentProperty === this.threeBackgroundParticlesResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId]) return;
+          if(!this.$store.state.responsiveEventHandler.deviceHasChanged) return;
           this.currentProperty = this.threeBackgroundParticlesResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
           this.particles = new BufferGeometry();
           this.particlesPosition = new Float32Array(this.currentProperty.particlesCount*3);

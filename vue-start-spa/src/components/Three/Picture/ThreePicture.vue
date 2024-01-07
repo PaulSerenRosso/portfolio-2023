@@ -1,12 +1,10 @@
 <script >
 import {Mesh, MeshBasicMaterial, PlaneGeometry, TextureLoader} from "three";
 import {
-  addEvent,
-  addRemoveAtSceneChangedEvent,
   addThreeTagObject,
   getThreeTagObject,
   raiseAndRemoveEvent,
-  removeEvent
+
 } from "@/composables/StoreHelper";
 
 
@@ -17,19 +15,18 @@ export default {
         parentPictureTag:String,
         onCreateKey:String,
         srcPicture: String,
-        idPicture: String,
         pictureTag:String,
         isDebugRatio:Boolean,
       },
   mounted()
   {
 
-    addEvent(this.onCreateKey);
     const textureLoader = new TextureLoader();
-    const image = (document.getElementById(this.idPicture)).src;
+    const image = this.$refs.image.src;
+
 
      textureLoader.load(image, (texture) => {
-
+texture.colorSpace ="srgb" ;
       const material = new MeshBasicMaterial({ map: texture });
       const imageScreen = new Mesh(
           new PlaneGeometry(texture.image.width/texture.image.height,1,), material);
@@ -46,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <img :id=this.idPicture
+  <img ref="image"
        :src="require('@/assets/'+this.srcPicture)" style="display: none;">
 </template>
 

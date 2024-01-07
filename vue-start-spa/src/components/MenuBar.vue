@@ -8,13 +8,13 @@ export default defineComponent({
       aboutMeName :"About Me",
       keyProjectsName:"Key Projects",
       contactName :"Contact",
-      mobileMenuButtonState:"closed ",
+      mobileMenuButtonState:"closed",
   }
   },
   methods:{
     checkPlatformDeviceIdForRenderMobileMenuBar()
     {
-      return this.$store.state.devicePlateformId ===0 || this.$store.state.devicePlateformId === 1;
+      return this.$store.state.responsiveEventHandler.devicePlateformId ===0 || this.$store.state.responsiveEventHandler.devicePlateformId === 1;
     },
     changeStateOfMobileMenuToClosed()
     {
@@ -76,19 +76,26 @@ export default defineComponent({
 .menu-bar-title
 {
   font-family: MyBlack;
+  font-size: 1.2rem;
   text-decoration: none;
   color: #F5FCFFFF;
 
 }
 .menu-bar-button
 {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   font-family: MyBold;
   text-decoration: none;
+  font-size: 1.1rem;
 
 }
 .menu-bar-mobile-button
 {
-  color:#424242;
+  padding-top: 10px;
+  color: #F5FCFFFF;
+  font-size: 2rem;
 }
 .menu-bar-desktop-button
 {
@@ -121,12 +128,13 @@ export default defineComponent({
 }
 #_menuBarMobilePopUp
 {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  left: 0%;
-  background-color: #F5FCFFFF;
+  top:0%;
+  background: rgb(33,40,89);
+  background: linear-gradient(90deg, rgba(33,40,89,1) 0%, rgba(58,68,138,1) 100%);
   width: 100%;
-  height:10%;
+  height:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,12 +143,12 @@ export default defineComponent({
 }
 .menu-bar-mobile-pop-up-opened
 {
-  top:10%;
+   left: 0%;
   transition-duration: 1s;
 }
 .menu-bar-mobile-pop-up-closed
 {
-  top:-20%;
+   left:-100%;
   transition-duration: 1s;
 }
 .menu-bar-mobile-burger-button
@@ -156,14 +164,15 @@ export default defineComponent({
   position: fixed;
   top:0%;
   left: 0%;
-  background-color: #424242;
+  background: rgb(33,40,89);
+  background: linear-gradient(0deg, rgba(33,40,89,0) 0%, rgba(33,40,89,1)  100%);
   width: 100%;
   height: 10%;
   z-index: 1;
 }
 .menu-bar-mobile-burger-button-icon{
-  width: 22px;
-  height: 2px;
+  width: 2rem;
+  height: 0.2rem;
   display: block;
   position: absolute;
   top: 50%;
@@ -172,8 +181,8 @@ export default defineComponent({
 }
 .menu-bar-mobile-burger-button-icon::after{
   content: '';
-  width: 22px;
-  height: 2px;
+  width: 2rem;
+  height: 0.2rem;
   background-color: #F5FCFFFF;
   display: block;
   position: absolute;
@@ -182,8 +191,8 @@ export default defineComponent({
 }
 .menu-bar-mobile-burger-button-icon::before{
   content: '';
-  width: 22px;
-  height: 2px;
+  width: 2rem;
+  height: 0.2rem;
   background-color: #F5FCFFFF;
   display: block;
   position: absolute;

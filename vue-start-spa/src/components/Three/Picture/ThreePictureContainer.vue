@@ -1,30 +1,27 @@
 <script>
 import ThreePicture from "@/components/Three/Picture/ThreePicture.vue";
 import ThreeEdges from "@/components/Three/ThreeEdges.vue";
-import ThreeJsGroupObject from "@/components/Three/ThreeJsGroupObject.vue";
-import ThreeLevitatedObject from "@/components/Three/ThreeLevitatedObject.vue";
+import ThreeParent from "@/components/Three/ThreeParent.vue";
 
 export default {
   name: "ThreePictureContainer",
-  components: {ThreeLevitatedObject, ThreeJsGroupObject, ThreePicture, ThreeEdges},
+  components: {ThreeParent, ThreePicture, ThreeEdges},
   props: {
     srcPicture: String,
     pictureObjectTag:String,
-    levitatedMovementFrequency:Number,
-    levitatedMovementLength:Number,
     isDebugRatio:Boolean,
-
+    threeBasicResponsivePropertyGroup:Object,
+    macroContainerResizeEventKey:String,
   },
 }
 </script>
 
 <template>
 
-  <three-js-group-object :obj-tag="this.pictureObjectTag+'Parent'" :parent-obj-tag="this.pictureObjectTag+'Root'"></three-js-group-object>
-  <three-levitated-object :current-obj-tag="this.pictureObjectTag+'Parent'" :movement-length="this.levitatedMovementLength" :movement-frequency="this.levitatedMovementFrequency"></three-levitated-object>
-  <three-picture :is-debug-ratio="this.isDebugRatio" :picture-tag="this.pictureObjectTag" :on-create-key="this.pictureObjectTag+'OnCreated'"   :src-picture="this.srcPicture" :id-picture="this.pictureObjectTag+'Id'"
+  <three-parent  :three-transform-responsive-property-group="this.threeBasicResponsivePropertyGroup" :has-ratio-obj-created-event="true" :tag="this.pictureObjectTag" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :movement-length="0.05" :movement-frequency="1.5"></three-parent>
+  <three-picture :is-debug-ratio="this.isDebugRatio" :picture-tag="this.pictureObjectTag" :on-create-key="this.pictureObjectTag+'OnCreated'"   :src-picture="this.srcPicture"
                   :parent-picture-tag="this.pictureObjectTag+'Parent'"> </three-picture>
-  <three-edges :parent-object-tag="this.pictureObjectTag" :on-parent-created-key="this.pictureObjectTag+'OnCreated'"  :edges-width-thickness=0.2  :edges-z-thickness=0.2></three-edges>
+  <three-edges :parent-object-tag="this.pictureObjectTag" :on-parent-created-key="this.pictureObjectTag+'OnCreated'"  :edges-width-thickness=0.1  :edges-z-thickness=0.2></three-edges>
 </template>
 
 <style scoped>
