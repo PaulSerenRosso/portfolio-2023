@@ -14,6 +14,7 @@ export default {
     movementLength:Number,
     movementFrequency:Number,
     hasRatioObjCreatedEvent:Boolean,
+
   }
 }
 </script>

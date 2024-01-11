@@ -8,13 +8,13 @@ import {lerp} from "@/composables/Math";
 export  const moduleThreeSceneCreator =
     new StoreModule(
         { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,oldWindowScrollY: 0,
-            textsColor:[{
-                "c#":new Color(0, 0, 1),
-                "ue5":new Color(1, 0, 1),
-                "unity":new Color(1, 0, 0),
-                "network":new Color(0, 1, 0),
+            textsColor:{
+                "C#":"rgba(255,0,0,1)",
+                "UE5":"rgba(0,0,255,1)",
+                "Unity":"rgba(0,255,0,1)",
+                "Network":"rgba(255,255,0,1)",
 
-            }],
+            },
         },
         {
 
@@ -27,7 +27,6 @@ export  const moduleThreeSceneCreator =
                     if(Math.abs(context.state.oldWindowScrollY-window.scrollY)>0.1){
                         context.state.oldWindowScrollY =  lerp(context.state.oldWindowScrollY,window.scrollY,0.2);
                         context.state.cameraYScroll = context.state.oldWindowScrollY/window.innerHeight*2
-                        console.log("scrollY "+window.scrollY,"innerheight "+window.innerHeight*2,"cameraYscroll "+ context.state.cameraYScroll);
                         context.state.onCameraYScrollHandler.raiseEvent();
                     }
                 }

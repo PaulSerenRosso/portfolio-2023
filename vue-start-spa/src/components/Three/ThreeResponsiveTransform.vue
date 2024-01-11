@@ -17,6 +17,7 @@ export default {
       currentProperty: {},
       currentRatioObj:{},
       isRatioObjCreated:false,
+      macroContainer: undefined,
     }
   },
   functional:true,
@@ -29,19 +30,25 @@ export default {
     ratioObjTag:String,
     eventKeyForGetRatioObjTag:String,
     macroContainerResizeEventKey:String,
+
   },
   mounted() {
-    addEventListener(this.updateDynamicObjectScene, this.macroContainerResizeEventKey);
     if(this.eventKeyForGetRatioObjTag === ""){
       this.applyResponsiveTransform();
+
     }
     else{
-      console.log(this.eventKeyForGetRatioObjTag)
+
       addEvent(this.eventKeyForGetRatioObjTag);
       addEventListener(this.applyResponsiveTransform,this.eventKeyForGetRatioObjTag)
     }
   },
+  created() {
+    addEventListener(this.updateDynamicObjectScene, this.macroContainerResizeEventKey);
+  },
+
   methods:{
+
     applyResponsiveTransform() {
       this.isRatioObjCreated = true;
       this.camera = this.$store.getters.getThreeObjectTag("currentCamera");
@@ -52,21 +59,22 @@ export default {
       this.updateDynamicObjectScene();
     },
     updateDynamicObjectScene(obj){
+
       if(obj !== undefined){
+        this.macroContainer = obj;
+      }
+      if(this.macroContainer !== undefined) {
         this.currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
-        this.currentProperty.update(obj);
+        this.currentProperty.update(this.macroContainer);
+        if (this.isRatioObjCreated) {
+          this.updateDynamicObjectScale();
+          var quaternion = new Quaternion();
+          quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY * degToRad); // Rotate around X axis
+          this.currentObj.setRotationFromQuaternion(quaternion);
+          //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
+          this.updateDynamicObjectPositionScene();
+        }
       }
-      if(this.isRatioObjCreated){
-        console.log(this.currentRatioObj,"bidule");
-        this.updateDynamicObjectScale();
-        var quaternion = new Quaternion();
-        quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY*degToRad); // Rotate around X axis
-        this.currentObj.setRotationFromQuaternion(quaternion);
-        //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
-        this.updateDynamicObjectPositionScene();
-      }
-
-
     },
     updateDynamicObjectScale()
     {
@@ -83,7 +91,6 @@ export default {
       this.currentObj.scale.set(maxScale, maxScale, this.currentProperty.scale.z)
     },
     updateDynamicObjectPositionScene() {
-      console.log(this.currentProperty.position, this.ratioObjTag, this.currentObjTag);
      const newPosition = new Vector3(this.currentProperty.position.x,
          this.currentProperty.position.y+this.$store.state.threeSceneCreator.cameraYScroll, this.currentProperty.position.z)
           .unproject(this.camera);
@@ -92,7 +99,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 

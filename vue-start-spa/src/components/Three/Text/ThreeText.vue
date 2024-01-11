@@ -9,7 +9,7 @@ import {
 import {
   addRemoveAtSceneChangedResponsiveListener,
   addThreeTagObject,
-  getThreeTagObject
+  getThreeTagObject, raiseAndRemoveEvent
 } from "@/composables/StoreHelper";
 
 import {
@@ -34,6 +34,7 @@ export default {
     parentTextTag:String,
     textTag:String,
     isDebugRatio:Boolean,
+    textEventCreated:String,
 
       },
 
@@ -54,9 +55,10 @@ export default {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.canvas.height = actualTextHeight + paddingInPixels * 2;
       this.canvas.width = textWidth + paddingInPixels * 2;
+      console.log(this.textUsed, this.$store.state.threeSceneCreator.textsColor[this.textUsed])
       this.ctx.fillStyle = this.$store.state.threeSceneCreator.textsColor[this.textUsed];
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
+      this.ctx.fillStyle = "white";
       this.ctx.font = textHeight + "px MyBlack";
       this.ctx.fillText(this.textUsed, paddingInPixels, this.canvas.height - paddingInPixels);
 
@@ -80,6 +82,7 @@ export default {
     const mesh = new Mesh(geometry, this.material);
     addThreeTagObject(mesh, this.textTag);
     getThreeTagObject(this.parentTextTag).add(mesh);
+    raiseAndRemoveEvent(this.textEventCreated);
     addRemoveAtSceneChangedResponsiveListener(this.drawCanvasTexture);
     waitForWebfonts(['MyBlack'],()=>{this.drawCanvasTexture(); });
 

@@ -22,8 +22,8 @@ export default {
 
 <template>
 
-  <three-parent  :three-transform-responsive-property-group="this.threeTextResponsivePropertyGroup" :has-ratio-obj-created-event="false" :tag="this.textObjectTag" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :movement-length="0.05" :movement-frequency="1.5"></three-parent>
-  <three-text :is-debug-ratio="this.isDebugRatio" :three-text-responsive-property-group="this.threeTextResponsivePropertyGroup" :text-used="this.textUsed" :parent-text-tag="this.textObjectTag+'Parent'" :text-tag="this.textObjectTag"
+  <three-parent  :three-transform-responsive-property-group="this.threeTextResponsivePropertyGroup" :has-ratio-obj-created-event="true" :tag="this.textObjectTag" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :movement-length="this.levitatedMovementLength" :movement-frequency="this.levitatedMovementFrequency"></three-parent>
+  <three-text :text-event-created="this.textObjectTag+'OnCreated'" :three-text-responsive-property-group="this.threeTextResponsivePropertyGroup" :text-used="this.textUsed" :parent-text-tag="this.textObjectTag+'Parent'" :text-tag="this.textObjectTag"
                  > </three-text>
   <three-edges  :parent-object-tag="this.textObjectTag"  :edges-width-thickness=0.2  :edges-z-thickness=0.2  ></three-edges>
 </template>
