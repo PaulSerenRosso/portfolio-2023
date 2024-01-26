@@ -19,7 +19,6 @@ export default{
     return{
       video : null,
       videoButton:null,
-
     }
 
   },

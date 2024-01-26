@@ -50,7 +50,7 @@ export default {
   </profile-pillar>
 </div>
 
-    <reveal-animation-trigger :is-debug="true" :top-desktop="60" :top-large-desktop="60" :top-mobile="60" :top-tablet="60" reveal-animation-trigger-event-key="SecondReveal"></reveal-animation-trigger>
+    <reveal-animation-trigger  :top-desktop="60" :top-large-desktop="60" :top-mobile="60" :top-tablet="60" reveal-animation-trigger-event-key="SecondReveal"></reveal-animation-trigger>
     <three-picture-container    macro-container-resize-event-key="aboutMeMacroContainer" :is-debug-ratio="true" :three-basic-responsive-property-group=this.threePictureContainerResponsivePropertyGroup
                              src-picture="PaulSerenRossoPhoto.jpg"  picture-object-tag="TestPicture"
     ></three-picture-container>

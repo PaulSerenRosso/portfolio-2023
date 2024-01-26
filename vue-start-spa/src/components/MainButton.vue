@@ -58,9 +58,6 @@ export default{
   padding-right: 1rem;
   text-align: center;
   transition: all .2s ease-in-out;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
   font-family: MyBold;
   font-size: 1.2rem;
 }

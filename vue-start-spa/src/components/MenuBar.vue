@@ -86,8 +86,9 @@ export default defineComponent({
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  font-family: MyBold;
   text-decoration: none;
+  font-family: MyBold;
+
   font-size: 1.1rem;
 
 }
@@ -165,7 +166,7 @@ export default defineComponent({
   top:0%;
   left: 0%;
   background: rgb(33,40,89);
-  background: linear-gradient(0deg, rgba(33,40,89,0) 0%, rgba(33,40,89,1)  100%);
+  background: linear-gradient(0deg, rgba(33,40,89,0) 0%, rgb(26, 30, 54) 100%);
   width: 100%;
   height: 10%;
   z-index: 1;

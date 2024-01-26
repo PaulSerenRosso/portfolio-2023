@@ -1,13 +1,19 @@
-<script lang="ts">
-import {defineComponent} from 'vue'
+<script>
 
-export default defineComponent({
-  name: "ProjectsView"
-})
+import ThreeScene from "@/components/Three/ThreeScene.vue";
+import ThreeBackgroundParticles from "@/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue";
+import KeyProjectsContainer from "@/components/Container/ProjectOverview/KeyProjectsContainer.vue";
+
+export default {
+  name: "ProjectsView",
+  components: {KeyProjectsContainer, ThreeBackgroundParticles, ThreeScene}
+}
 </script>
 
 <template>
-  <p>here the page of The Key Projects</p>
+  <three-scene  container-id="_canvasContainer"></three-scene>
+  <three-background-particles></three-background-particles>
+  <key-projects-container></key-projects-container>
 </template>
 
 <style scoped>

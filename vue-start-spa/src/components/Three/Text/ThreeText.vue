@@ -3,7 +3,7 @@ import {
   CanvasTexture,
   Mesh,
   MeshBasicMaterial,
-  PlaneGeometry
+  PlaneGeometry, Texture, TextureLoader
 } from "three";
 
 import {
@@ -25,27 +25,28 @@ export default {
           canvasSizeReference:Number,
           canvas:Object,
           ctx:Object,
-          material:Object
+          material:Object,
+          height:0,
+          width: 0,
         }
       },
   props: {
     textUsed:String,
-    threeTextResponsivePropertyGroup: Object,
     parentTextTag:String,
     textTag:String,
     isDebugRatio:Boolean,
     textEventCreated:String,
+    textResolution:Number,
 
       },
 
   methods: {
 
     drawCanvasTexture() {
-      this.canvasSizeReference = this.threeTextResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId].canvasSizeReference;
+      this.canvasSizeReference = this.textResolution;
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.canvas.height = this.canvasSizeReference;
       this.canvas.width = this.canvasSizeReference;
-// Initially draw some text
       const textHeight = this.textFontSizePercentage * this.canvasSizeReference;
       this.ctx.font = textHeight + "px MyBlack";
       const textSize = this.ctx.measureText(this.textUsed);
@@ -61,32 +62,28 @@ export default {
       this.ctx.fillStyle = "white";
       this.ctx.font = textHeight + "px MyBlack";
       this.ctx.fillText(this.textUsed, paddingInPixels, this.canvas.height - paddingInPixels);
+      const imageDataUrl = this.canvas.toDataURL();
+      this.height = this.canvas.height;
+      this.width = this.canvas.width;
+       new TextureLoader().load(imageDataUrl, (texture)=>{
+        this.material = new MeshBasicMaterial({ map: texture});
+        console.log(this.width/this.height);
+        const geometry = new PlaneGeometry(this.width/this.height, 1);
+        const mesh = new Mesh(geometry, this.material);
+        addThreeTagObject(mesh, this.textTag);
+        getThreeTagObject(this.parentTextTag).add(mesh);
+        raiseAndRemoveEvent(this.textEventCreated);
+      });
 
-      this.material.map = new CanvasTexture(this.canvas);
 
     },
 
   },
   mounted() {
-
     this.canvas = document.getElementById("threeTextCanvas");
     this.ctx = this.canvas.getContext('2d');
-    const textTexture = new CanvasTexture(this.canvas);
-    this.material = new MeshBasicMaterial({ map: textTexture});
     this.ctx.textBaseline = "bottom";
-    this.drawCanvasTexture();
-    const geometry = new PlaneGeometry(this.canvas.width/this.canvas.height, 1);
-    if(this.isDebugRatio){
-      console.log(this.textTag+(this.canvas.width/this.canvas.height));
-    }
-    const mesh = new Mesh(geometry, this.material);
-    addThreeTagObject(mesh, this.textTag);
-    getThreeTagObject(this.parentTextTag).add(mesh);
-    raiseAndRemoveEvent(this.textEventCreated);
-    addRemoveAtSceneChangedResponsiveListener(this.drawCanvasTexture);
     waitForWebfonts(['MyBlack'],()=>{this.drawCanvasTexture(); });
-
-
   }
 
 }
@@ -96,4 +93,5 @@ export default {
 <style scoped>
 
 </style>
+
 

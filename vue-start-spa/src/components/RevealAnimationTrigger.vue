@@ -1,5 +1,6 @@
 <script >
 import {
+  addCreateSceneHandlerListener,
   addRemoveAtSceneChangedEvent,
   addRemoveAtSceneChangedResponsiveListener,
   raiseAndRemoveEvent
@@ -23,17 +24,19 @@ export default {
   },
   created() {
     addRemoveAtSceneChangedEvent(this.revealAnimationTriggerEventKey);
-  },
+  console.log(this.revealAnimationTriggerEventKey);
+    },
   mounted() {
+    addCreateSceneHandlerListener(()=>{ window.removeEventListener("scroll", this.checkNeedToTrigger);})
     addRemoveAtSceneChangedResponsiveListener(this.tryReplaceTrigger);
     window.addEventListener('scroll', this.checkNeedToTrigger);
     this.tryReplaceTrigger();
     this.checkNeedToTrigger();
     if(this.isDebug){
-      this.$refs.revealAnimationTrigger.style.display = "flex";
+      this.$refs.revealAnimationTrigger.style.backgroundColor = "red";
     }
     else {
-      this.$refs.revealAnimationTrigger.style.display = "none";
+      this.$refs.revealAnimationTrigger.style.display = "transparent";
     }
   },
   methods:{
@@ -58,6 +61,7 @@ export default {
             break;
           }
         }
+        console.log(this.revealAnimationTriggerEventKey)
         this.$refs.revealAnimationTrigger.style.top = this.currentTopValue+"%";
       }
     },
@@ -80,9 +84,9 @@ export default {
 <style scoped>
 .reveal-animation-trigger{
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 1px;
+  height: 1px;
   background-size: cover;
-  background-color: red;
+  display: flex;
 }
 </style>

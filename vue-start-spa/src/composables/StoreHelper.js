@@ -26,7 +26,7 @@ export function addRemoveAtSceneChangedUpdateListener(listener){
 
 export function addRemoveAtSceneChangedEvent(eventKey){
     store.commit("addEvent",eventKey);
-    store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>this.$store.commit("removeEvent", eventKey));
+    store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>store.commit("removeEvent", eventKey));
 }
 
 export function addEvent(eventKey){
@@ -44,7 +44,7 @@ export function raiseAndRemoveEvent(eventKey, obj){
 }
 export function addEventListener(listener, keyEvent){
 
-
+    console.log( store.state.eventsManager.allEventHandlers);
     store.state.eventsManager.allEventHandlers[keyEvent].addEventListener(listener);
 }
 
