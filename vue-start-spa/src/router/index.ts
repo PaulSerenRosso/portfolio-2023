@@ -8,6 +8,26 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
+    path: '/INRS',
+    name: 'INRS',
+    component: () => import('../views/ProjectsView.vue')
+  },
+  {
+    path: '/Esquirel',
+    name: 'Esquirel',
+    component: () => import('../views/ProjectPage/EsquirelView.vue')
+  },
+  {
+    path: '/Boby',
+    name: 'Boby',
+    component: () => import('../views/ProjectsView.vue')
+  },
+  {
+    path: '/Jab',
+    name: 'Jab',
+    component: () => import('../views/ProjectsView.vue')
+  },
+  {
     path: '/keyProjects',
     name: 'keyProjects',
     component: () => import('../views/ProjectsView.vue')

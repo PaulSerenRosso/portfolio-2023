@@ -23,38 +23,44 @@ export default {
   },
   created() {
     addRemoveAtSceneChangedEvent(this.resizeEventKey);
+    console.log("created event");
   },
   mounted() {
-    addRemoveAtSceneChangedResponsiveListener(this.updateCurrentContainerInfo);
+    addRemoveAtSceneChangedResponsiveListener(this.tryUpdateCurrentContainerInfo);
     this.updateCurrentContainerInfo();
+    raiseEvent(this.resizeEventKey, this.currentContainerInfo);
   },
   methods:{
+    tryUpdateCurrentContainerInfo(){
+      if(this.$store.state.responsiveEventHandler.deviceHasChanged) {
+        this.updateCurrentContainerInfo();
+      }
+      raiseEvent(this.resizeEventKey, this.currentContainerInfo);
+    },
     updateCurrentContainerInfo(){
-      if(this.$store.state.responsiveEventHandler.deviceHasChanged){
-        switch (this.$store.state.responsiveEventHandler.devicePlateformId){
-          case 0 :{
+        switch (this.$store.state.responsiveEventHandler.devicePlateformId) {
+          case 0 : {
             this.currentContainerInfo.height = this.heightMobile;
             break;
           }
-          case 1 :{
+          case 1 : {
             this.currentContainerInfo.height = this.heightTablet;
             break;
           }
-          case 2 :{
+          case 2 : {
             this.currentContainerInfo.height = this.heightDesktop;
             break;
           }
-          case 3 :{
+          case 3 : {
             this.currentContainerInfo.height = this.heightLargeDesktop;
             break;
           }
         }
+        this.currentContainerInfo.top = (this.$refs.container.getBoundingClientRect().top + window.scrollY) / window.innerHeight;
+        this.$refs.container.style.height = (this.currentContainerInfo.height * 100) + "%";
 
-        this.currentContainerInfo.top = (this.$refs.container.getBoundingClientRect().top+window.scrollY)/window.innerHeight;
-        this.$refs.container.style.height = (this.currentContainerInfo.height*100)+"%";
-        raiseEvent(this.resizeEventKey, this.currentContainerInfo);
-      }
-    }
+    },
+
   }
 }
 </script>

@@ -56,7 +56,7 @@ export default {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.canvas.height = actualTextHeight + paddingInPixels * 2;
       this.canvas.width = textWidth + paddingInPixels * 2;
-      console.log(this.textUsed, this.$store.state.threeSceneCreator.textsColor[this.textUsed])
+
       this.ctx.fillStyle = this.$store.state.threeSceneCreator.textsColor[this.textUsed];
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = "white";
@@ -67,7 +67,7 @@ export default {
       this.width = this.canvas.width;
        new TextureLoader().load(imageDataUrl, (texture)=>{
         this.material = new MeshBasicMaterial({ map: texture});
-        console.log(this.width/this.height);
+
         const geometry = new PlaneGeometry(this.width/this.height, 1);
         const mesh = new Mesh(geometry, this.material);
         addThreeTagObject(mesh, this.textTag);

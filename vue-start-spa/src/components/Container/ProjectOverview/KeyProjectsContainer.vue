@@ -12,11 +12,17 @@ export default {
   data(){
     return{
         threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.5,0.9),0,new Vector2(0.1,0.1), new Vector2(0.2,0.2), new Vector2(0.1,0.1)),
-            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.5,0.9),0,new Vector2(0.1,0.1), new Vector2(0.2,0.2),new Vector2(0.1,0.1)),
-            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.5,0.9),0,new Vector2(0.2,0.2), new Vector2(0.2,0.2),new Vector2(0.1,0.1)),
-            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.5,0.9),0,new Vector2(0.2,0.2), new Vector2(0.2,0.2),new Vector2(0.1,0.1))
+            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.7,0.9),20,new Vector2(0.2,0.5), new Vector3(0.5,0.3,1),new Vector2(0.1,0.1)),
+            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.7,0.9),20,new Vector2(0.2,0.4), new Vector3(0.5,0.3,1),new Vector2(0.1,0.1)),
+            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.7,0.9),20,new Vector2(0.2,0.7), new Vector3(0.3,0.4,1),new Vector2(0.1,0.1)),
+            new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.7,0.9),20,new Vector2(0.2,0.7), new Vector3(0.3,0.4,1),new Vector2(0.1,0.1))
         ),
+      threeGridTextResponsivePropertyGroupTemplate:new ResponsivePropertyGroup(
+          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.2,0),20,new Vector2(0.05,0.05), new Vector3(0.10,0.10,0.5),new Vector2(0.1,0.1)),
+          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.2,0),20,new Vector2(0.05,0.05), new Vector3(0.10,0.10,0.5),new Vector2(0.1,0.1)) ,
+          new ThreeGridProperty(new Vector3(0.4,0.1,0), new Vector3(0,0.31,0),20,new Vector2(0.02,0.1), new Vector3(0.05,0.05,0.5),new Vector2(0.1,0.1)),
+          new ThreeGridProperty(new Vector3(0.4,0.1,0), new Vector3(0,0.31,0),20,new Vector2(0.02,0.1), new Vector3(0.05,0.05,0.5),new Vector2(0.1,0.1))
+      )
     }
   }
 }
@@ -28,14 +34,16 @@ export default {
                                 :picture-srcs="['snowflake1.png','PaulSerenRossoPhoto.jpg','logo.png','logo.png']"
                                 :title-texts="['It not a Rocket Science','Esquirel','Memory Of Hope','Jab']"
                                 base-tag="Project"
-                                :description-texts="['A project f ds  fdjskq m ldkjf qs lkjd fdslq l','A project f ds  fdjskq m ldkjf qs lkjd fdslq l','A project f ds  fdjskq m ldkjf qs lkjd fdslq l','A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
+                                :description-texts="['1A project f ds  fdjskq m ldkjf qs lkjd fdslq l','2A project f ds  fdjskq m ldkjf qs lkjd fdslq l','3A project f ds  fdjskq m ldkjf qs lkjd fdslq l','4A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
                                 macro-container-resize-event-key="keyProjectsMacroContainer"
-                                :description-offset-y="0.2"
-                                :title-offset-y="0.2"
+
+                                :title-offset-y="5"
                                 :tag-texts-lists="[['Unity', 'UE5', 'Git'],['Unity', 'UE5', 'Git','Unity', 'UE5', 'Git'],['Unity', 'UE5'], ['Unity', 'UE5','C++']]"
                                 :levitated-movement-frequency="0.1"
                                 :levitated-movement-length="0.1"
-                                :text-grid-offset-y="0.1"></three-project-overview-grid>
+                                :page-links="['Contact','Esquirel','','Contact']"
+                                :three-grid-text-responsive-property-group="this.threeGridTextResponsivePropertyGroupTemplate"
+                                ></three-project-overview-grid>
 </template>
 
 <style scoped>

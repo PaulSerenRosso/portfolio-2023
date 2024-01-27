@@ -11,18 +11,51 @@ export class ThreeGridProperty extends ResponsiveProperty {
         this.spacings = spacings;
         this.elementScale = textScale;
         this.paddings = paddings;
-        this.maxElementCountByLine = new Vector2(Math.floor((this.scale.x-this.paddings.x*2-this.elementScale.x/2)/(this.elementScale.x+this.spacings.x)),
-            Math.floor((this.scale.y-this.paddings.y*2-this.elementScale.y/2)/(this.elementScale.y+this.spacings.y)));
+        this.maxElementCountByLine = new Vector2(0,0);
+        let lineScaleX = this.getLineScale(this.elementScale.x, this.scale.x, this.spacings.x, this.paddings.x);
+            this.getLineScale(this.elementScale.y, this.scale.y, this.spacings.y, this.paddings.y);
+        let lineScaleY =   this.getLineScale(this.elementScale.y, this.scale.y, this.spacings.y, this.paddings.y)
+        this.maxElementCountByLine.x = lineScaleX.count;
+        this.maxElementCountByLine.y = lineScaleY.count;
+        this.offsetCompleteLine = new Vector2(0,0);
+        this.offsetCompleteLine.x  = (this.scale.x-lineScaleX.lineScale)/2;
+        this.offsetCompleteLine.y  = (this.scale.y-lineScaleY.lineScale)/2;
 
-        console.log(this.scale.x, this.maxElementCountByLine.x, (this.elementScale.x+this.spacings.x));
-        this.offsetCompleteLine  = new Vector2((this.scale.x-this.maxElementCountByLine.x*(this.elementScale.x+this.spacings.x))/2,
-            (this.scale.y-this.maxElementCountByLine.y*(this.elementScale.y+this.spacings.y))/2);
-        console.log(this.offsetCompleteLine);
         this.offsetForLastLine;
         this.completeLineCount;
         this.elementCountForTheLastLine;
         this.maxIndexCompleteLine;
         this.cellSize = new Vector2(this.elementScale.x+this.spacings.x,this.elementScale.y+this.spacings.y);
+    }
+
+    getLineScale(elementScale, scale, spacing, padding){
+        let isFoundMaxElement = false;
+        let currentScale = scale-padding*2;
+        let currentPoint = elementScale;
+        let i = 1;
+        while (!isFoundMaxElement){
+                if(currentPoint > currentScale){
+                    if( i === 1){
+                        currentPoint -=elementScale;
+                    }
+                    else{
+                        currentPoint -=elementScale+spacing;
+                    }
+
+                    i--;
+                    return {lineScale:currentPoint, count:i};
+                }
+                i++;
+                currentPoint += elementScale+spacing;
+            }
+    }
+    getLineScaleWithCount( count){
+
+        let currentPoint = this.elementScale.x;
+        for (let j = 1; j < count; j++) {
+            currentPoint += this.elementScale.x+this.spacings.x;
+        }
+        return currentPoint;
     }
 
     setElementCountByLine(elementCount){
@@ -31,9 +64,7 @@ export class ThreeGridProperty extends ResponsiveProperty {
 
        this.maxIndexCompleteLine = this.completeLineCount*this.maxElementCountByLine.x;
         this.elementCountForTheLastLine = elementCount%this.maxElementCountByLine.x;
-
-        this.offsetForLastLine = (this.scale.x-this.elementCountForTheLastLine*(this.elementScale.x+this.spacings.x))/2;
-
+        this.offsetForLastLine =(this.scale.x-this.getLineScaleWithCount(this.elementCountForTheLastLine))/2;
     }
 
     placeElement(index){
@@ -44,15 +75,12 @@ export class ThreeGridProperty extends ResponsiveProperty {
 
        if(index >= this.maxIndexCompleteLine){
 
-           position.x += this.offsetForLastLine.x+this.cellSize.x*lineIndex;
+           position.x += this.elementScale.x/2+this.offsetForLastLine+this.cellSize.x*lineIndex;
        }
        else{
-
-           position.x += this.offsetCompleteLine.x+this.cellSize.x*lineIndex;
-
+           position.x +=  this.elementScale.x/2+this.offsetCompleteLine.x+this.cellSize.x*lineIndex;
        }
-
-        position.y += this.offsetCompleteLine.y+this.cellSize.y*columnIndex;
+        position.y += this.paddings.y/2+this.elementScale.y/2+this.cellSize.y*columnIndex;
 
 
        return position;

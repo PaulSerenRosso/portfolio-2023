@@ -24,7 +24,7 @@ export default {
   },
   created() {
     addRemoveAtSceneChangedEvent(this.revealAnimationTriggerEventKey);
-  console.log(this.revealAnimationTriggerEventKey);
+
     },
   mounted() {
     addCreateSceneHandlerListener(()=>{ window.removeEventListener("scroll", this.checkNeedToTrigger);})
@@ -61,7 +61,7 @@ export default {
             break;
           }
         }
-        console.log(this.revealAnimationTriggerEventKey)
+
         this.$refs.revealAnimationTrigger.style.top = this.currentTopValue+"%";
       }
     },
@@ -84,9 +84,9 @@ export default {
 <style scoped>
 .reveal-animation-trigger{
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 10px;
+  height: 10px;
   background-size: cover;
-  display: flex;
+
 }
 </style>

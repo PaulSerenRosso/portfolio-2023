@@ -7,8 +7,8 @@ export class ThreeBasicResponsiveProperty extends ResponsiveProperty{
         super();
         this.initialPosition = new Vector3(position.x,position.y,position.z);
         this.initialScale = new Vector3(scale.x, scale.y, scale.z);
-        this.position = position;
-        this.scale = scale;
+        this.position = new Vector3(position.x, position.y, position.z);
+        this.scale = new Vector3(scale.x, scale.y, scale.z);
         this.position.x = remap(position.x, 0,1 ,-1,1);
         this.position.y = remap(position.y, 0,1 ,1,-1);
         this.scale.x = remap(scale.x, 0,1 ,-1,1)+1;

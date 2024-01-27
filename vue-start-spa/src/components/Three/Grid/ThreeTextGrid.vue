@@ -23,6 +23,7 @@ export default {
   },
   created() {
 
+    console.log(this.threeGridResponsivePropertyGroup);
     for (let j = 0; j < this.threeGridResponsivePropertyGroup.responsivePropertyGroup.length; j++) {
       this.threeGridResponsivePropertyGroup.responsivePropertyGroup[j].setElementCountByLine(this.texts.length);
 

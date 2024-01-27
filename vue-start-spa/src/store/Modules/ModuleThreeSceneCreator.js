@@ -68,7 +68,7 @@ export  const moduleThreeSceneCreator =
                 this.scene.add( axesHelper );
                 const camera = new PerspectiveCamera(20, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
                 context.commit("addThreeObjectTag",{tag:"currentCamera", obj:camera})
-                const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true, });
+                const renderer = new WebGLRenderer({antialias: false,  });
                 setSize();
 
                 context.rootState.responsiveEventHandler.onWindowResizeHandler.addEventListener(setSize);
@@ -78,7 +78,6 @@ export  const moduleThreeSceneCreator =
                 const renderPass =  new RenderPass( this.scene, camera );
                 composer.addPass(renderPass);
                 renderer.setClearColor(0xffffff, 0);
-
 
                 const animate= () => {
                     /*

@@ -25,15 +25,15 @@ export default {
   data() {
     return{
       threeBackgroundParticlesResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeBackgroundParticlesResponsiveProperty(100,1),
-          new ThreeBackgroundParticlesResponsiveProperty(150,1),
-          new ThreeBackgroundParticlesResponsiveProperty(200,1),
-          new ThreeBackgroundParticlesResponsiveProperty(200,1),
+          new ThreeBackgroundParticlesResponsiveProperty(100),
+          new ThreeBackgroundParticlesResponsiveProperty(150),
+          new ThreeBackgroundParticlesResponsiveProperty(200),
+          new ThreeBackgroundParticlesResponsiveProperty(200),
       ),
       threeBackgroundTypeParticleDatas:[
-          new ThreeBackgroundTypeParticleData( 20,new Color(0.69, 0.109, 0.105),0.002,1),
-        new ThreeBackgroundTypeParticleData( 15,new Color(0.070,0.09,0.23),0.0025,0.75),
-        new ThreeBackgroundTypeParticleData( 10,new Color( 0.227, 0.226, 0.54),0.003,0.5)],
+          new ThreeBackgroundTypeParticleData( 20,new Color(0.69, 0.109, 0.105),0.2,1),
+        new ThreeBackgroundTypeParticleData( 15,new Color(0.070,0.09,0.23),0.25,0.75),
+        new ThreeBackgroundTypeParticleData( 10,new Color( 0.227, 0.226, 0.54),0.3,0.5)],
 
       currentProperty:null,
       particles:null,
@@ -69,9 +69,10 @@ export default {
 
           this.camera = getThreeTagObject("currentCamera");
           this.originZ = new Vector3(0,0,this.originCameraZ).unproject(this.camera).z;
-         addRemoveAtSceneChangedUpdateListener(this.updateParticlePosition);
-          addRemoveAtSceneChangedResponsiveListener(this.createParticles);
+
+          addRemoveAtSceneChangedResponsiveListener(this.tryCreateParticles);
           addRemoveAtSceneChangedResponsiveListener(this.refreshRadius);
+          addRemoveAtSceneChangedUpdateListener(this.updateParticlePosition);
           this.particleMaterial = new ShaderMaterial({
 
             vertexShader: `
@@ -107,15 +108,20 @@ export default {
           }, { });
           this.refreshRadius();
           this.createParticles();
+          console.log("test particles");
+        },
+        tryCreateParticles(){
+          if(!this.$store.state.responsiveEventHandler.deviceHasChanged) return;
+          this.createParticles();
         },
         createParticles(){
 
-          if(!this.$store.state.responsiveEventHandler.deviceHasChanged) return;
           this.currentProperty = this.threeBackgroundParticlesResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
           this.particles = new BufferGeometry();
           this.particlesPosition = new Float32Array(this.currentProperty.particlesCount*3);
           this.particlesColor = new Float32Array(this.currentProperty.particlesCount*3);
           this.particlesSize = new Float32Array(this.currentProperty.particlesCount);
+          this.particlesId = [];
           this.particlesId = [];
           this.particlesElevationAngle = [];
           this.particlesPolarAngle= [];
@@ -181,8 +187,8 @@ export default {
               this.particlesDirections[i].y *= -1;
               this.particlesPolarAngle[i] += Math.PI;
             }
-            this.particlesPolarAngle[i] += this.particlesDirections[i].x*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed;
-            this.particlesElevationAngle[i] += this.particlesDirections[i].y*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed;
+            this.particlesPolarAngle[i] += this.particlesDirections[i].x*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*this.$store.state.updateLoopHandler.deltaTime;
+            this.particlesElevationAngle[i] += this.particlesDirections[i].y*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*this.$store.state.updateLoopHandler.deltaTime;
 
             this.setParticlePosition(i);
           }

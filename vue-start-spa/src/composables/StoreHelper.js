@@ -44,7 +44,6 @@ export function raiseAndRemoveEvent(eventKey, obj){
 }
 export function addEventListener(listener, keyEvent){
 
-    console.log( store.state.eventsManager.allEventHandlers);
     store.state.eventsManager.allEventHandlers[keyEvent].addEventListener(listener);
 }
 
