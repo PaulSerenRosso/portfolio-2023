@@ -1,7 +1,7 @@
 <script >
 import {
   BufferAttribute,
-  BufferGeometry,
+  BufferGeometry, Clock,
   Color,
   Points,
   ShaderMaterial,
@@ -51,7 +51,7 @@ export default {
       originZ: 0,
       originCameraZ: 0.8,
       camera: {},
-
+      clock :null,
 
     }
   },
@@ -67,6 +67,7 @@ export default {
       {
         initParticles(){
 
+          this.clock = new Clock();
           this.camera = getThreeTagObject("currentCamera");
           this.originZ = new Vector3(0,0,this.originCameraZ).unproject(this.camera).z;
 
@@ -178,30 +179,31 @@ export default {
         },
         updateParticlePosition(){
 
+         let delta =  this.clock.getDelta()
           for (let i = 0; i < this.currentProperty.particlesCount; i++) {
 
-            if(this.checkParticleTimer(i)){
+            if(this.checkParticleTimer(i, delta)){
                this.particlesDirections[i] = getRandomNormalizedVector2();
             }
             if(this.particlesElevationAngle[i]>=Math.PI || this.particlesElevationAngle[i] <= 0){
               this.particlesDirections[i].y *= -1;
               this.particlesPolarAngle[i] += Math.PI;
             }
-            this.particlesPolarAngle[i] += this.particlesDirections[i].x*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*this.$store.state.updateLoopHandler.deltaTime;
-            this.particlesElevationAngle[i] += this.particlesDirections[i].y*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*this.$store.state.updateLoopHandler.deltaTime;
+            this.particlesPolarAngle[i] += this.particlesDirections[i].x*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*delta;
+            this.particlesElevationAngle[i] += this.particlesDirections[i].y*this.threeBackgroundTypeParticleDatas[this.particlesId[i]].speed*delta;
 
             this.setParticlePosition(i);
           }
 
           this.particles.getAttribute('position').needsUpdate = true;
         },
-        checkParticleTimer(index){
+        checkParticleTimer(index, delta){
           if(this.particlesDirectionChangeTimer[index]>=this.threeBackgroundTypeParticleDatas[this.particlesId[index]].directionChangeTime){
             this.particlesDirectionChangeTimer[index] = 0;
             return true;
           }
           else {
-            this.particlesDirectionChangeTimer[index] += this.$store.state.updateLoopHandler.deltaTime;
+            this.particlesDirectionChangeTimer[index] += delta
             return false;
           }
         },
