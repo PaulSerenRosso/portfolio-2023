@@ -22,7 +22,7 @@ export default {
 
   <div class="end-redirector-panel-content">
 
-<div> {{this.textContent}}</div>
+<div class="end-redirector-panel-text"> {{this.textContent}}</div>
 <router-link class="text-content" :to="'/'+this.link">
   <main-button  key-event="endRedirectorReveal" :delay="1000">
 
@@ -66,10 +66,17 @@ export default {
   text-decoration: none;
 }
 
+.end-redirector-panel-text{
+  width: 60%;
+}
+
 @media (min-width: 768px) {
   .text-content
   {
     width: 30%;
+  }
+  .end-redirector-panel-text{
+    width: 70%;
   }
 }
 
@@ -77,6 +84,9 @@ export default {
   .text-content
   {
     width:20%;
+  }
+  .end-redirector-panel-text{
+    width: 80%;
   }
 }
 

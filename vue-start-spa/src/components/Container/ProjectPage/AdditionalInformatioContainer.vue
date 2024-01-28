@@ -1,13 +1,13 @@
-<script lang="ts">
-import {defineComponent} from 'vue'
 
-export default defineComponent({
+
+<script>
+export default {
   name: "AdditionalContentContainer"
-})
+}
 </script>
 
 <template>
-
+<slot></slot>
 </template>
 
 <style scoped>

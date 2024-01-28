@@ -69,11 +69,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.bold-content{
-  font-family: MyBold;
-  background-color: rgba(178,28,27,1) ;
 
-}
 
 @media (min-width: 768px) {
   .panel-container{

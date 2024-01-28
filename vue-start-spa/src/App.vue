@@ -88,7 +88,11 @@ html
   width: 100%;
   font-size: 11px;
 }
+.bold-content{
+  font-family: MyBold;
+  background-color: rgba(178,28,27,1) ;
 
+}
 
 @media (min-width: 768px) {
   html

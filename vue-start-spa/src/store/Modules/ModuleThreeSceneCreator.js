@@ -16,13 +16,21 @@ export  const moduleThreeSceneCreator =
                 "Javascript":"rgba(255,0,0,1)",
                 "C++":"rgba(255,0,0,1)",
                 "Tools":"rgba(0,0,255,1)",
-                "HTML/CSS":"rgba(0,255,0,1)",
                 "Vue.js":"rgba(255,0,0,1)",
                 "Three.js":"rgba(255,0,0,1)",
                 "Perforce":"rgba(255,0,0,1)",
                 "Physics":"rgba(255,0,0,1)",
-                "Maths":"rgba(255,0,0,1)",
-                "Git":"rgba(255,0,0,1)",
+                'Lead':"rgba(255,0,0,1)",
+                "Architecture":"rgba(255,0,0,1)",
+                "AI":"rgba(255,0,0,1)",
+                "Agile":"rgba(255,0,0,1)",
+                "Steam":"rgba(255,0,0,1)",
+                "Mobile":"rgba(255,0,0,1)",
+                "Blueprints":"rgba(255,0,0,1)",
+                "Web":"rgba(255,0,0,1)",
+                "Intership":"rgba(255,0,0,1)",
+                "Game Design":"rgba(255,0,0,1)"
+
 
 
             },
@@ -41,11 +49,17 @@ export  const moduleThreeSceneCreator =
                         context.state.onCameraYScrollHandler.raiseEvent();
                     }
                 }
+                window.onbeforeunload = () => {
+                    window.scrollTo({top:0, left:0, behavior:"instant"});
+                }
                 context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
             },
             createNewScene(context) {
                 this.scene = new Scene();
 
+                console.log(window.scrollY)
+                context.state.cameraYScroll = window.scrollY;
+                context.state.oldWindowScrollY =window.scrollY;
                 context.commit("addThreeObjectTag", {tag:"currentScene", obj:this.scene});
                 if( context.state.onCreateSceneHandler !== null)
                 {
