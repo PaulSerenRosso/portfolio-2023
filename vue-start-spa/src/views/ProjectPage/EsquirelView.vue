@@ -22,7 +22,8 @@ export default {
                         'Board & Tile System',
                         'State Machines',
                         'UI Programmation',
-                        'Lead Programmer']">
+                        'Lead Programmer']"
+                          :project-additional-picture-src="['PaulSerenRossoPhoto.jpg','logo.png']">
   <div>
     We were proud to be the class major of our promotion with
     this project. That's also the game in which players were litteraly shouting

@@ -11,7 +11,10 @@ export default {
   props:{
       textContent:String,
       link:String,
-  }
+
+
+  },
+
 }
 </script>
 
@@ -21,21 +24,26 @@ export default {
 <slide-in-animation :is-right-direction="false" :delay="0" key-event="endRedirectorReveal">
 
   <div class="end-redirector-panel-content">
-
 <div class="end-redirector-panel-text"> {{this.textContent}}</div>
-<router-link class="text-content" :to="'/'+this.link">
+<router-link    class="text-content" :to="'/'+this.link">
   <main-button  key-event="endRedirectorReveal" :delay="1000">
-
   Show it !</main-button></router-link>
-
-</div>
-
+  </div>
 </slide-in-animation>
   </span>
   <reveal-animation-trigger  :is-debug="false" :top-desktop="100" :top-large-desktop="100" :top-mobile="100" :top-tablet="100" reveal-animation-trigger-event-key="endRedirectorReveal"></reveal-animation-trigger>
 </div>
   <div class=""></div>
 </template>
+<style>
+.text-content{
+  width: 40%;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  text-decoration: none;
+}
+</style>
 
 <style scoped>
 .end-redirector-container{

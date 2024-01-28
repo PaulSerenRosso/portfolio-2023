@@ -6,7 +6,7 @@ import ProjectDescriptionContainer from "@/components/Container/ProjectPage/Proj
 import ThreeBackgroundParticles from "@/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue";
 import ThreeScene from "@/components/Three/ThreeScene.vue";
 import ProjectSummaryContainer from "@/components/Container/ProjectPage/ProjectSummaryContainer.vue";
-import AdditionalContentContainer from "@/components/Container/ProjectPage/AdditionalInformatioContainer.vue";
+import AdditionalContentContainer from "@/components/Container/ProjectPage/AdditionalContentContainer.vue";
 
 export default {
   name: "ProjectPageContainer",
@@ -31,8 +31,9 @@ export default {
   <project-summary-container :tags="this.projectTags" :key-points="this.projectKeyPoints" :project-name="this.projectTeam" :video-src="this.projectVideoSrc" :project-timeline="this.projectTimeline" :project-team="this.projectTeam" :project-description="this.projectDescription">
 
   </project-summary-container>
-  <additional-content-container >
-    <slot></slot>
+  <additional-content-container :picture-src-list="projectAdditionalPictureSrc">
+    <slot>
+    </slot>
   </additional-content-container>
 <end-redirector  link="keyProjects" text-content="Want to se more ? Take a look at the others Projects"></end-redirector>
 </template>

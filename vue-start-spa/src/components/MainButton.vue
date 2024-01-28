@@ -60,6 +60,7 @@ export default{
   transition: all .2s ease-in-out;
   font-family: MyBold;
   font-size: 1.2rem;
+
 }
 .main-button-reveal-animation{
     animation-name: reveal-animation;

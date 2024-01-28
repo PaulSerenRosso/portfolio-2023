@@ -183,7 +183,6 @@ position: absolute;
   margin-left: 0%;
   height: 100%;
   width: 100%;
-
   align-items: center;
 }
 
