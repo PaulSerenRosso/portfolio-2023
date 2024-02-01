@@ -2,19 +2,26 @@
 
 
 import ProjectPageContainer from "@/components/Container/ProjectPage/ProjectPageContainer.vue";
+import {ThreeContentType} from "@/composables/ThreeContentType";
 
 export default {
   name: "EsquirelView",
+  computed: {
+    ThreeContentType() {
+      return ThreeContentType
+    }
+  },
   components: {ProjectPageContainer},
 
 }
 </script>
 
 <template>
-<project-page-container project-name="Esquirel"
+<project-page-container
+                        project-name="Esquirel"
                         project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
                         project-timeline="November 2022 to January 2023"
-                        project-video-src="testVideo.mp4"
+                        project-video-src="logo.png"
                         :project-tags="['Unity', 'C#', 'Lead', 'Network', 'Architecture', 'Tools']"
                         :project-key-points="
                         ['Architecture thinking with UML diagrams',
@@ -23,7 +30,9 @@ export default {
                         'State Machines',
                         'UI Programmation',
                         'Lead Programmer']"
-                          :project-additional-picture-src="['PaulSerenRossoPhoto.jpg','logo.png']">
+                          :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
+                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
+                          :project-first-content-is-picture="true">
   <div>
     We were proud to be the class major of our promotion with
     this project. That's also the game in which players were litteraly shouting

@@ -39,7 +39,7 @@ export default {
   justify-content: space-around;
 }
 .resume-button{
-  width: 50%;
+  width: 60%;
   display: block;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -47,7 +47,7 @@ export default {
   text-decoration: none;
 }
 .resume-title-container{
-  width: 100%;
+  width: 95%;
   font-size: 2rem;
   text-align: center;
   font-family: MyBold;

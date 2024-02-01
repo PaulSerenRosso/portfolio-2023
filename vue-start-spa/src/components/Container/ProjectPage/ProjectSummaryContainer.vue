@@ -10,39 +10,43 @@ import SlideInAnimation from "@/components/Text/Animation/SlideInAnimation.vue";
 import ThreeTextGrid from "@/components/Three/Grid/ThreeTextGrid.vue";
 import {ThreeGridProperty} from "@/composables/ResponsiveProperty/ThreeGridProperty";
 import {Vector2} from "three";
+import {ThreeJsHtmlPositionLinkerProperty} from "@/composables/ResponsiveProperty/ThreeJsHtmlPositionLinkerProperty";
+import ThreePictureContainer from "@/components/Three/Picture/ThreePictureContainer.vue";
 
 export default {
   name: "ProjectSummaryContainer",
   components: {
+    ThreePictureContainer,
     ThreeTextGrid,
     SlideInAnimation, LettersAnimation, RevealAnimationTrigger, MacroContainer, ThreeVideoContainer},
   props:{
-    videoSrc:String,
+    contentSrc:String,
     projectName:String,
     projectTimeline:String,
     projectTeam:String,
     keyPoints:Array,
     tags:Array,
+    firstContentIsPicture:Boolean
   },
   data(){
     return{
-      threeVideoContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
+      threeContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.9),
               -30,
-              new Vector3(0.8,0.17,1)),
+              new Vector3(0.8,0.15,1)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.9),
               -30,
-              new Vector3(0.8,0.25,1)),
+              new Vector3(0.8,0.2,1)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.9),
               -30,
-              new Vector3(0.45,0.60,1)),
+              new Vector3(0.45,0.5,1)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.9),
               -30,
-              new Vector3(0.45,0.60,1)),
+              new Vector3(0.45,0.5,1)),
       ),
       threeGridTextResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(
@@ -73,6 +77,12 @@ export default {
               new Vector2(0.08,0.08),
               new Vector3(0.06,0.06,0.5),
               new Vector2(0.1,0.1))
+      ),
+      threeJsHtmlPositionLinkerPropertyGroup:new ResponsivePropertyGroup(
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
       )
     }
   }
@@ -115,9 +125,10 @@ export default {
 
         </slide-in-animation>
     </div>
-  <three-video-container macro-container-resize-event-key="ProjectSummaryMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup video-object-tag="TestVideo" :srcVideo="this.videoSrc"
-                         :offset-html-position-y=0
+  <three-video-container v-if="!this.firstContentIsPicture" :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" macro-container-resize-event-key="ProjectSummaryMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeContainerResponsivePropertyGroup video-object-tag="TestVideo" :srcVideo="this.contentSrc"
   > </three-video-container>
+    <three-picture-container v-if="this.firstContentIsPicture" macro-container-resize-event-key="ProjectSummaryMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeContainerResponsivePropertyGroup picture-object-tag="TestVideo" :src-picture="this.contentSrc"
+    > </three-picture-container>
     <reveal-animation-trigger :is-debug="false" :top-desktop="50" :top-large-desktop="50" :top-mobile="50" :top-tablet="50" reveal-animation-trigger-event-key="FirstReveal"></reveal-animation-trigger>
   </macro-container>
 <slot></slot>

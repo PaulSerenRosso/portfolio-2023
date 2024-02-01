@@ -20,7 +20,9 @@ export default {
     projectTeam:String,
     projectTags:Array,
     projectKeyPoints:Array,
-    projectAdditionalPictureSrc:Array,
+    projectAdditionalContentSrcs:Array,
+    projectAdditionalContentTypes:Array,
+    projectFirstContentIsPicture:Boolean,
   }
 }
 </script>
@@ -28,10 +30,10 @@ export default {
 <template>
   <three-scene  container-id="_canvasContainer"></three-scene>
   <three-background-particles></three-background-particles>
-  <project-summary-container :tags="this.projectTags" :key-points="this.projectKeyPoints" :project-name="this.projectTeam" :video-src="this.projectVideoSrc" :project-timeline="this.projectTimeline" :project-team="this.projectTeam" :project-description="this.projectDescription">
+  <project-summary-container :first-content-is-picture="this.projectFirstContentIsPicture" :tags="this.projectTags" :key-points="this.projectKeyPoints" :project-name="this.projectTeam" :content-src="this.projectVideoSrc" :project-timeline="this.projectTimeline" :project-team="this.projectTeam" >
 
   </project-summary-container>
-  <additional-content-container :picture-src-list="projectAdditionalPictureSrc">
+  <additional-content-container :content-type-list="this.projectAdditionalContentTypes"  :content-src-list="projectAdditionalContentSrcs">
     <slot>
     </slot>
   </additional-content-container>

@@ -44,9 +44,7 @@ export default defineComponent({
   <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-mobile-button">{{this.contactName}}</router-link>
   </div>
   <div id="_menuBarContainer">
-    <div class="menu-bar-title-container">
-      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-title">Paul Seren-Rosso</router-link>
-    </div>
+
     <div id="_menuBarMobile" v-if="this.checkPlatformDeviceIdForRenderMobileMenuBar()">
       <div class="menu-bar-mobile-burger-button"  v-on:click="this.changeStateOfMobileMenu()">
       <span :class="`menu-bar-mobile-burger-button-icon menu-bar-mobile-burger-button-icon-${this.mobileMenuButtonState}`"> </span>
@@ -59,6 +57,9 @@ export default defineComponent({
       <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-desktop-button">{{this.contactName}}</router-link>
       </div>
       </div>
+    <div class="menu-bar-title-container">
+      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-title">Paul Seren-Rosso</router-link>
+    </div>
   </div>
 </template>
 

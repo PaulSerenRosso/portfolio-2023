@@ -17,38 +17,46 @@ export default {
     console.log(this.htmlElement);
     console.log(this.threeBasicResponsivePropertyGroup);
     this.htmlElement.style.position="absolute";
-    this.htmlElement.style.transform ="translateX(-50%)"
+
+
       addRemoveAtSceneChangedResponsiveListener(this.placeHtmlElement);
     this.placeHtmlElement();
   },
   props: {
-    offsetHtmlPositionY:Number,
-    offsetHtmlPositionX:Number,
+    threeJsHtmlPositionLinkerPropertyGroup:Object,
     htmlElementIdName: String,
     threeBasicResponsivePropertyGroup:ResponsivePropertyGroup
   },
   methods:{
     placeHtmlElement (){
       const currentProperty = this.threeBasicResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
-
+      const currentPropertyForHtmlLinker = this.threeJsHtmlPositionLinkerPropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
       var width = window.innerWidth, height = window.innerHeight;
-      var pos = new Vector2(currentProperty.position.x,currentProperty.position.y) ;
-      if(this.offsetHtmlPositionX !== undefined){
-        pos.x += currentProperty.scale.x/2;
-      }
-      if(this.offsetHtmlPositionY !== undefined){
-        pos.y -= currentProperty.scale.y/2;
-      }
-      console.log(pos, currentProperty);
-      pos.x = remap(pos.x, -1,1,0,1) * 100;
-      pos.y =  remap(pos.y, -1,1,1,0 ) * 100 ;
 
-      if(this.offsetHtmlPositionX !== undefined){
-        pos.x =  pos.x+this.offsetHtmlPositionX;
+      var pos = new Vector2(currentProperty.initialPosition.x,currentProperty.initialPosition.y);
+
+      var scale = new Vector2(0,0);
+      if(currentPropertyForHtmlLinker.offsetX !== undefined){
+        scale.x += currentProperty.initialScale.x/2;
       }
-      if(this.offsetHtmlPositionY !== undefined){
-        pos.y =  pos.y+this.offsetHtmlPositionY;
+      if(currentPropertyForHtmlLinker.offsetY !== undefined){
+        scale.y += currentProperty.initialScale.y/2;
       }
+
+      pos.x += scale.x ;
+      pos.y +=  scale.y;
+      pos.x *=100;
+      pos.y *=100;
+
+      if(currentPropertyForHtmlLinker.offsetX !== undefined){
+        pos.x =  pos.x+currentPropertyForHtmlLinker.offsetX;
+        this.htmlElement.style.transform ="translateY(-50%)"
+      }
+      if(currentPropertyForHtmlLinker.offsetY !== undefined){
+        pos.y =  pos.y+currentPropertyForHtmlLinker.offsetY;
+        this.htmlElement.style.transform ="translateX(-50%)"
+      }
+      console.log("video html linker",  pos);
       this.htmlElement.style.top = pos.y+"%";
       this.htmlElement.style.left = pos.x+"%";
 

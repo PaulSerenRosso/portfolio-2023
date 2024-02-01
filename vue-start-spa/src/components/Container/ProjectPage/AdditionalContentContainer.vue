@@ -1,21 +1,29 @@
 <script>
 import MacroContainer from "@/components/Container/MacroContainer.vue";
-import ThreePictureGrid from "@/components/Three/Grid/ThreePictureGrid.vue";
+import ThreePictureGrid from "@/components/Three/Grid/ThreeContentGrid.vue";
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
 import {ThreeGridProperty} from "@/composables/ResponsiveProperty/ThreeGridProperty";
 import {Vector3} from "@/composables/Vector3";
 import {Vector2} from "three";
 import RevealAnimationTrigger from "@/components/RevealAnimationTrigger.vue";
 import SlideInAnimation from "@/components/Text/Animation/SlideInAnimation.vue";
+import ThreeContentGrid from "@/components/Three/Grid/ThreeContentGrid.vue";
+import {ThreeJsHtmlPositionLinkerProperty} from "@/composables/ResponsiveProperty/ThreeJsHtmlPositionLinkerProperty";
 
 export default {
   name: "AdditionalContentContainer",
-  components: {SlideInAnimation, RevealAnimationTrigger, ThreePictureGrid, MacroContainer},
+  components: {ThreeContentGrid, SlideInAnimation, RevealAnimationTrigger, MacroContainer},
   props:{
-    pictureSrcList :Array,
+    contentSrcList :Array,
+    contentTypeList:Array,
   },
   data(){
     return{
+      threeJsHtmlVideoPositionLinkerPropertyGroup: new ResponsivePropertyGroup(
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,5)),
       threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.9),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
           new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.9),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
@@ -32,7 +40,7 @@ export default {
     <slide-in-animation class="paragraph-container" key-event="SecondReveal" :delay="0" :is-right-direction="false">
       <slot></slot>
     </slide-in-animation>
-    <three-picture-grid  base-tag="AdditionalPicture" :picture-srcs="this.pictureSrcList" :three-grid-responsive-property-group="this.threeGridResponsivePropertyGroup" macro-container-resize-event-key="AdditionalContentContainer"></three-picture-grid>
+    <three-content-grid animation-reveal-video-button-key="SecondReveal" :three-js-html-video-position-linker-property-group="this.threeJsHtmlVideoPositionLinkerPropertyGroup" :content-types="this.contentTypeList" base-tag="AdditionalPicture" :content-srcs="this.contentSrcList" :three-grid-responsive-property-group="this.threeGridResponsivePropertyGroup" macro-container-resize-event-key="AdditionalContentContainer"></three-content-grid>
     <reveal-animation-trigger :is-debug="false" :top-desktop="30" :top-large-desktop="30" :top-mobile="30" :top-tablet="30" reveal-animation-trigger-event-key="SecondReveal"></reveal-animation-trigger>
   </macro-container>
 

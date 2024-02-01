@@ -5,6 +5,8 @@ import ThreeVideo from "@/components/Three/Video/ThreeVideo.vue";
 import ThreeEdges from "@/components/Three/ThreeEdges.vue";
 import MainButton from "@/components/MainButton.vue";
 import ThreeParent from "@/components/Three/ThreeParent.vue";
+import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
+import {ThreeJsHtmlPositionLinkerProperty} from "@/composables/ResponsiveProperty/ThreeJsHtmlPositionLinkerProperty";
 
 export default {
 
@@ -15,7 +17,7 @@ export default {
   props: {
     srcVideo: String,
     videoObjectTag:String,
-    offsetHtmlPositionY:Number,
+    threeJsHtmlPositionLinkerPropertyGroup:Object,
     keyEventTriggerAnimation:String,
     threeBasicResponsivePropertyGroup:Object,
     delayAnimationReveal:Number,
@@ -31,7 +33,7 @@ export default {
  <div :id="this.videoObjectTag+'Button'" class="video-button"><main-button :delay="this.delayAnimationReveal" :key-event="this.keyEventTriggerAnimation"> <div > Show it in fullscreen!  </div></main-button> </div>
   <three-js-html-position-linker  :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup"
                                   :html-element-id-name="this.videoObjectTag+'Button'"
-                                  :offset-html-position-y="this.offsetHtmlPositionY" ></three-js-html-position-linker>
+                                  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" ></three-js-html-position-linker>
   <three-edges  :parent-object-tag="this.videoObjectTag" :on-parent-created-key="this.videoObjectTag+'OnCreated'"  :edges-width-thickness=0.03  :edges-z-thickness=0.15></three-edges>
 </template>
 
