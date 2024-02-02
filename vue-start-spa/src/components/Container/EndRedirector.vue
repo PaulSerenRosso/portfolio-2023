@@ -72,6 +72,7 @@ export default {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   text-decoration: none;
+  font-size: 11px;
 }
 
 .end-redirector-panel-text{
@@ -81,6 +82,7 @@ export default {
 @media (min-width: 768px) {
   .text-content
   {
+    font-size: 20px;
     width: 30%;
   }
   .end-redirector-panel-text{
@@ -92,6 +94,7 @@ export default {
   .text-content
   {
     width:20%;
+    font-size: 17px;
   }
   .end-redirector-panel-text{
     width: 80%;

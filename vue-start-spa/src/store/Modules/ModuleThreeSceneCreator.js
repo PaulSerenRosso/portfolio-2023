@@ -4,6 +4,10 @@ import {EffectComposer} from "three/addons/postprocessing/EffectComposer";
 import {RenderPass} from "three/addons/postprocessing/RenderPass";
 import createEventHandler from "@/composables/EventHandler";
 import {lerp} from "@/composables/Math";
+import {
+    addRemoveAtSceneChangedResponsiveListener,
+    addRemoveAtSceneChangedUpdateListener
+} from "@/composables/StoreHelper";
 
 const languageColor ="rgb(129,80,213)";
 const specialityColor="rgb(75,173,204)";
@@ -95,12 +99,9 @@ export  const moduleThreeSceneCreator =
                 const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true  });
                 setSize();
 
-                context.rootState.responsiveEventHandler.onWindowResizeHandler.addEventListener(setSize);
+             addRemoveAtSceneChangedResponsiveListener(setSize);
                 sceneContainer.appendChild(renderer.domElement);
 
-                const composer = new EffectComposer( renderer );
-                const renderPass =  new RenderPass( this.scene, camera );
-                composer.addPass(renderPass);
                 renderer.setClearColor(0xffffff, 0);
 
                 const animate= () => {
@@ -119,10 +120,10 @@ export  const moduleThreeSceneCreator =
                     */
 
 
-                    composer.render();
+                    renderer.render(this.scene, camera);
                     // particleMesh.rotation.y += 0.001;
                     // particleMesh.position.y = Math.sin(clock.getElapsedTime()*2)*0.1;
                 }
-                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener(animate);
+                addRemoveAtSceneChangedUpdateListener(animate);
 }
         })
