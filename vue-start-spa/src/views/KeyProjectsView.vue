@@ -14,7 +14,7 @@ export default {
 <template>
   <three-scene  container-id="_canvasContainer"></three-scene>
   <three-background-particles></three-background-particles>
-  <projects-container :picture-srcs="['testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg']"
+  <projects-container :picture-srcs="['testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg',  'testPicture.jpg']"
                       :page-links="['INRS','Esquirel','Boby','Jab', 'MemoryOfHope']"
                       :tag-texts-lists="[
                           ['Steam','UE5', 'Blueprints', 'Physics','Perforce','C++']
@@ -22,7 +22,7 @@ export default {
                       ,['Internship', 'Web', 'Game Design', 'Agile', 'Javascript'],
                       ['Mobile','Unity', 'Tools', 'AI', 'Lead', 'C#' ],
                        ['Unity', 'C#','Physics', '3C', 'Tools', 'Lead']]"
-                      :description-texts="['1A project f ds  fdjskq m ldkjf qs lkjd fdslq l','2A project f ds  fdjskq m ldkjf qs lkjd fdslq l','3A project f ds  fdjskq m ldkjf qs lkjd fdslq l','4A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
+                      :description-texts="['1A project f ds  fdjskq m ldkjf qs lkjd fdslq l','2A project f ds  fdjskq m ldkjf qs lkjd fdslq l','3A project f ds  fdjskq m ldkjf qs lkjd fdslq l','4A project f ds  fdjskq m ldkjf qs lkjd fdslq l', '5A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
                       :title-texts="['It not a Rocket Science !','Esquirel','Boby','Jab','Memory Of Hope']" ></projects-container>
   <div class="container"></div>
   <end-redirector text-content="Want to see more ? Watch my solo projects !" link="SoloProjects"></end-redirector>
