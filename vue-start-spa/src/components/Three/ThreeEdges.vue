@@ -3,7 +3,7 @@
 import {
   BoxGeometry,
   Mesh,
-  MeshBasicMaterial,
+  MeshBasicMaterial, ShaderMaterial, Vector3,
 } from "three";
 
 
@@ -11,6 +11,9 @@ import {
   addEventListener,
   getThreeTagObject
 } from "@/composables/StoreHelper";
+import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUtils";
+
+
 
 export default {
   name: "ThreeEdges",
@@ -19,22 +22,11 @@ export default {
     edgesWidthThickness: Number,
     edgesZThickness: Number,
     onParentCreatedKey: String,
+
   },
   data() {
     return {
-      currentSideColored: null,
       parentObj: null,
-      edgeTopMaterial: [],
-      edgeDownMaterial: [],
-      edgeLeftMaterial: [],
-      edgeRightMaterial: [],
-      edgeCornerTopLeftMaterial: [],
-      edgeCornerTopRightMaterial: [],
-      edgeCornerDownLeftMaterial: [],
-      edgeCornerDownRightMaterial: [],
-      darkMaterial: null,
-      lightMaterial: null,
-      transparentMaterial:null,
     }
   },
   mounted() {
@@ -56,31 +48,21 @@ export default {
       this.parentObj = getThreeTagObject(this.parentObjectTag);
       const parentObjGeometry = this.parentObj.geometry;
 
-      const edgeParentScaleXGeometry = new BoxGeometry(parentObjGeometry.parameters.width, this.edgesWidthThickness, this.edgesZThickness);
-      const edgeParentScaleYGeometry = new BoxGeometry(this.edgesWidthThickness, parentObjGeometry.parameters.height, this.edgesZThickness);
-      const edgeParentCornerGeometry = new BoxGeometry(this.edgesWidthThickness,this.edgesWidthThickness, this.edgesZThickness);
-      this.lightMaterial = new MeshBasicMaterial({color: "white", fog: false});
-      this.darkMaterial = new MeshBasicMaterial({color: 0x12173D, fog: false});
-      this.transparentMaterial = new MeshBasicMaterial({visible:false });
-      this.edgeTopMaterial = [this.transparentMaterial, this.transparentMaterial, this.darkMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeDownMaterial = [this.lightMaterial, this.lightMaterial, this.darkMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeLeftMaterial = [this.darkMaterial, this.darkMaterial, this.transparentMaterial, this.transparentMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeRightMaterial = [this.darkMaterial, this.darkMaterial,this.transparentMaterial, this.transparentMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeCornerTopLeftMaterial = [this.transparentMaterial, this.darkMaterial, this.darkMaterial, this.transparentMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeCornerTopRightMaterial = [this.darkMaterial, this.transparentMaterial, this.darkMaterial, this.transparentMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeCornerDownRightMaterial = [this.darkMaterial, this.transparentMaterial, this.transparentMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];
-      this.edgeCornerDownLeftMaterial = [this.transparentMaterial, this.darkMaterial, this.transparentMaterial, this.darkMaterial, this.lightMaterial, this.darkMaterial];
-      const topEdgeMesh = new Mesh(edgeParentScaleXGeometry, this.edgeTopMaterial);
-      const downEdgeMesh = new Mesh(edgeParentScaleXGeometry, this.edgeDownMaterial);
-      const leftEdgeMesh = new Mesh(edgeParentScaleYGeometry, this.edgeLeftMaterial);
-      const rightEdgeMesh = new Mesh(edgeParentScaleYGeometry, this.edgeRightMaterial);
-      const topRightCornerMesh = new Mesh(edgeParentCornerGeometry, this.edgeCornerTopRightMaterial);
-      const topLeftCornerMesh = new Mesh(edgeParentCornerGeometry, this.edgeCornerTopLeftMaterial);
-      const downRightCornerMesh = new Mesh(edgeParentCornerGeometry, this.edgeCornerDownRightMaterial);
-      const downLeftCornerMesh = new Mesh(edgeParentCornerGeometry, this.edgeCornerDownLeftMaterial);
+      const edgeParentScaleXGeometry = new BoxGeometry(parentObjGeometry.parameters.width+this.edgesWidthThickness*2, this.edgesWidthThickness, this.edgesZThickness*4);
+      const edgeParentScaleYGeometry = new BoxGeometry(this.edgesWidthThickness, parentObjGeometry.parameters.height, this.edgesZThickness*4);
+      const rightEdgeGeometry = edgeParentScaleYGeometry.clone();
+      const leftEdgeGeometry = edgeParentScaleYGeometry.clone();
+      const topEdgeGeometry = edgeParentScaleXGeometry.clone();
+      const downEdgeGeometry = edgeParentScaleXGeometry.clone();
       const halfEdgesWidthThickness = this.edgesWidthThickness / 2;
       const halfParentGeometryHeight = parentObjGeometry.parameters.height / 2;
       const halfParentGeometryWidth = parentObjGeometry.parameters.width / 2;
+      rightEdgeGeometry.translate(halfEdgesWidthThickness + halfParentGeometryWidth,0,0);
+      leftEdgeGeometry.translate(-halfEdgesWidthThickness - halfParentGeometryWidth,0,0);
+      topEdgeGeometry.translate(0,halfEdgesWidthThickness + halfParentGeometryHeight,0);
+      downEdgeGeometry.translate(0,-halfEdgesWidthThickness - halfParentGeometryHeight,0);
+
+      /*
       rightEdgeMesh.position.setX(halfEdgesWidthThickness + halfParentGeometryWidth);
       leftEdgeMesh.position.setX(-halfEdgesWidthThickness - halfParentGeometryWidth);
       topEdgeMesh.position.setY(halfEdgesWidthThickness + halfParentGeometryHeight);
@@ -89,15 +71,55 @@ export default {
       topLeftCornerMesh.position.set(-parentObjGeometry.parameters.width/2-halfEdgesWidthThickness,parentObjGeometry.parameters.height/2+halfEdgesWidthThickness, 0);
       downRightCornerMesh.position.set(parentObjGeometry.parameters.width/2+halfEdgesWidthThickness,-parentObjGeometry.parameters.height/2-halfEdgesWidthThickness, 0);
       downLeftCornerMesh.position.set(-parentObjGeometry.parameters.width/2-halfEdgesWidthThickness,-parentObjGeometry.parameters.height/2-halfEdgesWidthThickness, 0);
+*/
 
-      this.parentObj.add(topEdgeMesh);
-      this.parentObj.add(downEdgeMesh);
-      this.parentObj.add(leftEdgeMesh);
-      this.parentObj.add(rightEdgeMesh);
-      this.parentObj.add(topRightCornerMesh);
-      this.parentObj.add(topLeftCornerMesh);
-      this.parentObj.add(downRightCornerMesh);
-      this.parentObj.add(downLeftCornerMesh);
+// Create a custom shader material
+      var vertexShader = `
+  varying vec3 vNormal;
+  void main() {
+
+
+    // Transform the normal to the correct orientation in camera space
+    vNormal = normal;
+    // Calculate the final position in camera space without modifying z
+
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * mvPosition;
+  }
+`;
+
+      var fragmentShader = `
+      varying vec3 vNormal;
+  uniform vec3 vectorToCompare; // Vector value to compare with
+  void main() {
+    vec3 faceNormal = normalize(vNormal); // Calculate face normal
+    float dotProduct = dot(faceNormal, vectorToCompare); // Calculate dot product
+
+    if (dotProduct >= 0.0) {
+      gl_FragColor =vec4(0.0706, 0.0902, 0.2392, 1.0); // Set the color to black for matching faces
+    } else {
+      gl_FragColor = vec4(1, 1, 1, 1.0); // Set the color to white for non-matching faces
+    }
+  }
+`;
+
+      var material = new ShaderMaterial({
+        uniforms: {
+          vectorToCompare: { value: new Vector3(0, 0, -1) }, // Replace with your desired vector value
+        },
+        vertexShader: vertexShader,
+        fragmentShader: fragmentShader,
+      });
+
+      const geometry=BufferGeometryUtils.mergeGeometries([topEdgeGeometry, downEdgeGeometry, rightEdgeGeometry, leftEdgeGeometry]);
+      geometry.computeBoundingSphere();
+geometry.computeTangents()
+      geometry.computeVertexNormals();
+geometry.computeBoundingBox();
+      const mergedMesh = new Mesh(geometry, material);
+
+      this.parentObj.add(mergedMesh);
+
 
 
 
