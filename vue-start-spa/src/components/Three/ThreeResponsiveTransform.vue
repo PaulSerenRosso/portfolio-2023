@@ -30,6 +30,7 @@ export default {
     ratioObjTag:String,
     eventKeyForGetRatioObjTag:String,
     macroContainerResizeEventKey:String,
+    isHeightPriority:Boolean
 
   },
   mounted() {
@@ -74,7 +75,6 @@ export default {
           var quaternion = new Quaternion();
           quaternion.setFromAxisAngle(new Vector3(0, 1, 0), this.currentProperty.rotationY * degToRad); // Rotate around X axis
           this.currentObj.setRotationFromQuaternion(quaternion);
-
           //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
           this.updateDynamicObjectPositionScene();
         }
@@ -90,7 +90,7 @@ export default {
           endPointForMeasuringSize.y-startPointForMeasuringSize.y,this.currentProperty.scale.z);
       const maxScaleX = startSize.x/this.currentRatioObj.geometry.parameters.width;
       const maxScaleY = startSize.y;
-      const maxScale = Math.min(maxScaleX, maxScaleY);
+      const maxScale = this.isHeightPriority ? maxScaleY: Math.min(maxScaleX, maxScaleY);
       this.currentObj.scale.set(maxScale, maxScale, this.currentProperty.scale.z)
 
     },

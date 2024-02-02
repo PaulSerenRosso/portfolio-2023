@@ -66,6 +66,7 @@ export default {
       this.height = this.canvas.height;
       this.width = this.canvas.width;
        new TextureLoader().load(imageDataUrl, (texture)=>{
+         texture.colorSpace ="srgb" ;
         this.material = new MeshBasicMaterial({ map: texture});
 
         const geometry = new PlaneGeometry(this.width/this.height, 1);

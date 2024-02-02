@@ -16,10 +16,14 @@ export default {
   <three-scene  container-id="_canvasContainer"></three-scene>
   <three-background-particles></three-background-particles>
   <projects-container :picture-srcs="['testPicture.jpg','testPicture.jpg','testPicture.jpg','testPicture.jpg']"
-                      :page-links="['Contact','Esquirel','','Contact']"
-                      :tag-texts-lists="[['Unity', 'UE5', 'Git'],['Unity', 'UE5', 'Git','Unity', 'UE5', 'Git'],['Unity', 'UE5'], ['Unity', 'UE5','C++']]"
+                      :page-links="['Portfolio','DeepLearning','Boids','Bubbles']"
+                      :tag-texts-lists="[
+                          ['Web', 'Javascript', 'Vue.js', 'Three.js','UI/UX']
+                          ,['Unity', 'AI', 'C#']
+                          ,['Unity', 'Optimization','AI', 'C#'],
+                           ['UE5', 'HLSL','Tech-Art']]"
                       :description-texts="['1A project f ds  fdjskq m ldkjf qs lkjd fdslq l','2A project f ds  fdjskq m ldkjf qs lkjd fdslq l','3A project f ds  fdjskq m ldkjf qs lkjd fdslq l','4A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
-                      :title-texts="['It not a Rocket Science','Esquirel','Memory Of Hope','Jab']" ></projects-container>
+                      :title-texts="['Portfolio','Deep Learning','Boids','Bubbles']" ></projects-container>
   <div class="container"></div>
   <end-redirector text-content="If you like my projects get my contacts ! !" link="Contact"></end-redirector>
 </template>

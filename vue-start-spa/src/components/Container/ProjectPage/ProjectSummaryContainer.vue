@@ -54,14 +54,14 @@ export default {
               new Vector3(0.5,0.27,0.9),
               40,
               new Vector2(0.01,0.05),
-              new Vector3(0.25,0.03,0.2),
+              new Vector3(0.25,0.025,0.2),
               new Vector2(0.1,0.1)) ,
           new ThreeGridProperty(
               new Vector3(1,0.3,0),
               new Vector3(0.5,0.27,0.9),
               40,
               new Vector2(0.1,0.05),
-              new Vector3(0.2,0.03,0.2),
+              new Vector3(0.2,0.025,0.2),
               new Vector2(0.1,0.1)) ,
           new ThreeGridProperty(
               new Vector3(0.6,0.5,0.1),
@@ -93,7 +93,7 @@ export default {
   <macro-container resize-event-key="ProjectSummaryMacroContainer" :height-desktop="1" :height-mobile="1.5" :height-large-desktop="1" :height-tablet="1.5">
    <div id="bigTitleContainer">
      <div id="bigTitle">
-       <letters-animation key-event="FirstReveal" text-content="`Esquirel`"> </letters-animation>
+       <letters-animation key-event="FirstReveal" :text-content="'`'+this.projectName+'`'"> </letters-animation>
      </div>
    </div>
 
@@ -115,10 +115,13 @@ export default {
       </div>
         <slide-in-animation v-for="(keypoint, index) in this.keyPoints" :key="index" class="keypoints-container" key-event="FirstReveal" :is-right-direction="true" :delay="1000">
         <div>
-      <svg  width="1rem" height="1rem" >
-
-            <circle  cx="0.5rem" cy="0.6rem" r="0.3rem" stroke="rgba(58,68,138,1)" stroke-width="0.1rem" fill="transparent"/>
-        <circle   cx="0.5rem" cy="0.6rem" r="0.15rem" stroke="transparent"  fill="white"/>
+          <svg style="background-color: white" v-if="index === 0" width="1rem" height="1rem" >
+            <path fill=" rgba(58,68,138,1)" d="M0,0.054V20h21V0.054H0z M15.422,18.129l-5.264-2.768l-5.265,2.768l1.006-5.863L1.64,8.114l5.887-0.855
+	l2.632-5.334l2.633,5.334l5.885,0.855l-4.258,4.152L15.422,18.129z"/>
+          </svg>
+      <svg v-else  width="1rem" height="1rem" >
+            <circle   cx="0.5rem" cy="0.6rem" r="0.3rem" stroke="rgba(58,68,138,1)" stroke-width="0.1rem" fill="transparent"/>
+        <circle v-if="index !== 0"  cx="0.5rem" cy="0.6rem" r="0.15rem" stroke="transparent"  fill="white"/>
           </svg>
           <span  style="padding-left: 0.5rem">{{keypoint}}</span>
         </div>
@@ -141,11 +144,11 @@ export default {
 
 #bigTitleContainer{
 position: absolute;
-  top: 7%;
+  top: 10%;
   left: 0%;
 
   width:100%;
-  font-size: 3rem;
+  font-size: 2.2rem;
   text-align: center;
   font-family: MyBlack;
 
@@ -201,7 +204,7 @@ position: absolute;
 @media (min-width: 768px) {
 
   #bigTitleContainer{
-    top: 7%;
+    top: 10%;
     width:100%;
 
   }
@@ -222,7 +225,7 @@ position: absolute;
 @media (min-width: 1024px) {
 
   #bigTitleContainer{
-    top: 7%;
+    top: 10%;
 
     width:45%;
 
@@ -242,7 +245,7 @@ position: absolute;
 @media (min-width: 1280px) {
 
   #bigTitleContainer{
-    top: 7%;
+    top: 10%;
     width:45%;
 
   }

@@ -26,9 +26,9 @@ export default {
     return{
       threeBackgroundParticlesResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBackgroundParticlesResponsiveProperty(100),
-          new ThreeBackgroundParticlesResponsiveProperty(150),
-          new ThreeBackgroundParticlesResponsiveProperty(200),
-          new ThreeBackgroundParticlesResponsiveProperty(200),
+          new ThreeBackgroundParticlesResponsiveProperty(100),
+          new ThreeBackgroundParticlesResponsiveProperty(100),
+          new ThreeBackgroundParticlesResponsiveProperty(100),
       ),
       threeBackgroundTypeParticleDatas:[
           new ThreeBackgroundTypeParticleData( 20,new Color(0.69, 0.109, 0.105),0.2,1),

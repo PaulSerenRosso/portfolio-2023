@@ -150,7 +150,7 @@ export default {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   text-decoration: none;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 @media (min-width: 768px) {

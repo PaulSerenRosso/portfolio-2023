@@ -5,7 +5,7 @@ import ProjectPageContainer from "@/components/Container/ProjectPage/ProjectPage
 import {ThreeContentType} from "@/composables/ThreeContentType";
 
 export default {
-  name: "EsquirelView",
+  name: "INRSView",
   computed: {
     ThreeContentType() {
       return ThreeContentType
@@ -19,11 +19,11 @@ export default {
 <template>
 <project-page-container
     :project-is-solo-project="false"
-                        project-name="Esquirel"
+                        project-name="It's not Rocket Science !"
                         project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
                         project-timeline="November 2022 to January 2023"
                         project-video-src="logo.png"
-                        :project-tags="['Unity', 'C#', 'Lead', 'Network', 'Architecture', 'Tools']"
+                        :project-tags="['Steam','UE5', 'Blueprints', 'Physics','Perforce','C++']"
                         :project-key-points="
                         ['Architecture thinking with UML diagrams',
                         'Ability System',

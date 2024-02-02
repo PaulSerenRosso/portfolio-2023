@@ -26,13 +26,13 @@ pageLinks:Array,
             new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.4,0.6,0.9),20,new Vector2(0.3,0.25), new Vector3(0.2,0.2,1),new Vector2(0.1,0.1))
         ),
       threeGridTextResponsivePropertyGroupTemplate:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.10,0),20,new Vector2(0.05,0.05), new Vector3(0.09,0.09,0.5),new Vector2(0.1,0.1)),
-          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.10,0),20,new Vector2(0.05,0.05), new Vector3(0.09,0.09,0.5),new Vector2(0.1,0.1)) ,
-          new ThreeGridProperty(new Vector3(0.5,0.2,0), new Vector3(0.1,0.22,0),20,new Vector2(0.02,0.05), new Vector3(0.04,0.04,0.5),new Vector2(0.1,0.1)),
-          new ThreeGridProperty(new Vector3(0.5,0.2,0), new Vector3(0.1,0.22,0),20,new Vector2(0.02,0.05), new Vector3(0.04,0.04,0.5),new Vector2(0.1,0.1))
+          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.10,0),20,new Vector2(0.15,0.03), new Vector3(0.05,0.025,0.5),new Vector2(0.15,0.1)),
+          new ThreeGridProperty(new Vector3(0.6,0.1,0), new Vector3(0,0.10,0),20,new Vector2(0.15,0.03), new Vector3(0.05,0.025,0.5),new Vector2(0.15,0.1)),
+          new ThreeGridProperty(new Vector3(0.5,0.2,0), new Vector3(0.1,0.22,0),20,new Vector2(0.04,0.05), new Vector3(0.027,0.027,0.5),new Vector2(0.1,0.1)),
+          new ThreeGridProperty(new Vector3(0.5,0.2,0), new Vector3(0.1,0.22,0),20,new Vector2(0.04,0.05), new Vector3(0.04,0.04,0.5),new Vector2(0.1,0.1))
       ),
       threeJsHtmlPositionLinkerPropertyGroup:new ResponsivePropertyGroup(
-          new ThreeJsHtmlPositionLinkerProperty(undefined,12),
+          new ThreeJsHtmlPositionLinkerProperty(undefined,14),
           new ThreeJsHtmlPositionLinkerProperty(undefined,14),
           new ThreeJsHtmlPositionLinkerProperty(2,undefined,),
           new ThreeJsHtmlPositionLinkerProperty(2,undefined,),

@@ -5,31 +5,45 @@ import {RenderPass} from "three/addons/postprocessing/RenderPass";
 import createEventHandler from "@/composables/EventHandler";
 import {lerp} from "@/composables/Math";
 
+const languageColor ="rgb(129,80,213)";
+const specialityColor="rgb(75,173,204)";
+const unityColor ="rgb(89,168,77)";
+const unrealColor="rgb(231,108,80)";
+const webColor="rgb(173,61,61)";
+const plateformColor="rgb(76,97,203)";
+const internshipColor="rgb(74,171,136)";
+const communicationColor="rgb(175,90,172)";
+const gameDesignColor="rgb(96,96,96)";
 export  const moduleThreeSceneCreator =
     new StoreModule(
         { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,
             textsColor:{
-                "C#":"rgba(255,0,0,1)",
-                "UE5":"rgba(0,0,255,1)",
-                "Unity":"rgba(0,255,0,1)",
-                "Network":"rgba(255,0,0,1)",
-                "Javascript":"rgba(255,0,0,1)",
-                "C++":"rgba(255,0,0,1)",
-                "Tools":"rgba(0,0,255,1)",
-                "Vue.js":"rgba(255,0,0,1)",
-                "Three.js":"rgba(255,0,0,1)",
-                "Perforce":"rgba(255,0,0,1)",
-                "Physics":"rgba(255,0,0,1)",
-                'Lead':"rgba(255,0,0,1)",
-                "Architecture":"rgba(255,0,0,1)",
-                "AI":"rgba(255,0,0,1)",
-                "Agile":"rgba(255,0,0,1)",
-                "Steam":"rgba(255,0,0,1)",
-                "Mobile":"rgba(255,0,0,1)",
-                "Blueprints":"rgba(255,0,0,1)",
-                "Web":"rgba(255,0,0,1)",
-                "Intership":"rgba(255,0,0,1)",
-                "Game Design":"rgba(255,0,0,1)"
+                "C#":languageColor,
+                "UE5":unrealColor,
+                "Unity":unityColor,
+                "Network":specialityColor,
+                "Javascript":languageColor,
+                "C++":languageColor,
+                "Tools":specialityColor,
+                "Vue.js":webColor,
+                "Three.js":webColor,
+                "Perforce":unrealColor,
+                "Physics":specialityColor,
+                'Lead':communicationColor,
+                "Architecture":specialityColor,
+                "AI":specialityColor,
+                "Agile":communicationColor,
+                "Steam":plateformColor,
+                "Mobile":plateformColor,
+                "Blueprints":unrealColor,
+                "Web":webColor,
+                "Internship":internshipColor,
+                "Game Design":gameDesignColor,
+                "3C" :specialityColor,
+                "Optimization" :specialityColor,
+                "HLSL" :languageColor,
+                "Tech-Art":specialityColor,
+                'UI/UX':gameDesignColor,
 
 
 
