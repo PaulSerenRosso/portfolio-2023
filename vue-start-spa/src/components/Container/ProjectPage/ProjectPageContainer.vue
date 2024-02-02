@@ -23,6 +23,7 @@ export default {
     projectAdditionalContentSrcs:Array,
     projectAdditionalContentTypes:Array,
     projectFirstContentIsPicture:Boolean,
+    projectIsSoloProject:Boolean,
   }
 }
 </script>
@@ -37,7 +38,7 @@ export default {
     <slot>
     </slot>
   </additional-content-container>
-<end-redirector  link="keyProjects" text-content="Want to se more ? Take a look at the others Projects"></end-redirector>
+<end-redirector  :link="this.projectIsSoloProject? 'soloProjects':'keyProjects'" text-content="Want to se more ? Take a look at the others Projects"></end-redirector>
 </template>
 
 <style scoped>

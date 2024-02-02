@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeHtmlLinkerGrid.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeJsHtmlPositionLinkerProperty.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ThreeContentType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/KeyProjectsContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/KeyProjectsContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/KeyProjectsContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ResumeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/ResumeContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreePictureGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeContentGrid.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ContactLinkData.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ContactLinkData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ContactView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ContactView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/EsquirelView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/EsquirelView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +27,8 @@
       <list>
         <option value="package.json" />
         <option value="HTML File" />
-        <option value="Vue Options API Component" />
         <option value="JavaScript File" />
+        <option value="Vue Options API Component" />
       </list>
     </option>
   </component>
@@ -252,7 +243,9 @@
       <workItem from="1706600224413" duration="2796000" />
       <workItem from="1706634525643" duration="4176000" />
       <workItem from="1706647193328" duration="46000" />
-      <workItem from="1706804567636" duration="7588000" />
+      <workItem from="1706804567636" duration="7661000" />
+      <workItem from="1706813269811" duration="601000" />
+      <workItem from="1706871586769" duration="7919000" />
     </task>
     <servers />
   </component>

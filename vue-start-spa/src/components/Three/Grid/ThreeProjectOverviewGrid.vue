@@ -64,6 +64,7 @@ export default {
         const position = this.threeGridResponsivePropertyGroup.responsivePropertyGroup[j].placeElement(i);
 
         position.y += this.threeGridTextResponsivePropertyGroup.responsivePropertyGroup[j].position.y;
+        position.x +=this.threeGridTextResponsivePropertyGroup.responsivePropertyGroup[j].position.x;
         const rotation =this.threeGridTextResponsivePropertyGroup.responsivePropertyGroup[j].rotation;
         const scale = new Vector3(this.threeGridResponsivePropertyGroup.responsivePropertyGroup[j].elementScale.x+this.threeGridTextResponsivePropertyGroup.responsivePropertyGroup[j].scale.x,
             this.threeGridTextResponsivePropertyGroup.responsivePropertyGroup[j].scale.y,
@@ -115,7 +116,8 @@ export default {
 <style scoped>
 
 .container{
-  width: 80%;
+
+  width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -123,32 +125,23 @@ export default {
   align-items: center;
 }
 
-@media (min-width: 768px) {
-  .container
-  {
-    width: 80%;
-  }
-}
 
-@media (min-width: 1024px) {
-  .container
-  {
-    width: 40%;
-  }
-}
 
 .button{
-  width: 40%;
+
+    width: 40%;
+
 }
 .title{
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: MyBold;
   padding-bottom: 0.25rem;
 }
 
+
 .description{
 
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding-bottom: 0.5rem;
 }
 
@@ -157,5 +150,45 @@ export default {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   text-decoration: none;
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .container
+  {
+    width: 80%;
+  }
+
+  .text-link{
+    font-size: 12px;
+  }
+  .button{
+    width: 40%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .container
+  {
+    width: 20%;
+  }
+
+  .text-link{
+    font-size: 12px;
+  }
+  .button{
+    width: 90%;
+  }
+
+}
+
+@media (min-width: 1280px) {
+  .text-link{
+    font-size: 12px;
+  }
+  .button{
+    width: 90%;
+  }
 }
 </style>

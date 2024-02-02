@@ -7,6 +7,7 @@ export default defineComponent({
     return{
       aboutMeName :"About Me",
       keyProjectsName:"Key Projects",
+      soloProjectsName:"Solo Projects",
       contactName :"Contact",
       mobileMenuButtonState:"closed",
   }
@@ -41,6 +42,7 @@ export default defineComponent({
   <div v-if="this.checkPlatformDeviceIdForRenderMobileMenuBar()" id="_menuBarMobilePopUp" :class="`menu-bar-mobile-pop-up-${this.mobileMenuButtonState}`">
   <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-button menu-bar-mobile-button">{{this.aboutMeName}}</router-link>
   <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/keyProjects" class="menu-bar-button menu-bar-mobile-button">{{this.keyProjectsName}}</router-link>
+    <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/soloProjects" class="menu-bar-button menu-bar-mobile-button">{{this.soloProjectsName}}</router-link>
   <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-mobile-button">{{this.contactName}}</router-link>
   </div>
   <div id="_menuBarContainer">
@@ -54,6 +56,7 @@ export default defineComponent({
       <div id="_menuBarDesktopButtonsContainer">
       <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-button menu-bar-desktop-button">{{this.aboutMeName}}</router-link>
       <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/keyProjects" class="menu-bar-button menu-bar-desktop-button">{{this.keyProjectsName}}</router-link>
+        <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/soloProjects" class="menu-bar-button menu-bar-desktop-button">{{this.soloProjectsName}}</router-link>
       <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-desktop-button">{{this.contactName}}</router-link>
       </div>
       </div>

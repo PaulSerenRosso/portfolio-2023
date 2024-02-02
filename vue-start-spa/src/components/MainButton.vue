@@ -52,14 +52,14 @@ export default{
   border-color: rgba(245,252,255,1) ;
   border-style : double;
   border-width: 10px;
-  padding-top: 1.1rem;
-  padding-bottom: 1.1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 1.1em;
+  padding-bottom: 1.1em;
+  padding-left: 1em;
+  padding-right: 1em;
   text-align: center;
   transition: all .2s ease-in-out;
   font-family: MyBold;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 
 }
 .main-button-reveal-animation{

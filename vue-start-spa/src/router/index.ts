@@ -10,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/INRS',
     name: 'INRS',
-    component: () => import('../views/ProjectsView.vue')
+    component: () => import('../views/KeyProjectsView.vue')
   },
   {
     path: '/Esquirel',
@@ -20,18 +20,24 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/Boby',
     name: 'Boby',
-    component: () => import('../views/ProjectsView.vue')
+    component: () => import('../views/KeyProjectsView.vue')
   },
   {
     path: '/Jab',
     name: 'Jab',
-    component: () => import('../views/ProjectsView.vue')
+    component: () => import('../views/KeyProjectsView.vue')
   },
   {
     path: '/keyProjects',
     name: 'keyProjects',
-    component: () => import('../views/ProjectsView.vue')
+    component: () => import('../views/KeyProjectsView.vue')
   },
+  {
+    path: '/soloProjects',
+    name: 'soloProjects',
+    component: () => import('../views/SoloProjectsView.vue')
+  },
+
   {
     path: '/contact',
     name: 'contact',

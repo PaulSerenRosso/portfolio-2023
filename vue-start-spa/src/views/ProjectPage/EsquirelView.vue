@@ -18,6 +18,7 @@ export default {
 
 <template>
 <project-page-container
+    :project-is-solo-project="false"
                         project-name="Esquirel"
                         project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
                         project-timeline="November 2022 to January 2023"

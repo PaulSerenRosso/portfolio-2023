@@ -7,7 +7,7 @@ import {lerp} from "@/composables/Math";
 
 export  const moduleThreeSceneCreator =
     new StoreModule(
-        { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,oldWindowScrollY: 0,
+        { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,
             textsColor:{
                 "C#":"rgba(255,0,0,1)",
                 "UE5":"rgba(0,0,255,1)",
@@ -42,24 +42,20 @@ export  const moduleThreeSceneCreator =
         {
             initThreeSceneCreator(context){
                 function updateScrollCamera( context){
-
-                    if(Math.abs(context.state.oldWindowScrollY-window.scrollY)>0.1){
-                        context.state.oldWindowScrollY =  lerp(context.state.oldWindowScrollY,window.scrollY,0.2);
-                        context.state.cameraYScroll = context.state.oldWindowScrollY/window.innerHeight*2
+                        context.state.cameraYScroll = window.scrollY/window.innerHeight*2;
                         context.state.onCameraYScrollHandler.raiseEvent();
-                    }
+
                 }
+                context.state.onCameraYScrollHandler = createEventHandler();
+                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
                 window.onbeforeunload = () => {
                     window.scrollTo({top:0, left:0, behavior:"instant"});
                 }
-                context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
+
             },
             createNewScene(context) {
                 this.scene = new Scene();
-
-                console.log(window.scrollY)
                 context.state.cameraYScroll = window.scrollY;
-                context.state.oldWindowScrollY =window.scrollY;
                 context.commit("addThreeObjectTag", {tag:"currentScene", obj:this.scene});
                 if( context.state.onCreateSceneHandler !== null)
                 {
