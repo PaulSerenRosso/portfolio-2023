@@ -25,10 +25,10 @@ export default {
           new ThreeJsHtmlPositionLinkerProperty(undefined,5),
           new ThreeJsHtmlPositionLinkerProperty(undefined,5)),
       threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.9),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.9),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.9),20,new Vector2(0.05,0.1), new Vector3(0.4,0.45,1),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.9),20,new Vector2(0.05,0.1), new Vector3(0.4,0.45,1),new Vector2(0.05,0.1))
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.5),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.5),20,new Vector2(0.05,0.1), new Vector3(0.8,0.2,1),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.5),20,new Vector2(0.05,0.1), new Vector3(0.4,0.45,1),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.5),20,new Vector2(0.05,0.1), new Vector3(0.4,0.45,1),new Vector2(0.05,0.1))
       ),
     }
   }

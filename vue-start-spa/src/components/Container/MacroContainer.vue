@@ -3,8 +3,9 @@
 
 import {
   addRemoveAtSceneChangedEvent,
-  addRemoveAtSceneChangedResponsiveListener, raiseEvent
+  addRemoveAtSceneChangedResponsiveListener, raiseAndRemoveEvent, raiseEvent
 } from "@/composables/StoreHelper";
+import {store} from "@/store/Store";
 
 
 export default {

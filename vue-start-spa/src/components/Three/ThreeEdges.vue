@@ -3,7 +3,7 @@
 import {
   BoxGeometry,
   Mesh,
-  MeshBasicMaterial, ShaderMaterial, Vector3,
+  MeshBasicMaterial, NormalBlending, ShaderMaterial, Vector3,
 } from "three";
 
 
@@ -48,8 +48,8 @@ export default {
       this.parentObj = getThreeTagObject(this.parentObjectTag);
       const parentObjGeometry = this.parentObj.geometry;
 
-      const edgeParentScaleXGeometry = new BoxGeometry(parentObjGeometry.parameters.width+this.edgesWidthThickness*2, this.edgesWidthThickness, this.edgesZThickness*4);
-      const edgeParentScaleYGeometry = new BoxGeometry(this.edgesWidthThickness, parentObjGeometry.parameters.height, this.edgesZThickness*4);
+      const edgeParentScaleXGeometry = new BoxGeometry(parentObjGeometry.parameters.width+this.edgesWidthThickness*2, this.edgesWidthThickness, this.edgesZThickness);
+      const edgeParentScaleYGeometry = new BoxGeometry(this.edgesWidthThickness, parentObjGeometry.parameters.height, this.edgesZThickness);
       const rightEdgeGeometry = edgeParentScaleYGeometry.clone();
       const leftEdgeGeometry = edgeParentScaleYGeometry.clone();
       const topEdgeGeometry = edgeParentScaleXGeometry.clone();
@@ -83,7 +83,7 @@ export default {
     vNormal = normal;
     // Calculate the final position in camera space without modifying z
 
-        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+        vec4 mvPosition = modelMatrix*viewMatrix * vec4(position, 1.0);
         gl_Position = projectionMatrix * mvPosition;
   }
 `;
@@ -100,6 +100,7 @@ export default {
     } else {
       gl_FragColor = vec4(1, 1, 1, 1.0); // Set the color to white for non-matching faces
     }
+
   }
 `;
 
@@ -111,12 +112,15 @@ export default {
         fragmentShader: fragmentShader,
       });
 
+
+
       const geometry=BufferGeometryUtils.mergeGeometries([topEdgeGeometry, downEdgeGeometry, rightEdgeGeometry, leftEdgeGeometry]);
       geometry.computeBoundingSphere();
 geometry.computeTangents()
       geometry.computeVertexNormals();
 geometry.computeBoundingBox();
       const mergedMesh = new Mesh(geometry, material);
+mergedMesh.position.set(0,0,0);
 
       this.parentObj.add(mergedMesh);
 

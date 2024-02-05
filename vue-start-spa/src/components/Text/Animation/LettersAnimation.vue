@@ -30,7 +30,7 @@ export default {
         currentLetterElement.textContent =  letters[i]+"";
         if(!isRegular){
           currentLetterElement.style.fontFamily = "MyBlack";
-          currentLetterElement.style.backgroundColor ="rgba(178,28,27,1)";
+          currentLetterElement.style.backgroundColor ="rgba(178,28,27,0.4)";
 
         }
     

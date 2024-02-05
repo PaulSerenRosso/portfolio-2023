@@ -1,7 +1,7 @@
 <template>
     <menu-bar></menu-bar>
 
-  <canvas id="threeTextCanvas" ></canvas>
+  <canvas  id="threeTextCanvas"  ></canvas>
   <div id="_testBackground">
 
   </div>
@@ -90,7 +90,7 @@ html
 }
 .bold-content{
   font-family: MyBold;
-  background-color: rgba(178,28,27,1) ;
+  background-color: rgba(178, 28, 27, 0.4);
 
 }
 

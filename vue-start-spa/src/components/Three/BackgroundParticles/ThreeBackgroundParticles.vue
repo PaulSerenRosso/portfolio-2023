@@ -47,9 +47,9 @@ export default {
       particlesSize:null,
       particlesColor:null,
       particlesSystem:null,
-      radius:new Vector3(0,0,10),
+      radius:new Vector3(0,0,1),
       originZ: 0,
-      originCameraZ: 0.8,
+      originCameraZ: 0.9,
       camera: {},
       clock :null,
 
@@ -103,10 +103,11 @@ export default {
       {
         gl_FragColor = vec4(vColor,1);
       }
+
           }
         `,
 
-          }, { });
+          });
           this.refreshRadius();
           this.createParticles();
           console.log("test particles");

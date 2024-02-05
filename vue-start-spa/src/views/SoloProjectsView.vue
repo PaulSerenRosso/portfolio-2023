@@ -22,7 +22,7 @@ export default {
                           ,['Unity', 'AI', 'C#']
                           ,['Unity', 'Optimization','AI', 'C#'],
                            ['UE5', 'HLSL','Tech-Art']]"
-                      :description-texts="['1A project f ds  fdjskq m ldkjf qs lkjd fdslq l','2A project f ds  fdjskq m ldkjf qs lkjd fdslq l','3A project f ds  fdjskq m ldkjf qs lkjd fdslq l','4A project f ds  fdjskq m ldkjf qs lkjd fdslq l']"
+                      :description-texts="['A 3D reusable responsive website','Race of cars that learn and remember','Simulation of RTS units with multi-threading','Shader using RayMarching and SDF']"
                       :title-texts="['Portfolio','Deep Learning','Boids','Bubbles']" ></projects-container>
   <div class="container"></div>
   <end-redirector text-content="If you like my projects get my contacts ! !" link="Contact"></end-redirector>
@@ -31,21 +31,21 @@ export default {
 <style scoped>
 .container{
   position: relative;
-  height: 230%;
+  height: 100%;
   z-index: -10;
 }
 
 @media (min-width: 768px) {
   .container
   {
-    height: 200%;
+    height: 100%;
   }
 }
 
 @media (min-width: 1024px) {
   .container
   {
-    height: 150%;
+    height: 0%;
   }
 }
 </style>

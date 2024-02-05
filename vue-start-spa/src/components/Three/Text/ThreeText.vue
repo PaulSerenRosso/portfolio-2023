@@ -37,7 +37,6 @@ export default {
     isDebugRatio:Boolean,
     textEventCreated:String,
     textResolution:Number,
-
       },
 
   methods: {
@@ -68,7 +67,6 @@ export default {
        new TextureLoader().load(imageDataUrl, (texture)=>{
          texture.colorSpace ="srgb" ;
         this.material = new MeshBasicMaterial({ map: texture});
-
         const geometry = new PlaneGeometry(this.width/this.height, 1);
         const mesh = new Mesh(geometry, this.material);
         addThreeTagObject(mesh, this.textTag);

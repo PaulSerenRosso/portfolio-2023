@@ -3,6 +3,7 @@
   <three-background-particles></three-background-particles>
  <welcome-container></welcome-container>
   <about-me-container></about-me-container>
+  <resume-container></resume-container>
   <end-redirector  link="keyProjects" text-content="See my projects for discovering more "></end-redirector>
   </template>
   <script >
@@ -14,6 +15,7 @@
  import WelcomeContainer from "@/components/Container/HomeView/WelcomeContainer.vue";
  import AboutMeContainer from "@/components/Container/HomeView/AboutMe/AboutMeContainer.vue";
   import EndRedirector from "@/components/Container/EndRedirector.vue";
+  import ResumeContainer from "@/components/Container/Contact/ResumeContainer.vue";
 
 
     export default {
@@ -21,6 +23,7 @@
 
       // eslint-disable-next-line vue/no-unused-components
   components:{
+    ResumeContainer,
     EndRedirector,
     AboutMeContainer,
     ThreeBackgroundParticles,

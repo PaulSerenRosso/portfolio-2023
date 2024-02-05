@@ -10,8 +10,6 @@ import {
 import { addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
 
 
-
-
 export default{
   name: "ThreeVideo",
   data()
@@ -38,20 +36,19 @@ export default{
       }
     });
     const videoTexture= new VideoTexture(this.video);
-      videoTexture.colorSpace ="srgb" ;
+    if(navigator.userAgent.indexOf("Firefox") <= -1){
+      videoTexture.colorSpace = "srgb" ;
+    }
+
+
     const videoMaterial= new MeshBasicMaterial(
         { map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
-
     const videoScreen = new Mesh(screen, videoMaterial);
       getThreeTagObject(this.parentVideoTag).add(videoScreen);
       addThreeTagObject(videoScreen, this.videoTag);
       raiseAndRemoveEvent(this.onCreateKey);
     };
-
-
-
-
   },
   props: {
     srcVideo: String,

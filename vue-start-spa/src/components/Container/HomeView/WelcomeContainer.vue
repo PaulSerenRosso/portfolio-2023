@@ -19,19 +19,19 @@ export default {
 
       threeVideoContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.65,0.9),
+              new Vector3(0.5,0.65,0.5),
               20,
               new Vector3(0.75,0.25,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.55,0.9),
+              new Vector3(0.5,0.55,0.5),
               30,
               new Vector3(0.8,0.3,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.28,0.52,0.9),
+              new Vector3(0.28,0.52,0.5),
               30,
               new Vector3(0.45,0.50,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.28,0.50,0.9),
+              new Vector3(0.28,0.50,0.5),
               30,
               new Vector3(0.45,0.50,1)),
       ),
@@ -55,7 +55,8 @@ export default {
   <slide-in-animation delay="500" :is-right-direction="false"  key-event="TestAnimationEvent"><p> fj fdjk j lj jl j l kj lkj lk jlk jl kj lk jl kj lkj lkj lkj </p> </slide-in-animation>-->
    <div id="bigTitle"> <letters-animation key-event="FirstReveal" text-content="Welcome ! I'am `Paul`, a Junior Gameplay Programmer !"> </letters-animation></div>
   </div>
-   <three-video-container macro-container-resize-event-key="welcomeMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup video-object-tag="TestVideo" srcVideo="testVideo.mp4"
+
+   <three-video-container macro-container-resize-event-key="welcomeMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup video-object-tag="TestVideo" srcVideo="testVideo3.mp4"
                            :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup"
    > </three-video-container>
    <reveal-animation-trigger :is-debug="false" :top-desktop="50" :top-large-desktop="50" :top-mobile="50" :top-tablet="50" reveal-animation-trigger-event-key="FirstReveal"></reveal-animation-trigger>

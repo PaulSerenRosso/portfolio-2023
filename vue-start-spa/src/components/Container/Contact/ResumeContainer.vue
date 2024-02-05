@@ -19,7 +19,7 @@ export default {
         Get English Resume !
       </main-button>
     </a>
-    <a class="contact-button" :href="require('@/assets/'+'pdf/PaulSerenRossoCVFrançais.pdf')" download="PaulSerenRossoCVFrançais.pdf">
+    <a class="resume-button" :href="require('@/assets/'+'pdf/PaulSerenRossoCVFrançais.pdf')" download="PaulSerenRossoCVFrançais.pdf">
       <main-button  key-event="FinalReveal" :delay="2000">
         Get French Resume !
       </main-button>
@@ -67,7 +67,7 @@ export default {
 
 @media (min-width: 1024px) {
   .resume-button{
-    width: 20%;
+    width: 25%;
   }
   .resume-container{
 

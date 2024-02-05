@@ -22,7 +22,7 @@ export default {
                         project-name="Esquirel"
                         project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
                         project-timeline="November 2022 to January 2023"
-                        project-video-src="logo.png"
+                        project-video-src="testVideo.mp4"
                         :project-tags="['Unity', 'C#', 'Network', 'Lead', 'Architecture', 'Tools' ]"
                         :project-key-points="
                         ['Architecture thinking with UML diagrams',
@@ -33,7 +33,7 @@ export default {
                         'Lead Programmer']"
                           :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
                             :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
+                          :project-first-content-is-picture="false">
   <div>
     We were proud to be the class major of our promotion with
     this project. That's also the game in which players were litteraly shouting

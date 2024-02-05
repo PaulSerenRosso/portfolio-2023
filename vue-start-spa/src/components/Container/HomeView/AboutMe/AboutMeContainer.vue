@@ -6,6 +6,8 @@ import RevealAnimationTrigger from "@/components/RevealAnimationTrigger.vue";
 import ThreePictureContainer from "@/components/Three/Picture/ThreePictureContainer.vue";
 import {ThreeBasicResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeBasicResponsiveProperty";
 import {Vector3} from "@/composables/Vector3";
+import {store} from "@/store/Store";
+import {raiseAndRemoveEvent} from "@/composables/StoreHelper";
 
 export default {
   name: "AboutMeContainer",
@@ -16,29 +18,34 @@ export default {
     return{
       threePictureContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.15,0.9),
+              new Vector3(0.5,0.15,0.5),
               -30,
               new Vector3(0.5,0.2,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.15,0.9),
+              new Vector3(0.5,0.15,0.5),
               -30,
               new Vector3(0.3,0.3,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.80,0.5,0.9),
+              new Vector3(0.80,0.5,0.5),
               -30,
               new Vector3(0.3,0.6,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.80,0.5,0.9),
+              new Vector3(0.80,0.5,0.5),
               -30,
               new Vector3(0.3,0.6,1)),
       ),
     }
   },
+  mounted() {
+    if(store.getters.getEventHandler("GoToAboutMeContainer") !== undefined)
+      raiseAndRemoveEvent("GoToAboutMeContainer");
+  }
 }
 </script>
 
 <template>
-  <macro-container  ref="macroContainer"  resize-event-key="aboutMeMacroContainer" :height-desktop="1" :height-mobile="1.2" :height-large-desktop="1.2" :height-tablet="1">
+
+  <macro-container id="AboutMeContainer" ref="macroContainer"  resize-event-key="aboutMeMacroContainer" :height-desktop="1" :height-mobile="1.2" :height-large-desktop="1.2" :height-tablet="1">
     <div class="panel-container">
   <profile-pillar text-title="Programming"  :delay="500" trigger-animation-key-event="SecondReveal">
     <div>  I'am a student in my <span class="bold-content">four years</span> of Gameplay Programming at Rubika, I'am always ready to learn <span class="bold-content">various things</span> in programming for project requirements. Thus, I've learning theoretical concepts in <span class="bold-content">physics and mathematics</span>, as well as practical aspects in <span class="bold-content">optimization, network, algorithm development, clean code and architecture</span>. Finally I experienced game development using <span class="bold-content">Unity, Unreal, C++, and web-based technologies.</span></div></profile-pillar>
@@ -52,7 +59,7 @@ export default {
 
     <reveal-animation-trigger  :top-desktop="60" :top-large-desktop="60" :top-mobile="60" :top-tablet="60" reveal-animation-trigger-event-key="SecondReveal"></reveal-animation-trigger>
     <three-picture-container    macro-container-resize-event-key="aboutMeMacroContainer" :is-debug-ratio="true" :three-basic-responsive-property-group=this.threePictureContainerResponsivePropertyGroup
-                             src-picture="PaulSerenRossoPhoto.jpg"  picture-object-tag="TestPicture"
+                             src-picture="PaulSerenRossoPhoto2.jpg"  picture-object-tag="TestPicture"
     ></three-picture-container>
   </macro-container>
 </template>

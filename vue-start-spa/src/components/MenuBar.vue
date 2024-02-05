@@ -1,5 +1,6 @@
 <script>
 import {defineComponent} from 'vue'
+import {addEvent, addEventListener} from "@/composables/StoreHelper";
 
 export default defineComponent({
   name: "MenuBar",
@@ -13,6 +14,25 @@ export default defineComponent({
   }
   },
   methods:{
+    goToPage(){
+      window.scrollTo(0,0);
+      this.changeStateOfMobileMenuToClosed()
+    },
+    goToAboutMeContainer(){
+
+
+      var aboutMeContainer = document.getElementById("AboutMeContainer");
+      console.log(aboutMeContainer)
+      if(aboutMeContainer !== null){
+      aboutMeContainer.scrollIntoView()
+      }
+      else{
+        addEvent("GoToAboutMeContainer");
+        addEventListener(()=>document.getElementById("AboutMeContainer").scrollIntoView(), "GoToAboutMeContainer");
+      }
+
+      this.changeStateOfMobileMenuToClosed()
+    },
     checkPlatformDeviceIdForRenderMobileMenuBar()
     {
       return this.$store.state.responsiveEventHandler.devicePlateformId ===0 || this.$store.state.responsiveEventHandler.devicePlateformId === 1;
@@ -20,6 +40,7 @@ export default defineComponent({
     changeStateOfMobileMenuToClosed()
     {
       this.mobileMenuButtonState = 'closed';
+
     },
     changeStateOfMobileMenu()
     {
@@ -40,10 +61,10 @@ export default defineComponent({
 <template>
 
   <div v-if="this.checkPlatformDeviceIdForRenderMobileMenuBar()" id="_menuBarMobilePopUp" :class="`menu-bar-mobile-pop-up-${this.mobileMenuButtonState}`">
-  <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-button menu-bar-mobile-button">{{this.aboutMeName}}</router-link>
-  <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/keyProjects" class="menu-bar-button menu-bar-mobile-button">{{this.keyProjectsName}}</router-link>
-    <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/soloProjects" class="menu-bar-button menu-bar-mobile-button">{{this.soloProjectsName}}</router-link>
-  <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-mobile-button">{{this.contactName}}</router-link>
+  <router-link v-on:click="this.goToAboutMeContainer()" to="/" class="menu-bar-button menu-bar-mobile-button">{{this.aboutMeName}}</router-link>
+  <router-link v-on:click="this.goToPage()" to="/keyProjects" class="menu-bar-button menu-bar-mobile-button">{{this.keyProjectsName}}</router-link>
+    <router-link v-on:click="this.goToPage()" to="/soloProjects" class="menu-bar-button menu-bar-mobile-button">{{this.soloProjectsName}}</router-link>
+  <router-link v-on:click="this.goToPage()" to="/contact" class="menu-bar-button menu-bar-mobile-button">{{this.contactName}}</router-link>
   </div>
   <div id="_menuBarContainer">
 
@@ -54,14 +75,14 @@ export default defineComponent({
     </div>
     <div id="_menuBarDesktop" v-if="!this.checkPlatformDeviceIdForRenderMobileMenuBar()" >
       <div id="_menuBarDesktopButtonsContainer">
-      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-button menu-bar-desktop-button">{{this.aboutMeName}}</router-link>
-      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/keyProjects" class="menu-bar-button menu-bar-desktop-button">{{this.keyProjectsName}}</router-link>
-        <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/soloProjects" class="menu-bar-button menu-bar-desktop-button">{{this.soloProjectsName}}</router-link>
-      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/contact" class="menu-bar-button menu-bar-desktop-button">{{this.contactName}}</router-link>
+      <router-link v-on:click="this.goToAboutMeContainer()" to="/" class="menu-bar-button menu-bar-desktop-button">{{this.aboutMeName}}</router-link>
+      <router-link v-on:click="this.goToPage()" to="/keyProjects" class="menu-bar-button menu-bar-desktop-button">{{this.keyProjectsName}}</router-link>
+        <router-link v-on:click="this.goToPage()" to="/soloProjects" class="menu-bar-button menu-bar-desktop-button">{{this.soloProjectsName}}</router-link>
+      <router-link v-on:click="this.goToPage()" to="/contact" class="menu-bar-button menu-bar-desktop-button">{{this.contactName}}</router-link>
       </div>
       </div>
     <div class="menu-bar-title-container">
-      <router-link v-on:click="this.changeStateOfMobileMenuToClosed()" to="/" class="menu-bar-title">Paul Seren-Rosso</router-link>
+      <router-link v-on:click="this.goToPage()" to="/" class="menu-bar-title">Paul Seren-Rosso</router-link>
     </div>
   </div>
 </template>

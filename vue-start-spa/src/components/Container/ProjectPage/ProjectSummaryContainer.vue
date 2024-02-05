@@ -32,48 +32,48 @@ export default {
     return{
       threeContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.77,0.9),
+              new Vector3(0.5,0.77,0.5),
               -30,
               new Vector3(0.8,0.15,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.5,0.77,0.9),
+              new Vector3(0.5,0.77,0.5),
               -30,
               new Vector3(0.8,0.2,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.7,0.50,0.9),
+              new Vector3(0.7,0.50,0.5),
               -30,
               new Vector3(0.45,0.5,1)),
           new ThreeBasicResponsiveProperty(
-              new Vector3(0.7,0.50,0.9),
+              new Vector3(0.7,0.50,0.5),
               -30,
               new Vector3(0.45,0.5,1)),
       ),
       threeGridTextResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(
               new Vector3(1,0.3,0),
-              new Vector3(0.5,0.27,0.9),
-              40,
+              new Vector3(0.5,0.27,0.5),
+              30,
               new Vector2(0.01,0.05),
               new Vector3(0.25,0.025,0.2),
               new Vector2(0.1,0.1)) ,
           new ThreeGridProperty(
               new Vector3(1,0.3,0),
-              new Vector3(0.5,0.27,0.9),
-              40,
+              new Vector3(0.5,0.27,0.5),
+              30,
               new Vector2(0.1,0.05),
               new Vector3(0.2,0.025,0.2),
               new Vector2(0.1,0.1)) ,
           new ThreeGridProperty(
               new Vector3(0.6,0.5,0.1),
-              new Vector3(0.22,0.45,0.9),
+              new Vector3(0.22,0.45,0.5),
               30,
               new Vector2(0.08,0.08),
               new Vector3(0.06,0.06,0.5),
               new Vector2(0.1,0.1)),
           new ThreeGridProperty(
               new Vector3(0.6,0.5,0.1),
-              new Vector3(0.22,0.45,0.9),
-              40,
+              new Vector3(0.22,0.45,0.5),
+              30,
               new Vector2(0.08,0.08),
               new Vector3(0.06,0.06,0.5),
               new Vector2(0.1,0.1))

@@ -1,9 +1,6 @@
 import {StoreModule} from "@/store/StoreModule";
-import {AxesHelper, Color, PerspectiveCamera, Scene, WebGLRenderer} from "three";
-import {EffectComposer} from "three/addons/postprocessing/EffectComposer";
-import {RenderPass} from "three/addons/postprocessing/RenderPass";
+import {AxesHelper, Color, ColorManagement, PerspectiveCamera, Scene, WebGLRenderer} from "three";
 import createEventHandler from "@/composables/EventHandler";
-import {lerp} from "@/composables/Math";
 import {
     addRemoveAtSceneChangedResponsiveListener,
     addRemoveAtSceneChangedUpdateListener
@@ -64,6 +61,7 @@ export  const moduleThreeSceneCreator =
                         context.state.onCameraYScrollHandler.raiseEvent();
 
                 }
+
                 context.state.onCameraYScrollHandler = createEventHandler();
                 context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
                 window.onbeforeunload = () => {
@@ -96,7 +94,7 @@ export  const moduleThreeSceneCreator =
                 this.scene.add( axesHelper );
                 const camera = new PerspectiveCamera(20, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
                 context.commit("addThreeObjectTag",{tag:"currentCamera", obj:camera})
-                const renderer = new WebGLRenderer({antialias: true, logarithmicDepthBuffer: true,alpha: true  });
+                const renderer = new WebGLRenderer({antialias: true,alpha: true  });
                 setSize();
 
              addRemoveAtSceneChangedResponsiveListener(setSize);
