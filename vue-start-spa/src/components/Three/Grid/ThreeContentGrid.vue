@@ -28,6 +28,9 @@ export default {
     threeJsHtmlPositionLinkerPropertyGroup:Object,
     threeJsHtmlVideoPositionLinkerPropertyGroup:Object,
     animationRevealVideoButtonKey:String,
+    macroContainerId:String,
+    isOutsideMacroContainer:Boolean,
+
   },
   data(){
     return{
@@ -63,10 +66,10 @@ export default {
 
     <three-picture-container v-if="contentTypes[index] === ThreeContentType.Picture" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :three-basic-responsive-property-group="this.contentsResponsivePropertyGroups[index]" ,
                             :picture-object-tag="this.baseTag+index" :src-picture="content" ></three-picture-container>
-    <three-video-container v-if="contentTypes[index] === ThreeContentType.Video" :key-event-trigger-animation="this.animationRevealVideoButtonKey" :delay-animation-reveal="1000"  :three-js-html-position-linker-property-group="this.threeJsHtmlVideoPositionLinkerPropertyGroup" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :three-basic-responsive-property-group="this.contentsResponsivePropertyGroups[index]" ,
+    <three-video-container  :is-outside-macro-container="true"  v-if="contentTypes[index] === ThreeContentType.Video" :key-event-trigger-animation="this.animationRevealVideoButtonKey" :delay-animation-reveal="1000"  :three-js-html-position-linker-property-group="this.threeJsHtmlVideoPositionLinkerPropertyGroup" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :three-basic-responsive-property-group="this.contentsResponsivePropertyGroups[index]" ,
                              :video-object-tag="this.baseTag+index" :src-video="content" ></three-video-container>
   </div>
-<three-html-linker-grid :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" v-if="this.hasHtmlLinkerGrid" :three-property-groups="contentsResponsivePropertyGroups" :base-id="this.baseId"  ></three-html-linker-grid>
+<three-html-linker-grid :is-outside-macro-container="isOutsideMacroContainer" :macro-container-id="this.macroContainerId"  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" v-if="this.hasHtmlLinkerGrid" :three-property-groups="contentsResponsivePropertyGroups" :base-id="this.baseId"  ></three-html-linker-grid>
 </template>
 
 <style scoped>

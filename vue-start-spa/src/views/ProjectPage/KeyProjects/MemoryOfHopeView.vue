@@ -19,40 +19,33 @@ export default {
 <template>
 <project-page-container
     :project-is-solo-project="false"
+    :has-two-column-of-additional-visual-content="true"
                         project-name="Memory of Hope"
-                        project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
-                        project-timeline="November 2022 to January 2023"
-                        project-video-src="logo.png"
+                        project-team="1 Game Designer, 2 Game Programmers, 6 Game Artists"
+                        project-timeline="February 2022 to June 2023"
+                        project-video-src="Projects/MemoryOfHope/MemoryOfHopeTrailer.mp4"
                         :project-tags="['Unity', 'C#','Physics', '3C', 'Tools', 'Lead']"
                         :project-key-points="
-                        ['Architecture thinking with UML diagrams',
-                        'Ability System',
-                        'Board & Tile System',
-                        'State Machines',
-                        'UI Programmation',
-                        'Lead Programmer']"
-                          :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
-                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
-  <div>
-    We were proud to be the class major of our promotion with
-    this project. That's also the game in which players were litteraly shouting
-    of fun during their playtests and that's a feeling that cannot be forgotten.
-  </div>
+                        ['Develop physic based controller',
+'Design the player Controller split in action scripts',
+'Work as Lead Programmer',
+'Program the Puzzle System',
+'Develop Boss using State Machines',
+'Create Event System (Dialogue and Cinematic)',
 
-  <div>
-   <span class="bold-content"> Jungle Dunk</span>, is all about being a mischievous little monkey, running around and stealing as many fruits
-    as possible with your gang. Two teams of four players face each other for 6 minutes,
-    with their only objective being to dunk as many fruits as possible in the central volcano.
-    But other than that, there are no rules. Jungle Dunk matches are a chockfull of sneaky tactics,
-    clever synergies and above all, pure chaos!
 
-  </div>
-    <div>
-      I learned so much with this project. On the technical side on
-      Unreal Engine and the network programming. And on the management side,
-      I achieved to execute my view on a project workflow. A lot of iterations and tests,
-      slow but constant progress and great team communication..
+]"
+                          :project-additional-content-srcs="['Projects/MemoryOfHope/MOHScreenshot01.jpg','Projects/MemoryOfHope/MOHScreenshot02.jpg',
+                          'Projects/MemoryOfHope/MOHListenertrigger.jpg','Projects/MemoryOfHope/MOHDialogue.jpg']"
+                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Picture,
+                            ThreeContentType.Picture, ThreeContentType.Picture]"
+                          :project-first-content-is-picture="false">
+  <div>
+    Memory of Hope, is a <span class="bold-content">Zelda-like</span> game in which the player plays as an <span class="bold-content">Artificial Intelligence</span> designed to replace the daughter of a researcher troubled by <span class="bold-content">grief</span>.
+    She will evolve in Lazarus, an abandoned virtual world, with the hope of finding Hope's memory, which has been kept there for years.
+    Throughout his exploration of Lazarus, the player will activate Memorial Modules which will inform him aboutHope's <span class="bold-content"> past</span>,
+    and give him access to <span class="bold-content">powers</span> allowing him to progress through the simulation.
+
   </div>
 
 </project-page-container>

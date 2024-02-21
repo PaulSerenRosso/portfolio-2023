@@ -3,7 +3,7 @@
 
 import {
   addRemoveAtSceneChangedEvent,
-  addRemoveAtSceneChangedResponsiveListener, raiseAndRemoveEvent, raiseEvent
+  addRemoveAtSceneChangedResponsiveListener, getApp, raiseAndRemoveEvent, raiseEvent
 } from "@/composables/StoreHelper";
 import {store} from "@/store/Store";
 
@@ -15,19 +15,21 @@ export default {
     heightTablet:Number,
     heightDesktop:Number,
     heightLargeDesktop:Number,
+
     resizeEventKey:String,
   },
   data(){
     return{
-      currentContainerInfo:{top:0, height:0}
+      currentContainerInfo:{top:0, height:0},
+      app:{},
     }
   },
   created() {
     addRemoveAtSceneChangedEvent(this.resizeEventKey);
-    console.log("created event");
   },
   mounted() {
     addRemoveAtSceneChangedResponsiveListener(this.tryUpdateCurrentContainerInfo);
+    this.app = getApp();
     this.updateCurrentContainerInfo();
     raiseEvent(this.resizeEventKey, this.currentContainerInfo);
   },
@@ -42,23 +44,29 @@ export default {
         switch (this.$store.state.responsiveEventHandler.devicePlateformId) {
           case 0 : {
             this.currentContainerInfo.height = this.heightMobile;
+
             break;
           }
           case 1 : {
             this.currentContainerInfo.height = this.heightTablet;
+
             break;
           }
           case 2 : {
             this.currentContainerInfo.height = this.heightDesktop;
+
             break;
           }
           case 3 : {
             this.currentContainerInfo.height = this.heightLargeDesktop;
+
             break;
           }
         }
-        this.currentContainerInfo.top = (this.$refs.container.getBoundingClientRect().top + window.scrollY) / window.innerHeight;
-        this.$refs.container.style.height = (this.currentContainerInfo.height * 100) + "%";
+
+
+        this.currentContainerInfo.top = (this.$refs.container.getBoundingClientRect().top + this.app.scrollTop) / this.app.clientHeight;
+        this.$refs.container.style.height = ((this.currentContainerInfo.height) * 100) + "%";
 
     },
 
@@ -67,7 +75,7 @@ export default {
 </script>
 
 <template>
-<div class="macro-container" ref="container" >
+<div class="macro-container" :id="resizeEventKey" ref="container" >
   <slot></slot>
 </div>
 </template>

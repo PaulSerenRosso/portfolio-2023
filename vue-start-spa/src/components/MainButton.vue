@@ -13,7 +13,14 @@ export default{
     }
   },
   mounted() {
-    addEventListener(this.launchRevealAnimationTimer,this.keyEvent);
+    console.log(this.keyEvent)
+    if(this.keyEvent ===""){
+      this.launchRevealAnimationTimer();
+    }
+    else{
+      addEventListener(this.launchRevealAnimationTimer,this.keyEvent);
+    }
+
   },
   methods: {
     launchRevealAnimationTimer() {

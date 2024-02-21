@@ -77,12 +77,7 @@ export default {
       var vertexShader = `
   varying vec3 vNormal;
   void main() {
-
-
-    // Transform the normal to the correct orientation in camera space
     vNormal = normal;
-    // Calculate the final position in camera space without modifying z
-
         vec4 mvPosition = modelMatrix*viewMatrix * vec4(position, 1.0);
         gl_Position = projectionMatrix * mvPosition;
   }
@@ -100,7 +95,6 @@ export default {
     } else {
       gl_FragColor = vec4(1, 1, 1, 1.0); // Set the color to white for non-matching faces
     }
-
   }
 `;
 

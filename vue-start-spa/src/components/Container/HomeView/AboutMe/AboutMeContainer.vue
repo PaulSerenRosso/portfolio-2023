@@ -48,12 +48,31 @@ export default {
   <macro-container id="AboutMeContainer" ref="macroContainer"  resize-event-key="aboutMeMacroContainer" :height-desktop="1" :height-mobile="1.2" :height-large-desktop="1.2" :height-tablet="1">
     <div class="panel-container">
   <profile-pillar text-title="Programming"  :delay="500" trigger-animation-key-event="SecondReveal">
-    <div>  I'am a student in my <span class="bold-content">four years</span> of Gameplay Programming at Rubika, I'am always ready to learn <span class="bold-content">various things</span> in programming for project requirements. Thus, I've learning theoretical concepts in <span class="bold-content">physics and mathematics</span>, as well as practical aspects in <span class="bold-content">optimization, network, algorithm development, clean code and architecture</span>. Finally I experienced game development using <span class="bold-content">Unity, Unreal, C++, and web-based technologies.</span></div></profile-pillar>
+    <div>
+      I am <span class="bold-content">a fourth student</span> in Gameplay Programming at Rubika,
+      I am always eager <span class="bold-content">to learn and acquire new competencies</span> in programming in order to fulfill a project’s requirements.
+      For instance, I have been studying <span class="bold-content">theoretical</span> concepts in physics and mathematics,
+      as well as <span class="bold-content">practical</span> aspects in optimization, network, algorithm development,
+      clean code and architecture. Finally I <span class="bold-content">have gained experience</span> in game development using
+      Unity, Unreal, C++, and web-based technologies.</div>
+  </profile-pillar>
   <profile-pillar text-title="Teamwork" :delay="750" trigger-animation-key-event="SecondReveal">
-    <div>  I have completed <span class="bold-content">two years of Game Design</span> at Rubika, I gained an understanding of <span class="bold-content">game designers roles and needs</span>. I endeavour to align my <span class="bold-content">code and tools with their requirements</span>. I put my skills in <span class="bold-content">project management and collaborative programming</span> into practice, leading teams of up to 10 people and <span class="bold-content">working closely with designers and artists</span>. Finally, I regularly use version control systems like <span class="bold-content">Git or Perforce and even pair programming</span>.</div>
+    <div>  I have done two years of<span class="bold-content"> Game Design</span> at Rubika,
+      I gained an understanding of the game designers’ <span class="bold-content">roles and needs</span>.
+      Today, I endeavour to align my code and tools with <span class="bold-content">their requirements</span>.
+      I have worked on <span class="bold-content">several collaborative programming projects</span>.
+      I also have had the opportunity <span class="bold-content">to lead </span>  teams up to 10 programmers and working closely with <span class="bold-content">designers and artists</span>.
+      Eventually, I have used daily <span class="bold-content">source control</span> systems like Git or Perforce and even pair programming during these projects.</div>
+
+
   </profile-pillar>
   <profile-pillar text-title="About me" :delay="1000" trigger-animation-key-event="SecondReveal">
-    <div> I prioritize a <span class="bold-content">healthy lifestyle</span> through proper nutrition and regular exercise. Cherish quality time with family, engaging in board games and video games. <span class="bold-content">Balancing personal and professional</span> aspects is crucial for me, <span class="bold-content">enhancing my effectiveness at work</span>. Fondness for atypical socks and enduring my dogs."</div>
+    <div> I prioritize a <span class="bold-content">healthy lifestyle</span>
+      through a proper nutrition and regular exercise. Then, I cherish quality time with family and friends
+      engaging in board games and video games. <span class="bold-content">Balancing</span> personal and professional
+      aspects is crucial for me, it’s enhancing my<span class="bold-content"> effectiveness</span> at work
+      .I also like atypical socks and taking my dogs on a stroll."</div>
+
   </profile-pillar>
 </div>
 
@@ -97,7 +116,6 @@ export default {
     left:2%;
     width:60%;
     height: 100%;
-
   }
 }
 
@@ -107,8 +125,6 @@ export default {
     left:2%;
     width:60%;
   height: 100%;
-
-
   }
 }
 </style>

@@ -5,26 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/public/Logo_PSR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/Paul_SEREN_ROSSO_CV.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/Paul_SEREN_ROSSO_Resume.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/PaulSerenRossoPhoto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/TrianglesParticles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/PaulSerenRossoCVEnglish.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/PaulSerenRossoCVFrançais.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/snowflake1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testPicture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo5.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/triangleParticleAlphaMap.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/ResumeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/ResumeContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/EndRedirector.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/EndRedirector.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/MacroContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/MacroContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/RevealAnimationTrigger.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/RevealAnimationTrigger.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/LettersAnimation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/LettersAnimation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Text/ThreeText.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeContentGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeContentGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeHtmlLinkerGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeHtmlLinkerGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/Scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/EsquirelView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/EsquirelView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/JabView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/JabView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/MemoryOfHopeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/MemoryOfHopeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BoidsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BoidsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BubbleView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BubbleView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/DeepLearningView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/DeepLearningView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/PortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/PortfolioView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +105,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.1&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.1&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Data_Paul/portfolio-2023/vue-start-spa/src/views/ProjectPage/SoloProjects&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Data_Paul/portfolio-2023/vue-start-spa/src/assets/pdf&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -79,17 +123,17 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets\pdf" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\views\ProjectPage\SoloProjects" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\views\ProjectPage" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets\pdf" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets\pdf" />
+      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\views\ProjectPage\KeyProjects" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\components\Container\Contact" />
       <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets\contactLogo" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\public" />
-      <recent name="C:\Data_Paul\portfolio-2023\vue-start-spa\src\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -269,7 +313,47 @@
       <workItem from="1707118972902" duration="874000" />
       <workItem from="1707123629849" duration="3703000" />
       <workItem from="1707157146806" duration="1953000" />
-      <workItem from="1707163511751" duration="813000" />
+      <workItem from="1707163511751" duration="861000" />
+      <workItem from="1707167010495" duration="2728000" />
+      <workItem from="1707207151774" duration="906000" />
+      <workItem from="1707242681254" duration="2074000" />
+      <workItem from="1707248173569" duration="4122000" />
+      <workItem from="1707291989952" duration="37000" />
+      <workItem from="1707320902821" duration="11000" />
+      <workItem from="1707403092519" duration="927000" />
+      <workItem from="1707404799594" duration="50000" />
+      <workItem from="1707409491787" duration="2288000" />
+      <workItem from="1707425243185" duration="2297000" />
+      <workItem from="1707498267049" duration="4161000" />
+      <workItem from="1707658723060" duration="5128000" />
+      <workItem from="1707669330172" duration="1772000" />
+      <workItem from="1707677428379" duration="1048000" />
+      <workItem from="1707724869067" duration="1286000" />
+      <workItem from="1707728519242" duration="55000" />
+      <workItem from="1707728944142" duration="936000" />
+      <workItem from="1707730433785" duration="1608000" />
+      <workItem from="1707733248906" duration="535000" />
+      <workItem from="1707768849738" duration="910000" />
+      <workItem from="1707776485928" duration="128000" />
+      <workItem from="1707776692869" duration="38000" />
+      <workItem from="1707809797397" duration="2528000" />
+      <workItem from="1707812627070" duration="612000" />
+      <workItem from="1707842382140" duration="1501000" />
+      <workItem from="1707844023855" duration="109000" />
+      <workItem from="1707846374492" duration="12892000" />
+      <workItem from="1707897307508" duration="140000" />
+      <workItem from="1707901988684" duration="32000" />
+      <workItem from="1707914933405" duration="16000" />
+      <workItem from="1707930389676" duration="4763000" />
+      <workItem from="1707995342806" duration="1035000" />
+      <workItem from="1707997468692" duration="495000" />
+      <workItem from="1708003085486" duration="98000" />
+      <workItem from="1708185537332" duration="29452000" />
+      <workItem from="1708333782992" duration="24000" />
+      <workItem from="1708460768891" duration="5626000" />
+      <workItem from="1708503777024" duration="218000" />
+      <workItem from="1708532268375" duration="755000" />
+      <workItem from="1708543183771" duration="4946000" />
     </task>
     <servers />
   </component>
@@ -283,11 +367,6 @@
           <url>file://$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeTransform.vue</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/LettersAnimation.vue</url>
-          <line>98</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

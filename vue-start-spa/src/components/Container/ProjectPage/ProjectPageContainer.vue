@@ -24,6 +24,8 @@ export default {
     projectAdditionalContentTypes:Array,
     projectFirstContentIsPicture:Boolean,
     projectIsSoloProject:Boolean,
+    withoutParagraph:Boolean,
+    hasTwoColumnOfAdditionalVisualContent:Boolean,
   }
 }
 </script>
@@ -34,11 +36,11 @@ export default {
   <project-summary-container :first-content-is-picture="this.projectFirstContentIsPicture" :tags="this.projectTags" :key-points="this.projectKeyPoints" :project-name="this.projectName" :content-src="this.projectVideoSrc" :project-timeline="this.projectTimeline" :project-team="this.projectTeam" >
 
   </project-summary-container>
-  <additional-content-container :content-type-list="this.projectAdditionalContentTypes"  :content-src-list="projectAdditionalContentSrcs">
+  <additional-content-container :has-two-column-of-additional-visual-content="hasTwoColumnOfAdditionalVisualContent" :without-paragraph="this.withoutParagraph"  :content-type-list="this.projectAdditionalContentTypes"  :content-src-list="projectAdditionalContentSrcs">
     <slot>
     </slot>
   </additional-content-container>
-<end-redirector  :link="this.projectIsSoloProject? 'soloProjects':'keyProjects'" text-content="Want to se more ? Take a look at the others Projects"></end-redirector>
+<end-redirector  :link="this.projectIsSoloProject? 'soloProjects':'keyProjects'" text-content="Want to see more ? Take a look at the others Projects"></end-redirector>
 </template>
 
 <style scoped>

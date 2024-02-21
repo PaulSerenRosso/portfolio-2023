@@ -9,7 +9,7 @@ export const moduleUpdateLoopHandler =
              initOnUpdate(state){
                  state.stats = new Stats();
                  state.stats.showPanel(0);
-                 document.body.appendChild( state.stats.dom );
+               //  document.body.appendChild( state.stats.dom );
                      state.clock = new Clock();
                      state.onUpdateHandler = createEventHandler();
                      function update(){

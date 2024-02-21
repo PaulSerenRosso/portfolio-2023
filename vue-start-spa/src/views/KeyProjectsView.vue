@@ -14,8 +14,15 @@ export default {
 <template>
   <three-scene  container-id="_canvasContainer"></three-scene>
   <three-background-particles></three-background-particles>
+  <projects-container
 
-  <projects-container :picture-srcs="['testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg', 'testPicture.jpg',  'testPicture.jpg']"
+
+      :picture-srcs="[
+      'Projects/INRS/INRSSplash.jpg',
+  'Projects/Esquirel/EsquirelSplash.jpg',
+   'Projects/Boby/BobySplash.jpg',
+    'Projects/Jab/JabSplash.jpg',
+      'Projects/MemoryOfHope/MemoryOfHopeSplash.jpg']"
                       :page-links="['INRS','Esquirel','Boby','Jab', 'MemoryOfHope']"
                       :tag-texts-lists="[
                           ['Steam','UE5', 'Blueprints', 'Physics','Perforce','C++']
@@ -23,21 +30,23 @@ export default {
                       ,['Internship', 'Web', 'Game Design', 'Agile', 'Javascript'],
                       ['Mobile','Unity', 'Tools', 'AI', 'Lead', 'C#' ],
                        ['Unity', 'C#','Physics', '3C', 'Tools', 'Lead']]"
-                      :description-texts="['Physic based 2v2 party game with collaboration and sabotage',
-                      'Capture the point MOBA with ambushes and squirels',
-                      'Integrated arcade game to web application for ludification',
+                      :description-texts="[
+                     'Physic-based 2v2 party game with collaboration and sabotage',
+                      'Capture the point MOBA with ambushes and squirrels',
+                      'Integrated casual arcade game to web application for gamification',
                       'Fight-Taunt-Action mobile game with iconic boss',
                        'Zelda-like exploring the grief through wonderful world']"
-                      :title-texts="['It not a Rocket Science !','Esquirel','Boby','Jab','Memory Of Hope']" ></projects-container>
-  <div class="container"></div>
-  <end-redirector text-content="Want to see more ? Watch my solo projects !" link="SoloProjects"></end-redirector>
+                      :title-texts="['It not a Rocket Science!','Esquirel','Boby','Jab','Memory Of Hope']" ></projects-container>
+<div class="container"></div>
+  <end-redirector text-content="Want to see more? Watch my solo projects!" link="SoloProjects"></end-redirector>
 </template>
 
 <style scoped>
 .container{
   position: relative;
   height: 150%;
-  z-index: -10;
+
+
 }
 
 @media (min-width: 768px) {
@@ -53,4 +62,5 @@ export default {
     height: 50%;
   }
 }
+
 </style>

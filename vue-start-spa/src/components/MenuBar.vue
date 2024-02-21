@@ -1,6 +1,7 @@
 <script>
 import {defineComponent} from 'vue'
-import {addEvent, addEventListener} from "@/composables/StoreHelper";
+import {addEvent, addEventListener, getApp, setApp} from "@/composables/StoreHelper";
+import {activateScroll, deactivateScroll} from "@/composables/Scroll";
 
 export default defineComponent({
   name: "MenuBar",
@@ -11,18 +12,22 @@ export default defineComponent({
       soloProjectsName:"Solo Projects",
       contactName :"Contact",
       mobileMenuButtonState:"closed",
+      scrollDesactivationTimer : {},
   }
+  },
+  mounted() {
+    setApp();
   },
   methods:{
     goToPage(){
-      window.scrollTo(0,0);
+
       this.changeStateOfMobileMenuToClosed()
+      getApp().scrollTo({top:0, left:0, behavior:"instant"})
     },
     goToAboutMeContainer(){
 
 
       var aboutMeContainer = document.getElementById("AboutMeContainer");
-      console.log(aboutMeContainer)
       if(aboutMeContainer !== null){
       aboutMeContainer.scrollIntoView()
       }
@@ -39,6 +44,8 @@ export default defineComponent({
     },
     changeStateOfMobileMenuToClosed()
     {
+      clearTimeout(this.scrollDesactivationTimer);
+      activateScroll()
       this.mobileMenuButtonState = 'closed';
 
     },
@@ -46,10 +53,13 @@ export default defineComponent({
     {
       if(this.mobileMenuButtonState ==="opened")
       {
+        clearTimeout(this.scrollDesactivationTimer);
+        activateScroll();
         this.mobileMenuButtonState = 'closed';
       }
       else
       {
+       this.scrollDesactivationTimer = setTimeout(deactivateScroll, 1000);
         this.mobileMenuButtonState = 'opened';
       }
     }
@@ -155,12 +165,13 @@ export default defineComponent({
 #_menuBarMobilePopUp
 {
   position: fixed;
+  overflow: hidden;
   z-index: 1;
   top:0%;
   background: rgb(33,40,89);
   background: linear-gradient(90deg, rgba(33,40,89,1) 0%, rgba(58,68,138,1) 100%);
   width: 100%;
-  height:100%;
+  height:100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,6 +199,7 @@ export default defineComponent({
 #_menuBarContainer
 {
   position: fixed;
+  overflow: hidden;
   top:0%;
   left: 0%;
   background: rgb(33,40,89);

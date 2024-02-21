@@ -1,10 +1,12 @@
 import {StoreModule} from "@/store/StoreModule";
 import createEventHandler from "@/composables/EventHandler";
+import MobileDetect from "mobile-detect";
+
 
 
 export const moduleResponsiveEventHandler =
     new StoreModule(
-        {  devicePlateformId:1, onWindowResizeHandler:null, oldDevice:-1, deviceHasChanged: false},
+        { devicePlateformId:1, onWindowResizeHandler:null, oldDevice:-1, deviceHasChanged: false},
         {
             initDeviceId(state)
             {
@@ -39,12 +41,14 @@ export const moduleResponsiveEventHandler =
                     state.oldDevice = state.devicePlateformId;
                     state.onWindowResizeHandler.raiseEvent();
             }
-
-                window.addEventListener('resize', ()=>setDevice(state));
                state.onWindowResizeHandler = createEventHandler();
-
-
                 setDevice(state);
+                    window.addEventListener('resize', ()=>setDevice(state));
+
+
+
+
+
 
             /*    for (var index in state. allResponsivePropertyGroup) {
                     var value = state. allResponsivePropertyGroup[index];

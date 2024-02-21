@@ -26,6 +26,7 @@ export class ThreeBasicResponsiveProperty extends ResponsiveProperty{
         this.scale.x =this.initialScale.x;
         this.scale.y = this.initialScale.y;
         this.scale.z = this.initialScale.z;
+
         this.position.x = remap(this.position.x, 0,1 ,-1,1);
         this.position.y = remap( this.position.y*obj.height+obj.top, 0,1 ,1,-1);
         this.scale.x = remap(this.scale.x, 0,1 ,-1,1)+1;

@@ -34,19 +34,19 @@ export default {
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.5),
               -30,
-              new Vector3(0.8,0.15,1)),
+              new Vector3(0.8,0.15,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.5),
               -30,
-              new Vector3(0.8,0.2,1)),
+              new Vector3(0.8,0.2,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.5),
               -30,
-              new Vector3(0.45,0.5,1)),
+              new Vector3(0.45,0.5,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.5),
               -30,
-              new Vector3(0.45,0.5,1)),
+              new Vector3(0.45,0.5,0.5)),
       ),
       threeGridTextResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(
@@ -93,7 +93,7 @@ export default {
   <macro-container resize-event-key="ProjectSummaryMacroContainer" :height-desktop="1" :height-mobile="1.5" :height-large-desktop="1" :height-tablet="1.5">
    <div id="bigTitleContainer">
      <div id="bigTitle">
-       <letters-animation key-event="FirstReveal" :text-content="'`'+this.projectName+'`'"> </letters-animation>
+       <letters-animation key-event="FirstReveal" :text-content="this.projectName"> </letters-animation>
      </div>
    </div>
 
@@ -103,20 +103,20 @@ export default {
         <div class="timeline">
           <slide-in-animation key-event="FirstReveal" :is-right-direction="false" :delay="500">
         <span class="secondary-information-title">Timeline: </span>
-          <span>{{this.projectTimeline}}</span>
+          <span>{{' '+this.projectTimeline}}</span>
           </slide-in-animation>
         </div>
         <div class="group-staff">
           <slide-in-animation key-event="FirstReveal" :is-right-direction="false" :delay="750">
           <span class="secondary-information-title">Staff:</span>
-          <span>{{this.projectTeam}}</span>
+          <span>{{' '+this.projectTeam}}</span>
           </slide-in-animation>
         </div>
       </div>
         <slide-in-animation v-for="(keypoint, index) in this.keyPoints" :key="index" class="keypoints-container" key-event="FirstReveal" :is-right-direction="true" :delay="1000">
         <div>
-          <svg style="background-color: white" v-if="index === 0" width="1rem" height="1rem" >
-            <path fill=" rgba(58,68,138,1)" d="M0,0.054V20h21V0.054H0z M15.422,18.129l-5.264-2.768l-5.265,2.768l1.006-5.863L1.64,8.114l5.887-0.855
+          <svg style="background-color: white" v-if="index === 0" width="1rem" height="1rem" viewBox="0 0 19 19">
+            <path   fill=" rgba(58,68,138,1)" d="M0,0.054V20h21V0.054H0z M15.422,18.129l-5.264-2.768l-5.265,2.768l1.006-5.863L1.64,8.114l5.887-0.855
 	l2.632-5.334l2.633,5.334l5.885,0.855l-4.258,4.152L15.422,18.129z"/>
           </svg>
       <svg v-else  width="1rem" height="1rem" >
@@ -167,6 +167,7 @@ position: absolute;
   left:0%;
   width:100%;
   height: 35%;
+  align-items: center;
 
 }
 .secondary-information-container{
@@ -196,8 +197,11 @@ position: absolute;
   flex-direction: column;
   margin-left: 0%;
   height: 100%;
-  width: 100%;
+  width: 90%;
   align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  justify-content: center;
 }
 
 
@@ -206,7 +210,6 @@ position: absolute;
   #bigTitleContainer{
     top: 10%;
     width:100%;
-
   }
 
   .panel-container{
@@ -219,6 +222,7 @@ position: absolute;
   .keypoints-container{
     align-items: center;
     margin-left: 0%;
+    width:90%;
   }
 }
 
@@ -226,19 +230,19 @@ position: absolute;
 
   #bigTitleContainer{
     top: 10%;
-
     width:45%;
-
   }
   .panel-container{
     top:50%;
     left:2%;
     width:45%;
     height: 45%;
+    align-items: flex-start;
   }
   .keypoints-container{
     align-items: flex-start;
-    margin-left: 10%;
+    width:100%;
+    text-align: left;
   }
 }
 
@@ -247,17 +251,19 @@ position: absolute;
   #bigTitleContainer{
     top: 10%;
     width:45%;
-
   }
   .panel-container{
     top:50%;
     left:2%;
     width:45%;
     height: 45%;
+    align-items: flex-start;
   }
   .keypoints-container{
     align-items: flex-start;
-    margin-left: 10%;
+    width:100%;
+    text-align: left;
+
   }
 }
 

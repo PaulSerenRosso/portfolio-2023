@@ -20,39 +20,44 @@ export default {
 <project-page-container
     :project-is-solo-project="false"
                         project-name="Jab"
-                        project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
-                        project-timeline="November 2022 to January 2023"
-                        project-video-src="logo.png"
+                        project-team="4 Game Designers, 2 Game Programmers, 6 Game Artists"
+                        project-timeline="February 2023 to June 2023"
+                        project-video-src="Projects/Jab/JabTrailer.mp4"
                         :project-tags="   ['Mobile','Unity', 'Tools', 'AI', 'Lead', 'C#' ]"
                         :project-key-points="
-                        ['Architecture thinking with UML diagrams',
-                        'Ability System',
-                        'Board & Tile System',
-                        'State Machines',
-                        'UI Programmation',
-                        'Lead Programmer']"
-                          :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
-                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
+                        ['Create a window tool to easily read and edit the boss’ behavior',
+ 'Work on a mobile game',
+'Work as Lead Programmer',
+'Design and implement juicy UI',
+'Experience Pair programming workflow',
+'Develop copy paste tool of behavior tree to accelerate boss production.'
+]"
+                          :project-additional-content-srcs="['Projects/Jab/JabBehaviourTreeTool.mp4','Projects/Jab/JabCopyPaste.mp4',
+                          'Projects/Jab/JabGame.mp4','Projects/Jab/JabMenu.mp4']"
+                            :project-additional-content-types="[ThreeContentType.Video, ThreeContentType.Video,
+                            ThreeContentType.Video,ThreeContentType.Video]"
+                         :has-two-column-of-additional-visual-content="true"
+                          :project-first-content-is-picture="false">
   <div>
-    We were proud to be the class major of our promotion with
-    this project. That's also the game in which players were litteraly shouting
-    of fun during their playtests and that's a feeling that cannot be forgotten.
+    Jab is a <span class="bold-content">mobile fighting sport game</span> with a completely crazy atmosphere.
+    The player does one fight after another against a boss until he/she wins the tournament.
+    To win a fight, the player must gain the favors of the public by <span class="bold-content">taunting</span> and <span class="bold-content">hitting</span> the boss represented by a <span class="bold-content">gauge</span> of the Hype inspired of the tug of war.
+    The player can move within a <span class="bold-content">radial grid</span> around the boss.
+    At last, each boss has a unique ability or behavior and a <span class="bold-content">weak moment</span> that the player must find for <span class="bold-content">stunning</span> the boss in order to gain an advantage.
+
   </div>
 
   <div>
-   <span class="bold-content"> Jungle Dunk</span>, is all about being a mischievous little monkey, running around and stealing as many fruits
-    as possible with your gang. Two teams of four players face each other for 6 minutes,
-    with their only objective being to dunk as many fruits as possible in the central volcano.
-    But other than that, there are no rules. Jungle Dunk matches are a chockfull of sneaky tactics,
-    clever synergies and above all, pure chaos!
+    For the creation of the boss, I am very proud of the tools we set up.
+    First, we developed the boss’ behavior based on a behavior tree architecture for a better flexibility and readability.
+    Then, from this architecture, we created a window tool to edit and visualize the behavior pieces of the boss’ trees.
+    Later, we developed a copy paste tool, to copy a common part of a boss tree to another in order to accelerate the production of bosses.
+    Both were designed and used by the programmers and designers.
 
   </div>
-    <div>
-      I learned so much with this project. On the technical side on
-      Unreal Engine and the network programming. And on the management side,
-      I achieved to execute my view on a project workflow. A lot of iterations and tests,
-      slow but constant progress and great team communication..
+  <div>
+    On the other hand, thanks to the mobile platform of our game I learnt how to make juicy UI responsive, to use a profiler and set up other graphics optimization.
+    Finally, we worked a lot in pair programming for designing the code architecture and handling technical problematics.
   </div>
 
 </project-page-container>

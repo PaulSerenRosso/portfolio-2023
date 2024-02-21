@@ -82,7 +82,7 @@ export default {
         <div ref="mailPopUp" class="mail-copy-pop-up"> Copy To Clipboard !</div>
       </div>
     </div>
-    <three-content-grid :content-types="[ThreeContentType.Picture,ThreeContentType.Picture,ThreeContentType.Picture,ThreeContentType.Picture]" :has-html-linker-grid="true" :base-id="'contact-text'" :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup"  :three-grid-responsive-property-group="this.threeGridResponsivePropertyGroup"
+    <three-content-grid macro-container-id="ContactMacroContainer" :content-types="[ThreeContentType.Picture,ThreeContentType.Picture,ThreeContentType.Picture,ThreeContentType.Picture]" :has-html-linker-grid="true" :base-id="'contact-text'" :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup"  :three-grid-responsive-property-group="this.threeGridResponsivePropertyGroup"
                         :content-srcs="['contactLogo/GmailLogo.jpg', this.contactContainerLinks[0].linkPicture,this.contactContainerLinks[1].linkPicture,this.contactContainerLinks[2].linkPicture]"
                         macro-container-resize-event-key="ContactMacroContainer"
                         base-tag="ContactLogo"></three-content-grid>

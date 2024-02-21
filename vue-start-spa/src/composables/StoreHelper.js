@@ -42,11 +42,19 @@ export function raiseAndRemoveEvent(eventKey, obj){
     store.getters.getEventHandler(eventKey).raiseEvent(obj);
     store.commit("removeEvent", eventKey);
 }
+
+
 export function addEventListener(listener, keyEvent){
 
     store.state.eventsManager.allEventHandlers[keyEvent].addEventListener(listener);
 }
 
+export function getApp(){
+    return store.state.threeSceneCreator.app;
+}
+export function setApp(){
+    store.commit("setApp",document.getElementById("app"));
+}
 export function addRemoveAtSceneChangedResponsiveListener(listener){
     store.state.responsiveEventHandler.onWindowResizeHandler.addEventListener(listener);
     store.state.threeSceneCreator.onCreateSceneHandler.addEventListener(()=>

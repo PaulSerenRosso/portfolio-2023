@@ -2,7 +2,7 @@
 import {
   addCreateSceneHandlerListener,
   addRemoveAtSceneChangedEvent,
-  addRemoveAtSceneChangedResponsiveListener,
+  addRemoveAtSceneChangedResponsiveListener, getApp,
   raiseAndRemoveEvent
 } from "@/composables/StoreHelper";
 
@@ -10,7 +10,8 @@ export default {
   name: "RevealAnimationTrigger",
   data(){
     return{
-      currentTopValue:0
+      currentTopValue:0,
+      app : null,
     }
   },
   props:{
@@ -27,13 +28,15 @@ export default {
 
     },
   mounted() {
-    addCreateSceneHandlerListener(()=>{ window.removeEventListener("scroll", this.checkNeedToTrigger);})
+    this.app = getApp();
+    addCreateSceneHandlerListener(()=>{ this.app.removeEventListener("scroll", this.checkNeedToTrigger);})
     addRemoveAtSceneChangedResponsiveListener(this.tryReplaceTrigger);
-    window.addEventListener('scroll', this.checkNeedToTrigger);
+    this.app.addEventListener('scroll', this.checkNeedToTrigger);
     this.tryReplaceTrigger();
     this.checkNeedToTrigger();
+
     if(this.isDebug){
-      this.$refs.revealAnimationTrigger.style.backgroundColor = "red";
+      this.$refs.revealAnimationTrigger.style.backgroundColor = "blue";
     }
     else {
       this.$refs.revealAnimationTrigger.style.display = "transparent";
@@ -41,7 +44,6 @@ export default {
   },
   methods:{
     tryReplaceTrigger(){
-      if(this.$store.state.responsiveEventHandler.deviceHasChanged){
 
         switch (this.$store.state.responsiveEventHandler.devicePlateformId){
           case 0 :{
@@ -61,15 +63,13 @@ export default {
             break;
           }
         }
-
-        this.$refs.revealAnimationTrigger.style.top = this.currentTopValue+"%";
-      }
-    },
+      this.$refs.revealAnimationTrigger.style.top = this.currentTopValue+"%";
+      },
     checkNeedToTrigger(){
 
       if(window.innerHeight> this.$refs.revealAnimationTrigger.getBoundingClientRect().top){
         raiseAndRemoveEvent(this.revealAnimationTriggerEventKey);
-        window.removeEventListener("scroll", this.checkNeedToTrigger);
+        this.app.removeEventListener("scroll", this.checkNeedToTrigger);
       }
 
     }

@@ -6,7 +6,7 @@ import MainButton from "@/components/MainButton.vue";
 import LettersAnimation from "@/components/Text/Animation/LettersAnimation.vue";
 import SlideInAnimation from "@/components/Text/Animation/SlideInAnimation.vue";
 import {ThreeGridProperty} from "@/composables/ResponsiveProperty/ThreeGridProperty";
-import {addRemoveAtSceneChangedEvent} from "@/composables/StoreHelper";
+import {addRemoveAtSceneChangedEvent, getApp} from "@/composables/StoreHelper";
 import ThreeContentGrid from "@/components/Three/Grid/ThreeContentGrid.vue";
 import {ThreeContentType} from "@/composables/ThreeContentType";
 
@@ -47,6 +47,7 @@ export default {
     }
   },
   methods:{
+    getApp
 
   },
   created() {
@@ -96,20 +97,21 @@ export default {
       <letters-animation  :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'" :text-content="this.titleTexts[index]" ></letters-animation>
     </div>
     </router-link>
-  <slide-in-animation :delay="1000" :is-right-direction="false" :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'">
+  <slide-in-animation :delay="1500" :is-right-direction="false" :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'">
     <div class="description">{{this.descriptionTexts[index]}} </div> </slide-in-animation>
     <div class="button">
-    <router-link class="text-link"  :to="'/'+this.pageLinks[index]">
-      <main-button :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'"  :delay="1000" >Jump it !</main-button>
+    <router-link @click="getApp().scrollTo({top:0, left:0, behavior:'instant'});" class="text-link"  :to="'/'+this.pageLinks[index]">
+      <main-button :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'"  :delay="2000" >Jump it !</main-button>
     </router-link>
     </div>
   </div>
 </div>
-  <three-content-grid :content-types="picturesTypes"  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup"  :has-html-linker-grid="true"
+  <three-content-grid  :is-outside-macro-container="true" :content-types="picturesTypes"  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup"  :has-html-linker-grid="true"
                       :base-id="this.baseTag+'TextContainer'" :base-tag="this.baseTag"
                       :macro-container-resize-event-key="this.macroContainerResizeEventKey"
                       :three-grid-responsive-property-group="this.threeGridResponsivePropertyGroup"
-                      :content-srcs="this.pictureSrcs"></three-content-grid>
+                      :content-srcs="this.pictureSrcs"
+  macro-container-id="keyProjectsMacroContainer"/>
 
 </template>
 

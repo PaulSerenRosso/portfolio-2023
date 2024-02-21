@@ -4,7 +4,7 @@
  <welcome-container></welcome-container>
   <about-me-container></about-me-container>
   <resume-container></resume-container>
-  <end-redirector  link="keyProjects" text-content="See my projects for discovering more "></end-redirector>
+  <end-redirector  link="keyProjects" text-content="See my projects for discovering more!"></end-redirector>
   </template>
   <script >
 

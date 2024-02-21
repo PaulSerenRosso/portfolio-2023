@@ -7,12 +7,13 @@
   </div>
 
     <router-view/>
-
-
-
+  <!--
+  <video  playsinline autoplay muted loop controls type="video/mp4">
+    <source :src="require('@/assets/Projects/Esquirel/EsquirelTrailer.mp4')" >
+  </video>
+-->
 
 </template>
-
 <style>
 
 @font-face {
@@ -55,10 +56,15 @@
   text-align: left;
   font-family: MyRegular;
   color: white;
-  height: 100%;
+  position: fixed;
+  height: 100vh;
   width: 100%;
-  position: relative;
-
+  top:0;
+  left: 0;
+  margin : 0%;
+  overflow: scroll;
+  padding: 0;
+  border: 0;
 }
 
 #_testBackground
@@ -67,7 +73,7 @@
   width: 100%;
   top: 0%;
   left: 0%;
-  height: 100%;
+  height: 100vh;
   background-size: cover;
   background-attachment: fixed;
   background: rgb(178,28,27);
@@ -77,16 +83,20 @@
 
 #threeTextCanvas{
   position: fixed;
-
+  overflow: hidden;
 }
 
 html
 {
-  position: relative;
-  height: 100%;
-  margin: 0%;
+top: 0;
+  left: 0;
   width: 100%;
   font-size: 11px;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
 }
 .bold-content{
   font-family: MyBold;
@@ -116,10 +126,14 @@ html
 }
 body
 {
-  position: relative;
-  height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin : 0%;
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
 }
 
 nav {
@@ -135,6 +149,10 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
-<script setup lang="ts">
+<script setup >
+
+
 import MenuBar from "@/components/MenuBar.vue";
+
+
 </script>

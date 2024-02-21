@@ -1,6 +1,10 @@
 <script>
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
-import {addRemoveAtSceneChangedResponsiveListener} from "@/composables/StoreHelper";
+import {
+  addCreateSceneHandlerListener,
+  addRemoveAtSceneChangedResponsiveListener,
+  getApp
+} from "@/composables/StoreHelper";
 import {Vector2} from "@/composables/Vector2";
 import {remap} from "@/composables/Math";
 
@@ -10,25 +14,35 @@ export default {
   {
     return{
       htmlElement:{},
+      macroContainer:{},
+      app : {},
     }
   },
     mounted() {
-    this.htmlElement = document.getElementById(this.htmlElementIdName);
-    console.log(this.htmlElement);
-    console.log(this.threeBasicResponsivePropertyGroup);
-    this.htmlElement.style.position="absolute";
-
-
+    this.app = getApp();
+      this.htmlElement = document.getElementById(this.htmlElementIdName);
+      this.htmlElement.style.position="absolute";
+    if(this.isOutsideMacroContainer)
+    {
+      this.macroContainer = document.getElementById(this.macroContainerId);
+      this.htmlElement.remove();
+      document.getElementById("app").appendChild(this.htmlElement);
+      addCreateSceneHandlerListener(()=>{this.htmlElement.remove()});
+    }
       addRemoveAtSceneChangedResponsiveListener(this.placeHtmlElement);
+
     this.placeHtmlElement();
   },
   props: {
     threeJsHtmlPositionLinkerPropertyGroup:Object,
     htmlElementIdName: String,
-    threeBasicResponsivePropertyGroup:ResponsivePropertyGroup
+    threeBasicResponsivePropertyGroup:ResponsivePropertyGroup,
+    macroContainerId:String,
+    isOutsideMacroContainer : Boolean
   },
   methods:{
     placeHtmlElement (){
+
       const currentProperty = this.threeBasicResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
       const currentPropertyForHtmlLinker = this.threeJsHtmlPositionLinkerPropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
       var width = window.innerWidth, height = window.innerHeight;
@@ -57,8 +71,17 @@ export default {
         this.htmlElement.style.transform ="translateX(-50%)"
       }
       console.log("video html linker",  pos);
+      if(this.isOutsideMacroContainer){
+
+        console.log("la macro container en debug ",this.macroContainer,this.macroContainer.getBoundingClientRect().top, this.app.clientHeight);
+        console.log("before",pos.y);
+        pos.y += (this.macroContainer.getBoundingClientRect().top/window.innerHeight)*100;
+        console.log("after",pos.y);
+      }
+
       this.htmlElement.style.top = pos.y+"%";
       this.htmlElement.style.left = pos.x+"%";
+
 
     }
   }

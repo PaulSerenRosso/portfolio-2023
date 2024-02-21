@@ -4,7 +4,6 @@ export default{
   props:{ containerId:String},
 
   beforeCreate() {
-
     this.$store.dispatch('createNewScene');
   },
 
@@ -30,7 +29,8 @@ export default{
   left: 0%;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   animation-name: reveal-animation;
   animation-fill-mode: forwards;
   animation-duration: 2s;

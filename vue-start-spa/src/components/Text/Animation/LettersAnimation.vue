@@ -9,8 +9,8 @@ export default {
   },
   data(){
     return{
-      lettersElements:[],
-      delayBetweenLettersCreation:20,
+      letters:[],
+      delayBetweenLettersCreation:40,
       intervalTimer:null,
     }
   },
@@ -19,38 +19,20 @@ export default {
   },
   methods:{
     launchLettersAnimation(){
-      let isRegular = true;
-     const letters= this.textContent.split("");
-      for (let i = 0; i <letters.length; i++) {
-        if(letters[i] === "`"){
-          isRegular = !isRegular;
-          continue;
-        }
-       const currentLetterElement = document.createElement("div");
-        currentLetterElement.textContent =  letters[i]+"";
-        if(!isRegular){
-          currentLetterElement.style.fontFamily = "MyBlack";
-          currentLetterElement.style.backgroundColor ="rgba(178,28,27,0.4)";
 
-        }
-    
-    
-        this.$refs.lettersContainer.appendChild(currentLetterElement);
+     this.letters= this.textContent.split("");
 
-        this.lettersElements.push({letterElement:currentLetterElement, isBlack:isRegular});
-        currentLetterElement.classList.add("letter-hidden");
-      }
       this.intervalTimer = setInterval(this.animateLetter,this.delayBetweenLettersCreation);
       addCreateSceneHandlerListener(()=>clearInterval(this.intervalTimer));
     },
     animateLetter(){
-      const currentLetterElement = this.lettersElements.shift();
+      const currentLetterElement = this.letters.shift();
       if(currentLetterElement === undefined){
         clearInterval(this.intervalTimer);
       }
      
-      else{ 
-        currentLetterElement.letterElement.classList.add("letter-animation");
+      else{
+        this.$refs.lettersContainer.textContent = this.$refs.lettersContainer.textContent+currentLetterElement;
       }
     }
   }
@@ -64,42 +46,13 @@ export default {
 <style>
 
 .letters-container {
-
+color: white;
+  text-shadow: 5px 2px #12173DFF, 2px 4px #12173DFF, 3px 5px #12173DFF;
 }
 .letter-hidden{
  opacity: 0;
   display:inline;
   color: #424242;
-
-
-}
-.letter-animation{
-  animation-name: reveal-animation-letter;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
- 
-}
-
-@keyframes reveal-animation-letter{
-0%{
-  opacity: 0;
- clip-path: circle(0);
-  color: #12173D;
-
-}
-  50%{
-    opacity: 1;
-}
-  70%{
-    clip-path: circle(100%);
-  }
-100%{
-opacity: 1;
-  color: #FFFFFFFF;
-
-
-}
 }
 
 

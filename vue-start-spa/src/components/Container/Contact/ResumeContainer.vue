@@ -12,14 +12,14 @@ export default {
 <template>
   <div class="resume-container">
     <div class="resume-title-container">
-      <letters-animation text-content="`Look at my resume, download it !`" key-event="FinalReveal"></letters-animation>
+      <letters-animation text-content="Look at my resume, download it !" key-event="FinalReveal"></letters-animation>
     </div>
-    <a class="resume-button" :href="require('@/assets/'+'pdf/PaulSerenRossoCVEnglish.pdf')" download="PaulSerenRossoCVEnglish.pdf">
+    <a class="resume-button" :href="require('@/assets/'+'pdf/Paul_SEREN_ROSSO_Resume.pdf')" download="Paul_SEREN_ROSSO_Resume.pdf">
       <main-button  key-event="FinalReveal" :delay="2000">
         Get English Resume !
       </main-button>
     </a>
-    <a class="resume-button" :href="require('@/assets/'+'pdf/PaulSerenRossoCVFrançais.pdf')" download="PaulSerenRossoCVFrançais.pdf">
+    <a class="resume-button" :href="require('@/assets/'+'pdf/Paul_SEREN_ROSSO_CV.pdf')" download="Paul_SEREN_ROSSO_CV.pdf">
       <main-button  key-event="FinalReveal" :delay="2000">
         Get French Resume !
       </main-button>

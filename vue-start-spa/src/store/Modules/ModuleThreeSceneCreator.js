@@ -3,8 +3,9 @@ import {AxesHelper, Color, ColorManagement, PerspectiveCamera, Scene, WebGLRende
 import createEventHandler from "@/composables/EventHandler";
 import {
     addRemoveAtSceneChangedResponsiveListener,
-    addRemoveAtSceneChangedUpdateListener
+    addRemoveAtSceneChangedUpdateListener, getApp
 } from "@/composables/StoreHelper";
+import {moduleResponsiveEventHandler} from "@/store/Modules/ModuleResponsiveEventHandler";
 
 const languageColor ="rgb(129,80,213)";
 const specialityColor="rgb(75,173,204)";
@@ -17,7 +18,7 @@ const communicationColor="rgb(175,90,172)";
 const gameDesignColor="rgb(96,96,96)";
 export  const moduleThreeSceneCreator =
     new StoreModule(
-        { onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,
+        {app:null,  onCreateSceneHandler:null,cameraYScroll: 0, onCameraYScrollHandler:null,
             textsColor:{
                 "C#":languageColor,
                 "UE5":unrealColor,
@@ -46,27 +47,30 @@ export  const moduleThreeSceneCreator =
                 "Tech-Art":specialityColor,
                 'UI/UX':gameDesignColor,
 
-
-
             },
         },
         {
-
-
+            setApp(state, app){
+                state.app = app;
+                app.scrollTo({top:0, left:0, behavior:"instant"});
+            }
         },{},
         {
             initThreeSceneCreator(context){
-                function updateScrollCamera( context){
-                        context.state.cameraYScroll = window.scrollY/window.innerHeight*2;
-                        context.state.onCameraYScrollHandler.raiseEvent();
 
+                function updateScrollCamera( context){
+
+
+                        context.state.cameraYScroll = context.state.app.scrollTop/context.state.app.clientHeight*2;
+
+                        context.state.onCameraYScrollHandler.raiseEvent();
                 }
+
+
 
                 context.state.onCameraYScrollHandler = createEventHandler();
                 context.rootState.updateLoopHandler.onUpdateHandler.addEventListener( ()=>updateScrollCamera(context));
-                window.onbeforeunload = () => {
-                    window.scrollTo({top:0, left:0, behavior:"instant"});
-                }
+
 
             },
             createNewScene(context) {
@@ -89,7 +93,6 @@ export  const moduleThreeSceneCreator =
                     renderer.setSize(sceneContainer.clientWidth,sceneContainer.clientHeight);
                     renderer.setPixelRatio(window.devicePixelRatio);
                 }
-
                 var axesHelper = new AxesHelper( 1 );
                 this.scene.add( axesHelper );
                 const camera = new PerspectiveCamera(20, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 20);
@@ -99,7 +102,7 @@ export  const moduleThreeSceneCreator =
 
              addRemoveAtSceneChangedResponsiveListener(setSize);
                 sceneContainer.appendChild(renderer.domElement);
-
+                renderer.domElement.style.height = "100vh";
                 renderer.setClearColor(0xffffff, 0);
 
                 const animate= () => {
@@ -119,6 +122,7 @@ export  const moduleThreeSceneCreator =
 
 
                     renderer.render(this.scene, camera);
+
                     // particleMesh.rotation.y += 0.001;
                     // particleMesh.position.y = Math.sin(clock.getElapsedTime()*2)*0.1;
                 }

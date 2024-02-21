@@ -8,6 +8,7 @@ export default {
   name: "BubbleView",
   computed: {
     ThreeContentType() {
+
       return ThreeContentType
     }
   },
@@ -20,40 +21,24 @@ export default {
 <project-page-container
     :project-is-solo-project="true"
                         project-name="Bubble"
-                        project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
-                        project-timeline="November 2022 to January 2023"
-                        project-video-src="logo.png"
+                        project-team="Me"
+                        project-timeline="April 2023, 1 week"
+                        project-video-src="Projects/Bubbles/BubblesTrailer.mp4"
                         :project-tags="  ['UE5', 'HLSL','Tech-Art']"
                         :project-key-points="
-                       ['Architecture thinking with UML diagrams',
-                        'Ability System',
-                        'Board & Tile System',
-                        'State Machines',
-                        'UI Programmation',
-                        'Lead Programmer']"
-                          :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
-                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
-  <div>
-    We were proud to be the class major of our promotion with
-    this project. That's also the game in which players were litteraly shouting
-    of fun during their playtests and that's a feeling that cannot be forgotten.
-  </div>
-
-  <div>
-   <span class="bold-content"> Jungle Dunk</span>, is all about being a mischievous little monkey, running around and stealing as many fruits
-    as possible with your gang. Two teams of four players face each other for 6 minutes,
-    with their only objective being to dunk as many fruits as possible in the central volcano.
-    But other than that, there are no rules. Jungle Dunk matches are a chockfull of sneaky tactics,
-    clever synergies and above all, pure chaos!
-
-  </div>
-    <div>
-      I learned so much with this project. On the technical side on
-      Unreal Engine and the network programming. And on the management side,
-      I achieved to execute my view on a project workflow. A lot of iterations and tests,
-      slow but constant progress and great team communication..
-  </div>
+                       ['Implement shader in HLSL in Unreal engine from effects references',
+'Develop SDF (signed distance field) and raymarching algorithms for creating deformation and merging effects.',
+'Organize material parameters for better readability.',
+'Use the HSV model for getting a result closer to the bubble effect.'
+]"
+    :has-two-column-of-additional-visual-content="true"
+    :without-paragraph="true"
+                          :project-additional-content-srcs="['Projects/Bubbles/BubblesSplash.jpg',
+                          'Projects/Bubbles/BubblesMaterialView.mp4',
+                          'Projects/Bubbles/BubblesMaterialInstance.jpg']"
+                            :project-additional-content-types="[ThreeContentType.Picture,
+                             ThreeContentType.Video,ThreeContentType.Picture]"
+                          :project-first-content-is-picture="false">
 
 </project-page-container>
 </template>

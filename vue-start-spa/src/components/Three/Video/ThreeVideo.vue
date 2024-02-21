@@ -5,42 +5,38 @@ import {
   PlaneGeometry,
   Mesh,
   FrontSide,
-  MeshBasicMaterial,
+  MeshBasicMaterial
 } from 'three';
-import { addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
+import {addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
+import {activateScroll, deactivateScroll} from "@/composables/Scroll";
+import MainButton from "@/components/MainButton.vue";
 
 
 export default{
   name: "ThreeVideo",
+  components: {MainButton},
   data()
   {
     return{
       video : null,
       videoButton:null,
+      videoSource:null,
     }
-
   },
-
   mounted() {
-
     this.video = this.$refs.video;
+    this.videoSource = this.$refs.videoSource;
     this.video.style.display = "none";
+
+    this.$refs.videoQuitButton.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
     this.video.onloadeddata = () =>{
       this.video.play()
-
-    this.videoButton.addEventListener('click', this.activateFullscreen);
-    document.addEventListener('fullscreenchange', () => {
-      if (!document.fullscreenElement) {
-        this.video.style.display = "none";
-      }
-    });
+        this.videoButton.addEventListener('click', this.activateFullscreen);
     const videoTexture= new VideoTexture(this.video);
-    if(navigator.userAgent.indexOf("Firefox") <= -1){
+    if(navigator.userAgent.indexOf("Firefox") <= -1 ){
       videoTexture.colorSpace = "srgb" ;
     }
-
-
     const videoMaterial= new MeshBasicMaterial(
         { map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
@@ -56,30 +52,51 @@ export default{
     parentVideoTag:String,
     onCreateKey:String,
     videoTag:String,
-
   },
   methods: {
+deactivateFullScreen(){
+  this.video.play();
+  this.video.muted = true;
+  this.video.style.display = "none";
+  this.$refs.videoQuitButton.style.display = "none";
+  activateScroll();
+},
   activateFullscreen() {
-    if (this.video.requestFullscreen) {
-      this.video.requestFullscreen();
-    } else if (this.video.mozRequestFullScreen) { // Firefox
-      this.video.mozRequestFullScreen();
-    } else if (this.video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-      this.video.webkitRequestFullscreen();
-    } else if (this.video.msRequestFullscreen) { // IE/Edge
-      this.video.msRequestFullscreen();
-    }
-    this.video.style.display = "flex";
+   deactivateScroll();
+    this.video.style.display = "";
+    this.$refs.videoQuitButton.style.display = "";
   }
   },
-
-
 
 }
 
 </script>
 <template>
-  <video ref="video" playsinline webkit-playsinline muted loop autoplay
-         :src="require('@/assets/'+this.srcVideo)" ></video>
+  <video  class="three-video" ref="video"  playsinline autoplay muted loop controls type="video/mp4">
+<source ref="videoSource" :src="require('@/assets/'+this.srcVideo)">
+  </video>
+  <div class="video-button" ref="videoQuitButton">
+
+
+    <main-button class="video-button"   key-event="" :delay="0" @click="deactivateFullScreen" >Quit</main-button>
+  </div>
 </template>
+
+<style scoped>
+.three-video{
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: #12173D;
+}
+.video-button{
+
+  position: fixed;
+  z-index: 6;
+
+}
+</style>
 

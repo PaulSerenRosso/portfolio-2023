@@ -33,8 +33,8 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/ProjectPage/SoloProjects/BoidsView.vue')
   },
   {
-    path: '/Bubble',
-    name: 'Bubble',
+    path: '/Bubbles',
+    name: 'Bubbles',
     component: () => import('../views/ProjectPage/SoloProjects/BubbleView.vue')
   },
   {

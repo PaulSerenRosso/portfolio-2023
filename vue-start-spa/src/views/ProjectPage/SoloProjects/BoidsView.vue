@@ -20,41 +20,25 @@ export default {
 <project-page-container
     :project-is-solo-project="true"
                         project-name="Boids"
-                        project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
-                        project-timeline="November 2022 to January 2023"
-                        project-video-src="logo.png"
+                        project-team="Me"
+                        project-timeline="March 2022, 3 weeks"
+                        project-video-src="Projects/Boids/BoidsTrailer.mp4"
                         :project-tags=" ['Unity', 'Optimization','AI', 'C#']"
                         :project-key-points="
-                        ['Architecture thinking with UML diagrams',
-                        'Ability System',
-                        'Board & Tile System',
-                        'State Machines',
-                        'UI Programmation',
-                        'Lead Programmer']"
-                          :project-additional-content-srcs="['PaulSerenRossoPhoto.jpg','testVideo.mp4']"
-                            :project-additional-content-types="[ThreeContentType.Picture, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
-  <div>
-    We were proud to be the class major of our promotion with
-    this project. That's also the game in which players were litteraly shouting
-    of fun during their playtests and that's a feeling that cannot be forgotten.
-  </div>
-
-  <div>
-   <span class="bold-content"> Jungle Dunk</span>, is all about being a mischievous little monkey, running around and stealing as many fruits
-    as possible with your gang. Two teams of four players face each other for 6 minutes,
-    with their only objective being to dunk as many fruits as possible in the central volcano.
-    But other than that, there are no rules. Jungle Dunk matches are a chockfull of sneaky tactics,
-    clever synergies and above all, pure chaos!
-
-  </div>
-    <div>
-      I learned so much with this project. On the technical side on
-      Unreal Engine and the network programming. And on the management side,
-      I achieved to execute my view on a project workflow. A lot of iterations and tests,
-      slow but constant progress and great team communication..
-  </div>
-
+                        ['Create a prototype of RTS units using multithreading with Unity Jobs.',
+'Optimize units’ behavior using Data-oriented Paradigm and by dividing the arena into smaller cubic areas for faster treatments.',
+'Implements navmeshes for each movement mode.',
+'Use Boids Algorithm for moving organically units.',
+'Create configuration units tool from a document regrouping the game design needs.'
+]"
+    :has-two-column-of-additional-visual-content="true"
+                          :without-paragraph="true"
+                          :project-additional-content-srcs="['Projects/Boids/BoidsSplash.jpg',
+                          'Projects/Boids/BoidsJobs.jpg','Projects/Boids/BoidsSO.mp4',
+                          'Projects/Boids/BoidsGridisolation.jpg']"
+                            :project-additional-content-types="[ThreeContentType.Picture,ThreeContentType.Picture,
+                             ThreeContentType.Video,ThreeContentType.Picture]"
+                          :project-first-content-is-picture="false">
 </project-page-container>
 </template>
 

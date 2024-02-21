@@ -68,6 +68,7 @@ export default {
       }
       if(this.macroContainer !== undefined) {
         this.currentProperty = this.threeTransformResponsivePropertyGroup.responsivePropertyGroup[this.$store.state.responsiveEventHandler.devicePlateformId];
+
         this.currentProperty.update(this.macroContainer);
         if (this.isRatioObjCreated) {
 
@@ -77,6 +78,7 @@ export default {
           this.currentObj.setRotationFromQuaternion(quaternion);
           //this.currentObj.rotation.y = this.currentProperty.rotationY*degToRad;
           this.updateDynamicObjectPositionScene();
+          console.log(this.$store.state.threeSceneCreator.cameraYScroll);
         }
       }
     },
