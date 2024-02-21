@@ -75,7 +75,7 @@ export default {
 
         console.log("la macro container en debug ",this.macroContainer,this.macroContainer.getBoundingClientRect().top, this.app.clientHeight);
         console.log("before",pos.y);
-        pos.y += (this.macroContainer.getBoundingClientRect().top/window.innerHeight)*100;
+        pos.y += ((this.macroContainer.getBoundingClientRect().top+this.app.scrollTop)/this.app.clientHeight)*100;
         console.log("after",pos.y);
       }
 

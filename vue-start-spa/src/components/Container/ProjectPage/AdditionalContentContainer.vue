@@ -30,10 +30,10 @@ export default {
           new ThreeJsHtmlPositionLinkerProperty(undefined,5),
           new ThreeJsHtmlPositionLinkerProperty(undefined,5)),
       threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.17,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.55,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.20,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.5),10,new Vector2(0.05,0.2), new Vector3(0.4,0.35,1),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.6,0.5),10,new Vector2(0.1,0.2), new Vector3(0.35,0.35,1),new Vector2(0.05,0.1))
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,1,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.17,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.95,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.20,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.8,0.5),10,new Vector2(0.05,0.2), new Vector3(0.4,0.35,1),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.8,0.5),10,new Vector2(0.1,0.2), new Vector3(0.35,0.35,1),new Vector2(0.05,0.1))
       ),
       threeWithoutParagraphGridResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.3,0.5),10,new Vector2(0.05,0.3), new Vector3(0.8,0.2,0.5),new Vector2(0.05,0.1)),
@@ -48,7 +48,6 @@ export default {
 
 <template>
   <macro-container
-
       resize-event-key="AdditionalContentContainer" :height-desktop="1" :height-large-desktop="1" :height-mobile="1" :height-tablet="1">
     <slide-in-animation v-if="!this.withoutParagraph" class="paragraph-container" key-event="SecondReveal" :delay="0" :is-right-direction="false">
       <slot></slot>
@@ -66,7 +65,7 @@ export default {
 
 .additional-container{
   position: relative;
-  height: 150%;
+  height: 125%;
 }
 .additional-container-without-paragraph{
   position: relative;
@@ -89,7 +88,7 @@ export default {
 
   .additional-container
   {
-    height: 200%;
+    height: 150%;
   }
   .additional-container-without-paragraph{
     height: 100%;

@@ -5,71 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/public/Logo_PSR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/Paul_SEREN_ROSSO_CV.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/Paul_SEREN_ROSSO_Resume.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/PaulSerenRossoPhoto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/TrianglesParticles.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/PaulSerenRossoCVEnglish.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/pdf/PaulSerenRossoCVFrançais.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/snowflake1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testPicture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo2.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo3.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo4.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/testVideo5.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/triangleParticleAlphaMap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/ResumeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/ResumeContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/EndRedirector.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/EndRedirector.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/MacroContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/MacroContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MenuBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/RevealAnimationTrigger.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/RevealAnimationTrigger.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/LettersAnimation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/LettersAnimation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeContentGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeContentGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeHtmlLinkerGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeHtmlLinkerGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeProjectOverviewGrid.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Picture/ThreePicture.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeEdges.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeScene.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideoContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/ResponsiveProperty/ThreeBasicResponsiveProperty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/Scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/Scroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/router/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleResponsiveEventHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleThreeSceneCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/store/Modules/ModuleUpdateLoopHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/HomeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/EsquirelView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/EsquirelView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/JabView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/JabView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/MemoryOfHopeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/MemoryOfHopeView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BoidsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BoidsView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BubbleView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/BubbleView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/DeepLearningView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/DeepLearningView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/PortfolioView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/SoloProjects/PortfolioView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,7 +292,7 @@
       <workItem from="1708460768891" duration="5626000" />
       <workItem from="1708503777024" duration="218000" />
       <workItem from="1708532268375" duration="755000" />
-      <workItem from="1708543183771" duration="4946000" />
+      <workItem from="1708543183771" duration="7054000" />
     </task>
     <servers />
   </component>

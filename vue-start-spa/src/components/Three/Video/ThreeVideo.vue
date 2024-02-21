@@ -27,7 +27,7 @@ export default{
     this.video = this.$refs.video;
     this.videoSource = this.$refs.videoSource;
     this.video.style.display = "none";
-
+    this.$refs.videoBackgroundFullScreen.style.display = "none";
     this.$refs.videoQuitButton.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
     this.video.onloadeddata = () =>{
@@ -59,12 +59,14 @@ deactivateFullScreen(){
   this.video.muted = true;
   this.video.style.display = "none";
   this.$refs.videoQuitButton.style.display = "none";
+  this.$refs.videoBackgroundFullScreen.style.display = "none";
   activateScroll();
 },
   activateFullscreen() {
    deactivateScroll();
     this.video.style.display = "";
     this.$refs.videoQuitButton.style.display = "";
+    this.$refs.videoBackgroundFullScreen.style.display = "";
   }
   },
 
@@ -72,17 +74,27 @@ deactivateFullScreen(){
 
 </script>
 <template>
+  <div ref="videoBackgroundFullScreen" class="video-background-fullscreen"></div>
   <video  class="three-video" ref="video"  playsinline autoplay muted loop controls type="video/mp4">
 <source ref="videoSource" :src="require('@/assets/'+this.srcVideo)">
   </video>
+
   <div class="video-button" ref="videoQuitButton">
-
-
     <main-button class="video-button"   key-event="" :delay="0" @click="deactivateFullScreen" >Quit</main-button>
   </div>
 </template>
 
 <style scoped>
+
+.video-background-fullscreen{
+  top: 0%;
+  left: 0%;
+  background-color: #12173D;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+}
 .three-video{
   top: 0%;
   left: 0%;
@@ -90,13 +102,14 @@ deactivateFullScreen(){
   height: 100%;
   width: 100%;
   z-index: 5;
-  background-color: #12173D;
+
 }
 .video-button{
 
   position: fixed;
   z-index: 6;
-
+  top: 0%;
+  left: 0%;
 }
 </style>
 
