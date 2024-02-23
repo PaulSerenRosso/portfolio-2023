@@ -20,11 +20,11 @@ export default {
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.15,0.5),
               -30,
-              new Vector3(0.5,0.2,1)),
+              new Vector3(0.5,0.2,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.15,0.5),
               -30,
-              new Vector3(0.3,0.3,1)),
+              new Vector3(0.3,0.3,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.80,0.5,0.5),
               -30,

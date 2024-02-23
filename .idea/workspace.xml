@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/AboutMe/AboutMeContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/HomeView/WelcomeContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectOverview/ProjectsContainer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/AdditionalContentContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Video/ThreeVideo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/KeyProjectsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/BobyView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/SoloProjectsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +299,8 @@
       <workItem from="1708503777024" duration="218000" />
       <workItem from="1708532268375" duration="755000" />
       <workItem from="1708543183771" duration="7054000" />
+      <workItem from="1708696972929" duration="2583000" />
+      <workItem from="1708712084065" duration="2316000" />
     </task>
     <servers />
   </component>

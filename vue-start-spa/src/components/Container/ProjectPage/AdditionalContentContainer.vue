@@ -30,16 +30,16 @@ export default {
           new ThreeJsHtmlPositionLinkerProperty(undefined,5),
           new ThreeJsHtmlPositionLinkerProperty(undefined,5)),
       threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,1,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.17,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.95,0.5),10,new Vector2(0.05,0.2), new Vector3(0.8,0.20,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,1.2,0.5),10,new Vector2(0.05,0.2), new Vector3(0.75,0.25,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,1.1,0.5),10,new Vector2(0.05,0.2), new Vector3(0.75,0.25,0.5),new Vector2(0.05,0.1)),
           new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.8,0.5),10,new Vector2(0.05,0.2), new Vector3(0.4,0.35,1),new Vector2(0.05,0.1)),
           new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.8,0.5),10,new Vector2(0.1,0.2), new Vector3(0.35,0.35,1),new Vector2(0.05,0.1))
       ),
       threeWithoutParagraphGridResponsivePropertyGroup:new ResponsivePropertyGroup(
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.3,0.5),10,new Vector2(0.05,0.3), new Vector3(0.8,0.2,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.3,0.5),10,new Vector2(0.05,0.3), new Vector3(0.8,0.2,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.4,0.5),10,new Vector2(0.05,0.3), new Vector3(0.4,0.45,0.5),new Vector2(0.05,0.1)),
-          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.4,0.5),10,new Vector2(0.1,0.3), new Vector3(0.35,0.45,0.5),new Vector2(0.05,0.1))
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.3,0.5),10,new Vector2(0.05,0.2), new Vector3(0.75,0.3,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.3,0.5),10,new Vector2(0.05,0.2), new Vector3(0.75,0.3,0.5),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.4,0.5),10,new Vector2(0.05,0.3), new Vector3(0.4,0.45,1),new Vector2(0.05,0.1)),
+          new ThreeGridProperty(new Vector3(1,0.45,1), new Vector3(0.5,0.4,0.5),10,new Vector2(0.1,0.3), new Vector3(0.35,0.45,1),new Vector2(0.05,0.1))
       ),
     }
   },
@@ -65,7 +65,7 @@ export default {
 
 .additional-container{
   position: relative;
-  height: 125%;
+  height: 170%;
 }
 .additional-container-without-paragraph{
   position: relative;
@@ -79,7 +79,6 @@ export default {
   align-items: center;
   text-align: center;
   gap: 2rem;
-
   position: absolute;
 }
 
@@ -88,10 +87,10 @@ export default {
 
   .additional-container
   {
-    height: 150%;
+    height: 170%;
   }
   .additional-container-without-paragraph{
-    height: 100%;
+    height: 120%;
   }
 }
 

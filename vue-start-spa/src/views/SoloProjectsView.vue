@@ -37,13 +37,13 @@ export default {
 <style scoped>
 .container{
   position: relative;
-  height: 100%;
+  height: 170%;
 }
 
 @media (min-width: 768px) {
   .container
   {
-    height: 100%;
+    height: 160%;
   }
 }
 

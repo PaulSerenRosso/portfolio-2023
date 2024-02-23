@@ -33,19 +33,19 @@ export default {
       threeContainerResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.5),
-              -30,
-              new Vector3(0.8,0.15,0.5)),
+              -20,
+              new Vector3(0.9,0.17,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.5,0.77,0.5),
-              -30,
-              new Vector3(0.8,0.2,0.5)),
+              -20,
+              new Vector3(0.9,0.17,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.5),
-              -30,
+              -20,
               new Vector3(0.45,0.5,0.5)),
           new ThreeBasicResponsiveProperty(
               new Vector3(0.7,0.50,0.5),
-              -30,
+              -20,
               new Vector3(0.45,0.5,0.5)),
       ),
       threeGridTextResponsivePropertyGroup:new ResponsivePropertyGroup(
@@ -53,9 +53,9 @@ export default {
               new Vector3(1,0.3,0),
               new Vector3(0.5,0.27,0.5),
               30,
-              new Vector2(0.01,0.05),
+              new Vector2(0.03,0.05),
               new Vector3(0.25,0.025,0.2),
-              new Vector2(0.1,0.1)) ,
+              new Vector2(0.05,0.1)) ,
           new ThreeGridProperty(
               new Vector3(1,0.3,0),
               new Vector3(0.5,0.27,0.5),

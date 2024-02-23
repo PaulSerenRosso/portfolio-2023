@@ -22,7 +22,7 @@ export default {
                         project-name="Boby"
                         project-team="4 Game Designers, 2 Game Programmers, 4 Game Artists / 10 Game Programmers"
                         project-timeline="November 2022 to January 2023"
-                        project-video-src="Projects/Boby/BobySplash.jpg"
+                        project-video-src="Projects/Boby/BobyTrailer.mp4"
                         :project-tags=" ['Internship', 'Web', 'Game Design', 'Agile', 'Javascript']"
                         :project-key-points=" ['Internship as Gameplay Programmer and Game designer',
 'Create an Casual-Web-Arcade game in pure Javascript for all platforms',
@@ -35,7 +35,8 @@ export default {
                           'Projects/Boby/BobyMainMenu.jpg','Projects/Boby/BobyEndMenu.jpg']"
                             :project-additional-content-types="[ThreeContentType.Picture,ThreeContentType.Picture,
                             ThreeContentType.Picture,ThreeContentType.Picture,]"
-                          :project-first-content-is-picture="true"
+                          :project-first-content-is-picture="
+                          false"
 :has-two-column-of-additional-visual-content="true">
   <div>
     Boby is a start-up developing a ERP (Enterprise Resource Planning),

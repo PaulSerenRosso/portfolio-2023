@@ -44,7 +44,7 @@ export default {
 <style scoped>
 .container{
   position: relative;
-  height: 150%;
+  height: 220%;
 
 
 }
@@ -52,7 +52,7 @@ export default {
 @media (min-width: 768px) {
   .container
   {
-    height: 150%;
+    height: 220%;
   }
 }
 
