@@ -15,6 +15,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.keyEvent)
     addEventListener(this.launchSlideInAnimationTimer,this.keyEvent);
   },
   methods:{

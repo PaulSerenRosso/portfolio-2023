@@ -21,6 +21,7 @@ export default {
     topLargeDesktop:Number,
     revealAnimationTriggerEventKey:String,
     isDebug:Boolean,
+    isRelativePosition:Boolean
 
   },
   created() {
@@ -29,6 +30,8 @@ export default {
     },
   mounted() {
     this.app = getApp();
+    if(this.isRelativePosition)
+    this.$refs.revealAnimationTrigger.style.position = "relative";
     addCreateSceneHandlerListener(()=>{ this.app.removeEventListener("scroll", this.checkNeedToTrigger);})
     addRemoveAtSceneChangedResponsiveListener(this.tryReplaceTrigger);
     this.app.addEventListener('scroll', this.checkNeedToTrigger);
