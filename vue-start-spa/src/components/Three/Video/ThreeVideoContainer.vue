@@ -24,26 +24,16 @@ export default {
     macroContainerResizeEventKey:String,
     isOutsideMacroContainer:Boolean,
   },
-  methods:{
-    checkSafariIOSBrowser(){
-
-      return /iP(ad|od|hone)/i.test( navigator.userAgent) &&
-          /WebKit/i.test( navigator.userAgent) &&
-          !(/(CriOS|FxiOS|OPiOS|mercury)/i.test( navigator.userAgent));
-    }
-  }
-
 }
 </script>
 
 <template>
   <three-parent :three-transform-responsive-property-group="this.threeBasicResponsivePropertyGroup" :has-ratio-obj-created-event="true" :tag="this.videoObjectTag" :macro-container-resize-event-key="this.macroContainerResizeEventKey" :movement-length="0.05" :movement-frequency="1"></three-parent>
   <three-video :video-tag="this.videoObjectTag" :parent-video-tag="this.videoObjectTag+'Parent'" :on-create-key="this.videoObjectTag+'OnCreated'" :video-height="9.0" :video-width="16.0"  :video-button-id="this.videoObjectTag+'Button'" :srcVideo="this.srcVideo" > </three-video>
-  <div v-if="!this.checkSafariIOSBrowser()">
   <div :id="this.videoObjectTag+'Button'" class="video-button"><main-button :delay="this.delayAnimationReveal" :key-event="this.keyEventTriggerAnimation"> <div > Show it in fullscreen!  </div></main-button> </div>
   <three-js-html-position-linker :is-outside-macro-container="isOutsideMacroContainer" :macro-container-id="macroContainerResizeEventKey" :three-basic-responsive-property-group="this.threeBasicResponsivePropertyGroup"
                                   :html-element-id-name="this.videoObjectTag+'Button'"
-                                  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" ></three-js-html-position-linker></div>
+                                  :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" ></three-js-html-position-linker>
 
   <three-edges  :parent-object-tag="this.videoObjectTag" :on-parent-created-key="this.videoObjectTag+'OnCreated'"  :edges-width-thickness=0.03  :edges-z-thickness=0.15></three-edges>
 </template>

@@ -56,7 +56,7 @@ export default {
   <div class="panel-container" >
     <!-- Write your comments here
   <slide-in-animation delay="500" :is-right-direction="false"  key-event="TestAnimationEvent"><p> fj fdjk j lj jl j l kj lkj lk jlk jl kj lk jl kj lkj lkj lkj </p> </slide-in-animation>-->
-   <div id="bigTitle"> <letters-animation key-event="FirstReveal" text-content="Welcome! I'am Paul, a Junior Gameplay Programmer!"> </letters-animation></div>
+   <div id="bigTitle"> <letters-animation key-event="FirstReveal" text-content="Welcome! I am Paul, a Junior Gameplay Programmer!"> </letters-animation></div>
   </div>
 
    <three-video-container macro-container-resize-event-key="welcomeMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeVideoContainerResponsivePropertyGroup video-object-tag="TestVideo" srcVideo="ProjectsOverview.mp4"

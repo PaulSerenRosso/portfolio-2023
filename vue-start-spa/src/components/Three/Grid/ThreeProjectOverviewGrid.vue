@@ -46,10 +46,6 @@ export default {
       picturesTypes:[]
     }
   },
-  methods:{
-    getApp
-
-  },
   created() {
 
     for (let j = 0; j < this.threeGridResponsivePropertyGroup.responsivePropertyGroup.length; j++) {
@@ -100,7 +96,7 @@ export default {
   <slide-in-animation :delay="1500" :is-right-direction="false" :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'">
     <div class="description">{{this.descriptionTexts[index]}} </div> </slide-in-animation>
     <div class="button">
-    <router-link @click="getApp().scrollTo({top:0, left:0, behavior:'instant'});" class="text-link"  :to="'/'+this.pageLinks[index]">
+    <router-link class="text-link"  :to="'/'+this.pageLinks[index]">
       <main-button :key-event="this.baseTag+'TextContainer'+index+'AnimationTrigger'"  :delay="2000" >Jump it !</main-button>
     </router-link>
     </div>

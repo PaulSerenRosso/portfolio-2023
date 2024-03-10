@@ -4,7 +4,7 @@
 import MainButton from "@/components/MainButton.vue";
 import RevealAnimationTrigger from "@/components/RevealAnimationTrigger.vue";
 import SlideInAnimation from "@/components/Text/Animation/SlideInAnimation.vue";
-import {getApp} from "@/composables/StoreHelper";
+
 
 export default {
   name: "EndRedirector",
@@ -16,9 +16,7 @@ export default {
 
   },
   methods: {
-    goToPage() {
-      getApp().scrollTo({top:0, left:0, behavior:"instant"});
-    },
+
   }
 
 }
@@ -31,7 +29,7 @@ export default {
 
   <div class="end-redirector-panel-content">
 <div class="end-redirector-panel-text"> {{this.textContent}}</div>
-<router-link  @click="goToPage"  class="text-content" :to="'/'+this.link">
+<router-link    class="text-content" :to="'/'+this.link">
   <main-button   key-event="endRedirectorReveal" :delay="1000">
   Show it !</main-button></router-link>
   </div>

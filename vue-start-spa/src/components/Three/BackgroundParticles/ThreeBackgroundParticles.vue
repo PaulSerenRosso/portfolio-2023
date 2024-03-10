@@ -144,11 +144,7 @@ export default {
             this.particlesColor[i * 3] = color.r;
             this.particlesColor[i * 3 + 1] = color.g;
            this.particlesColor[i * 3 + 2] = color.b;
-
-
-
           }
-
           this.particles.setAttribute(
               'position',
               new BufferAttribute(this.particlesPosition, 3)

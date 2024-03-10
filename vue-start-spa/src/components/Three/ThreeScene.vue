@@ -1,4 +1,6 @@
 <script >
+import {getApp} from "@/composables/StoreHelper";
+
 export default{
   name: "ThreeScene",
   props:{ containerId:String},
@@ -8,7 +10,7 @@ export default{
   },
 
   mounted() {
-
+    getApp().scrollTo({top:0, left:0, behavior:"instant"});
     this.$store.dispatch('initNewScene', document.getElementById(this.containerId));
 
   },

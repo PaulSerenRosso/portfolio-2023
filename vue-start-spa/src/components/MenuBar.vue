@@ -20,13 +20,9 @@ export default defineComponent({
   },
   methods:{
     goToPage(){
-
-      this.changeStateOfMobileMenuToClosed()
-      getApp().scrollTo({top:0, left:0, behavior:"instant"})
+      this.changeStateOfMobileMenuToClosed();
     },
     goToAboutMeContainer(){
-
-
       var aboutMeContainer = document.getElementById("AboutMeContainer");
       if(aboutMeContainer !== null){
       aboutMeContainer.scrollIntoView()

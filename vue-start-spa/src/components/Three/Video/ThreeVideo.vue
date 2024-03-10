@@ -10,6 +10,7 @@ import {
 import {addThreeTagObject, getThreeTagObject, raiseAndRemoveEvent} from "@/composables/StoreHelper";
 import {activateScroll, deactivateScroll} from "@/composables/Scroll";
 import MainButton from "@/components/MainButton.vue";
+import {randomInt} from "@/composables/Math";
 
 
 export default{
@@ -26,17 +27,15 @@ export default{
   mounted() {
     this.video = this.$refs.video;
     this.videoSource = this.$refs.videoSource;
-    this.video.style.display = "none";
+  this.video.style.zIndex = "-1";
     this.$refs.videoBackgroundFullScreen.style.display = "none";
     this.$refs.videoQuitButton.style.display = "none";
     this.videoButton = document.getElementById(this.videoButtonId);
     this.video.onloadeddata = () =>{
-      this.video.play()
+      this.video.currentTime = 0;
         this.videoButton.addEventListener('click', this.activateFullscreen);
     const videoTexture= new VideoTexture(this.video);
-    if(navigator.userAgent.indexOf("Firefox") <= -1 ){
-      videoTexture.colorSpace = "srgb" ;
-    }
+      //videoTexture.colorSpace = "srgb";
     const videoMaterial= new MeshBasicMaterial(
         { map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);
@@ -57,19 +56,18 @@ export default{
 deactivateFullScreen(){
   this.video.play();
   this.video.muted = true;
-  this.video.style.display = "none";
+  this.video.style.zIndex = "-1";
   this.$refs.videoQuitButton.style.display = "none";
   this.$refs.videoBackgroundFullScreen.style.display = "none";
   activateScroll();
 },
   activateFullscreen() {
    deactivateScroll();
-    this.video.style.display = "";
+    this.video.style.zIndex = "";
     this.$refs.videoQuitButton.style.display = "";
     this.$refs.videoBackgroundFullScreen.style.display = "";
   }
   },
-
 }
 
 </script>
@@ -93,15 +91,15 @@ deactivateFullScreen(){
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 5;
+z-index: 5;
 }
 .three-video{
   top: 0%;
   left: 0%;
-  position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 5;
+ z-index: 5;
+  position: fixed;
 
 }
 .video-button{
