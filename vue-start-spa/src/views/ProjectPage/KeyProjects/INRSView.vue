@@ -30,7 +30,7 @@ export default {
 'Create a clean Blueprints architecture',
 'Entirely create elastic rope algorithm',
 'Handle Unreal engine physics',
-'Simplify the game designers’ work by using data assets'
+'Simplify the game designers work by using data assets'
 ]"
     :has-two-column-of-additional-visual-content = "true"
                           :project-additional-content-srcs="['Projects/INRS/INRSScreenshot01.jpg','Projects/INRS/INRSScreenshot01.jpg',

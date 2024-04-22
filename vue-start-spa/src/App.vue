@@ -1,4 +1,6 @@
 <template>
+
+
     <menu-bar></menu-bar>
 
   <canvas  id="threeTextCanvas"  ></canvas>

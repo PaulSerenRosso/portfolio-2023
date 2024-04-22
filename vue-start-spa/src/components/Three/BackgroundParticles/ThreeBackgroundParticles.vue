@@ -12,6 +12,7 @@ import {
   ThreeBackgroundParticlesResponsiveProperty
 } from "@/composables/ResponsiveProperty/ThreeBackgroundParticlesResponsiveProperty";
 import {
+  addCreateSceneHandlerListener,
   addRemoveAtSceneChangedResponsiveListener, addRemoveAtSceneChangedUpdateListener, getThreeTagObject
 } from "@/composables/StoreHelper";
 import {
@@ -65,12 +66,20 @@ export default {
   },
   methods:
       {
+        checkVisibility() {
+          if (document.visibilityState === 'visible') {
+            // Website is visible, do something
+            console.log('Website is visible');
+            // Call your function here
+            this.createParticles();
+          }
+        },
         initParticles(){
-
+          document.addEventListener('visibilitychange', this.checkVisibility);
           this.clock = new Clock();
           this.camera = getThreeTagObject("currentCamera");
           this.originZ = new Vector3(0,0,this.originCameraZ).unproject(this.camera).z;
-
+          addCreateSceneHandlerListener(()=>{document.removeEventListener('visibilitychange', this.checkVisibility);})
           addRemoveAtSceneChangedResponsiveListener(this.tryCreateParticles);
           addRemoveAtSceneChangedResponsiveListener(this.refreshRadius);
           addRemoveAtSceneChangedUpdateListener(this.updateParticlePosition);

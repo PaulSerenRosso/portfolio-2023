@@ -38,13 +38,12 @@ export default {
   <three-scene  container-id="_canvasContainer"></three-scene>
   <three-background-particles></three-background-particles>
   <project-summary-container :first-content-is-picture="this.projectFirstContentIsPicture" :tags="this.projectTags" :key-points="this.projectKeyPoints" :project-name="this.projectName" :content-src="this.projectVideoSrc" :project-timeline="this.projectTimeline" :project-team="this.projectTeam" >
-
   </project-summary-container>
   <div>
-    <reveal-animation-trigger :is-relative-position="true" :is-debug="false" :top-desktop="0" :top-large-desktop="0" :top-mobile="0" :top-tablet="0" reveal-animation-trigger-event-key="ThirdReveal"></reveal-animation-trigger>
-    <slide-in-animation   class="paragraph-container" key-event="ThirdReveal" :delay="500" :is-right-direction="false">
+    <slide-in-animation   class="paragraph-container"  key-event="ThirdReveal" :delay="500" :is-right-direction="false">
       <slot></slot>
     </slide-in-animation>
+    <reveal-animation-trigger :is-relative-position="false" :is-debug="false" :top-desktop="0" :top-large-desktop="0" :top-mobile="0" :top-tablet="0" reveal-animation-trigger-event-key="ThirdReveal"></reveal-animation-trigger>
   </div>
   <additional-content-container :has-two-column-of-additional-visual-content="hasTwoColumnOfAdditionalVisualContent" :without-paragraph="this.withoutParagraph"  :content-type-list="this.projectAdditionalContentTypes"  :content-src-list="projectAdditionalContentSrcs">
 
