@@ -20,7 +20,7 @@ export default {
   components: {ThreeContentGrid, MainButton, MacroContainer},
   data(){
     return{
-      contactContainerLinks:[new ContactLinkData("https://www.linkedin.com/in/paul-seren-rosso/", "LinkedIn", 'contactLogo/linkedinLogo.png' ),
+      contactContainerLinks:[new ContactLinkData("https://www.linkedin.com/in/paul-seren-rosso/", "LinkedIn", 'contactLogo/linkedinLogo.jpg' ),
         new ContactLinkData("https://github.com/PaulSerenRosso","Github", "contactLogo/githubLogo.png"),new ContactLinkData("https://twitter.com/tiondel_", "X",'contactLogo/XLogo.jpg')],
       threeGridResponsivePropertyGroup:new ResponsivePropertyGroup(
           new ThreeGridProperty(new Vector3(1,1,1), new Vector3(0.5,0.5,0.5),20,new Vector2(0.4,0.07), new Vector3(0.3,0.15 ,0.5),new Vector2(0.1,0.1)),

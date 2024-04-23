@@ -70,13 +70,10 @@ export default {
         pos.y =  pos.y+currentPropertyForHtmlLinker.offsetY;
         this.htmlElement.style.transform ="translateX(-50%)"
       }
-      console.log("video html linker",  pos);
       if(this.isOutsideMacroContainer){
 
-        console.log("la macro container en debug ",this.macroContainer,this.macroContainer.getBoundingClientRect().top, this.app.clientHeight);
-        console.log("before",pos.y);
         pos.y += ((this.macroContainer.getBoundingClientRect().top+this.app.scrollTop)/this.app.clientHeight)*100;
-        console.log("after",pos.y);
+
       }
 
       this.htmlElement.style.top = pos.y+"%";

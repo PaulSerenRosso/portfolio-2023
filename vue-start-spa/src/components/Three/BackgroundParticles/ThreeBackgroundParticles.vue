@@ -69,7 +69,8 @@ export default {
         checkVisibility() {
           if (document.visibilityState === 'visible') {
             // Website is visible, do something
-            console.log('Website is visible');
+
+
             // Call your function here
             this.createParticles();
           }
@@ -119,7 +120,6 @@ export default {
           });
           this.refreshRadius();
           this.createParticles();
-          console.log("test particles");
         },
         tryCreateParticles(){
           if(!this.$store.state.responsiveEventHandler.deviceHasChanged) return;

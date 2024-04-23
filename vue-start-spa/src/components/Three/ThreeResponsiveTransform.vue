@@ -45,14 +45,12 @@ export default {
     }
   },
   created() {
-    console.log("add listener event");
     addEventListener(this.updateDynamicObjectScene, this.macroContainerResizeEventKey);
   },
 
   methods:{
 
     applyResponsiveTransform() {
-      console.log("apply responsive transform")
       this.isRatioObjCreated = true;
       this.camera = this.$store.getters.getThreeObjectTag("currentCamera");
       this.currentObj = getThreeTagObject(this.currentObjTag);

@@ -13,7 +13,6 @@ export default{
     }
   },
   mounted() {
-    console.log(this.keyEvent)
     if(this.keyEvent ===""){
       this.launchRevealAnimationTimer();
     }

@@ -6,11 +6,65 @@
   <component name="ChangeListManager">
     <list default="true" id="7f935066-7547-49e1-bf65-bd765aa52268" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectPageContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/ProjectPage/ProjectSummaryContainer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/SlideInAnimation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Text/Animation/SlideInAnimation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/PaulSerenRossoPhoto2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/PaulSerenRossoPhoto2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyEndMenu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyEndMenu.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyMainMenu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyMainMenu.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyScreenshot01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyScreenshot01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobySplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobySplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyTuto.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boby/BobyTuto.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsGridisolation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsGridisolation.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsJobs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsJobs.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsSO.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsSO.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Boids/BoidsTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesMaterialInstance.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesMaterialInstance.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesMaterialView.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesMaterialView.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Bubbles/BubblesTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningLSTM.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningLSTM.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningSO.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningSO.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningScreenshotSO.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningScreenshotSO.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/DeepLearning/DeepLearningTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelArchitectureView.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelArchitectureView.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelRemoteConfig.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelRemoteConfig.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelScreenshot01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelScreenshot01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelScreenshot02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelScreenshot02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Esquirel/EsquirelTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSMerge.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSMerge.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSRope.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSRope.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSScreenshot01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSScreenshot01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSScreenshot02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSScreenshot02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/INRS/INRSSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabBehaviourTreeTool.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabBehaviourTreeTool.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabCopyPaste.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabCopyPaste.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabGame.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabGame.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabMenu.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabMenu.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Jab/JabTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHDialogue.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHDialogue.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHListenertrigger.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHListenertrigger.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHScreenshot01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHScreenshot01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHScreenshot02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MOHScreenshot02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MemoryOfHopeSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MemoryOfHopeSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MemoryOfHopeTrailer.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/MemoryOfHope/MemoryOfHopeTrailer.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioComponentPage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioComponentPage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioResponsiveProperty.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioResponsiveProperty.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioScreenPropsProjectPage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioScreenPropsProjectPage.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioSplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioSplash.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioThreejs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/Projects/Portfolio/PortfolioThreejs.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/ProjectsOverview.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/ProjectsOverview.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/contactLogo/GmailLogo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/contactLogo/GmailLogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/contactLogo/XLogo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/assets/contactLogo/XLogo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/assets/contactLogo/linkedinLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Container/Contact/SocialNetworkContainer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/MainButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/BackgroundParticles/ThreeBackgroundParticles.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeTextGrid.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/Grid/ThreeTextGrid.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeJsHtmlPositionLinker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/components/Three/ThreeResponsiveTransform.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/composables/StoreHelper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-start-spa/src/views/ProjectPage/KeyProjects/INRSView.vue" afterDir="false" />
     </list>
@@ -307,6 +361,8 @@
       <workItem from="1709295791975" duration="2378000" />
       <workItem from="1712306850827" duration="10192000" />
       <workItem from="1713796243667" duration="701000" />
+      <workItem from="1713878479321" duration="2394000" />
+      <workItem from="1713882384926" duration="621000" />
     </task>
     <servers />
   </component>

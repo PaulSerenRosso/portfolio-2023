@@ -22,10 +22,10 @@ export default {
                         project-name="It's not Rocket Science !"
                         project-team="4 Game Designers, 2 Game Programmers"
                         project-timeline="October 2023 to January 2024"
-                        project-video-src="Projects/INRS/INRSSplash.jpg"
+                        project-video-src="Projects/INRS/INRSTrailer.mp4"
                         :project-tags="['Steam','UE5', 'Blueprints', 'Physics','Perforce','C++']"
                         :project-key-points="
-                        ['Working on shipping the project to Steam',
+                        ['Shipping the project to Steam',
 'Set up and use Perforce as versioning software',
 'Create a clean Blueprints architecture',
 'Entirely create elastic rope algorithm',
@@ -37,7 +37,7 @@ export default {
                           'Projects/INRS/INRSRope.mp4','Projects/INRS/INRSMerge.mp4']"
                             :project-additional-content-types="[ThreeContentType.Picture,ThreeContentType.Picture,
                              ThreeContentType.Video, ThreeContentType.Video]"
-                          :project-first-content-is-picture="true">
+                          :project-first-content-is-picture="false">
   <div>
     It’s not Rocket Science is <span class="bold-content">a party game </span> where 2 teams of 2 players compete.
     Their goal is to make the highest rocket, then launch it in order to be the first to reach the finish line.
