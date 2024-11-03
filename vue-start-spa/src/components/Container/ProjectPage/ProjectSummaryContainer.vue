@@ -2,7 +2,7 @@
 import {ResponsivePropertyGroup} from "@/composables/ResponsiveProperty/ResponsivePropertyGroup";
 import {ThreeBasicResponsiveProperty} from "@/composables/ResponsiveProperty/ThreeBasicResponsiveProperty";
 import {Vector3} from "@/composables/Vector3";
-import ThreeVideoContainer from "@/components/Three/Video/ThreeVideoContainer.vue";
+
 import MacroContainer from "@/components/Container/MacroContainer.vue";
 import RevealAnimationTrigger from "@/components/RevealAnimationTrigger.vue";
 import LettersAnimation from "@/components/Text/Animation/LettersAnimation.vue";
@@ -11,14 +11,15 @@ import ThreeTextGrid from "@/components/Three/Grid/ThreeTextGrid.vue";
 import {ThreeGridProperty} from "@/composables/ResponsiveProperty/ThreeGridProperty";
 import {Vector2} from "three";
 import {ThreeJsHtmlPositionLinkerProperty} from "@/composables/ResponsiveProperty/ThreeJsHtmlPositionLinkerProperty";
-import ThreePictureContainer from "@/components/Three/Picture/ThreePictureContainer.vue";
+
+import TvBorder from "@/components/TvBorder.vue";
 
 export default {
   name: "ProjectSummaryContainer",
   components: {
-    ThreePictureContainer,
+
     ThreeTextGrid,
-    SlideInAnimation, LettersAnimation, RevealAnimationTrigger, MacroContainer, ThreeVideoContainer},
+    SlideInAnimation, LettersAnimation, RevealAnimationTrigger, MacroContainer, TvBorder},
   props:{
     contentSrc:String,
     projectName:String,
@@ -26,7 +27,7 @@ export default {
     projectTeam:String,
     keyPoints:Array,
     tags:Array,
-    firstContentIsPicture:Boolean
+    firstContentIsPicture:Boolean,
   },
   data(){
     return{
@@ -128,11 +129,13 @@ export default {
 
         </slide-in-animation>
     </div>
-  <three-video-container v-if="!this.firstContentIsPicture" :three-js-html-position-linker-property-group="this.threeJsHtmlPositionLinkerPropertyGroup" macro-container-resize-event-key="ProjectSummaryMacroContainer" :delay-animation-reveal="2000"  key-event-trigger-animation="FirstReveal" :three-basic-responsive-property-group=this.threeContainerResponsivePropertyGroup video-object-tag="TestVideo" :srcVideo="this.contentSrc"
-  > </three-video-container>
+    <div class="first-content">
+      <tv-border key-event="FirstReveal" :delay="1500">
+        <video  v-if="!this.firstContentIsPicture" playsinline autoplay muted loop controls type="video/mp4" :src="require('@/assets/'+this.contentSrc)"></video>
+        <img v-if="this.firstContentIsPicture" :src="require('@/assets/'+this.contentSrc)" alt="">
+      </tv-border>
+    </div>
 
-    <three-picture-container v-else macro-container-resize-event-key="ProjectSummaryMacroContainer"   :three-basic-responsive-property-group=this.threeContainerResponsivePropertyGroup picture-object-tag="TestVideo" :src-picture="this.contentSrc"
-    > </three-picture-container>
     <reveal-animation-trigger :is-debug="false" :top-desktop="50" :top-large-desktop="50" :top-mobile="50" :top-tablet="50" reveal-animation-trigger-event-key="FirstReveal"></reveal-animation-trigger>
   </macro-container>
 <slot></slot>
@@ -204,7 +207,10 @@ position: absolute;
   text-align: center;
   justify-content: center;
 }
-
+.first-content{
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 
 @media (min-width: 768px) {
 
@@ -225,6 +231,13 @@ position: absolute;
     margin-left: 0%;
     width:90%;
   }
+  .first-content{
+    height: auto;
+    top: 82%;
+    left: 50%;
+    width: 90%;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -236,7 +249,7 @@ position: absolute;
   .panel-container{
     top:50%;
     left:2%;
-    width:45%;
+    width:40%;
     height: 45%;
     align-items: flex-start;
   }
@@ -244,6 +257,13 @@ position: absolute;
     align-items: flex-start;
     width:100%;
     text-align: left;
+  }
+
+  .first-content{
+    height: auto;
+    top: 55%;
+    left: 72%;
+    width: 55%;
   }
 }
 
@@ -256,7 +276,7 @@ position: absolute;
   .panel-container{
     top:50%;
     left:2%;
-    width:45%;
+    width:40%;
     height: 45%;
     align-items: flex-start;
   }
@@ -265,6 +285,13 @@ position: absolute;
     width:100%;
     text-align: left;
 
+  }
+
+  .first-content{
+    height: auto;
+    top: 55%;
+    left: 72%;
+    width: 55%;
   }
 }
 

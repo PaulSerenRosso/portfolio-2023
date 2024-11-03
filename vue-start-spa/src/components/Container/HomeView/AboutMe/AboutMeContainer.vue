@@ -44,7 +44,6 @@ export default {
 </script>
 
 <template>
-
   <macro-container id="AboutMeContainer" ref="macroContainer"  resize-event-key="aboutMeMacroContainer" :height-desktop="1" :height-mobile="1.2" :height-large-desktop="1.2" :height-tablet="1">
     <div class="panel-container">
   <profile-pillar text-title="Programming"  :delay="500" trigger-animation-key-event="SecondReveal">

@@ -23,6 +23,7 @@ export default {
 
     const textureLoader = new TextureLoader();
     const image = this.$refs.image.src;
+
      textureLoader.load(image, (texture) => {
 texture.colorSpace ="srgb" ;
       const material = new MeshBasicMaterial({ map: texture });

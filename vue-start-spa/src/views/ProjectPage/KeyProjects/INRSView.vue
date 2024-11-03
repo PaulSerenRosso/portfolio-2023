@@ -58,6 +58,7 @@ export default {
   <div>
     At last, we were working on shipping the project to <span class="bold-content">Steam </span>.
     I implemented the Steam SDK, and the steam achievements for our game.
+    Here the <a style="color: white" target="_blank"  href="https://store.steampowered.com/app/1580860/Its_Not_Rocket_Science/"> link </a> of the Steam page
   </div>
 
 

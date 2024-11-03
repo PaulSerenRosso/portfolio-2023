@@ -6,6 +6,7 @@ export default {
   props:{
     textContent:String,
     keyEvent:String,
+
   },
   data(){
     return{

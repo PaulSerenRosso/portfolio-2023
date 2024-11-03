@@ -3,6 +3,7 @@ export default function createEventHandler(){
         return{
             addEventListener(listener){
                 onEvent.push(listener);
+
             },
             removeEventListener(listener){
                 onEvent.splice(onEvent.indexOf(listener),1);

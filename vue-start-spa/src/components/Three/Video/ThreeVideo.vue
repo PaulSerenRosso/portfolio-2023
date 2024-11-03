@@ -30,12 +30,14 @@ export default{
   this.video.style.zIndex = "-1";
     this.$refs.videoBackgroundFullScreen.style.display = "none";
     this.$refs.videoQuitButton.style.display = "none";
+
     this.videoButton = document.getElementById(this.videoButtonId);
     this.video.onloadeddata = () =>{
       this.video.currentTime = 0;
         this.videoButton.addEventListener('click', this.activateFullscreen);
     const videoTexture= new VideoTexture(this.video);
-      //videoTexture.colorSpace = "srgb";
+      videoTexture.colorSpace = "srgb";
+
     const videoMaterial= new MeshBasicMaterial(
         { map: videoTexture, side: FrontSide, toneMapped: false, fog: false});
     const screen = new PlaneGeometry(this.video.videoWidth/this.video.videoHeight,1);

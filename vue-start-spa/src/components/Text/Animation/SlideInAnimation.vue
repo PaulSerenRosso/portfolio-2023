@@ -30,6 +30,7 @@ export default {
       }
       else{
         this.$refs.slotContainer.classList.add("slide-in-animation-top");
+
       }
     }
   }

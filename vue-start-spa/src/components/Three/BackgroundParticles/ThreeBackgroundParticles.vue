@@ -67,13 +67,10 @@ export default {
   methods:
       {
         checkVisibility() {
-          if (document.visibilityState === 'visible') {
-            // Website is visible, do something
-
 
             // Call your function here
             this.createParticles();
-          }
+
         },
         initParticles(){
           document.addEventListener('visibilitychange', this.checkVisibility);
